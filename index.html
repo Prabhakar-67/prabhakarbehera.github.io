@@ -3,204 +3,121 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Prabhakar | SAP B1 · Power BI · Data Analyst</title>
+  <title>Prabhakar Behera | SAP B1 · Power BI · Data Analyst</title>
   <meta name="description" content="Prabhakar Behera — SAP Business One Specialist & Power BI Developer. Turning data into business decisions." />
-  <meta property="og:title" content="Prabhakar | SAP B1 · Power BI · Data Analyst" />
-  <meta property="og:description" content="SAP B1 Specialist, Crystal Reports, Power BI developer from Odisha building analytics solutions." />
-  <meta property="og:image" content="profile.jpg" />
   <link rel="icon" href="profile.jpg" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Plausible Analytics (privacy-friendly). Replace 'yourdomain.com' with your domain or remove if you prefer no analytics -->
+  <!-- <script async defer data-domain="yourdomain.com" src="https://plausible.io/js/plausible.js"></script> -->
 
   <style>
     :root{
-      --bg-light: #f3f8fb;
-      --card-light: rgba(255,255,255,0.96);
-      --accent: #1587d6; /* primary blue */
-      --accent-2: #21b6d6; /* turquoise */
-      --muted: #22506f;
-      --glass: rgba(255,255,255,0.6);
-      --shadow: 0 10px 30px rgba(18,71,133,0.08);
-      --radius: 14px;
-      --mono: 'Roboto', system-ui, sans-serif;
+      --bg:#f3f8fb; --card:#ffffff; --muted:#22506f; --accent1:#1a89d8; --accent2:#22c1d6;
+      --glass: rgba(255,255,255,0.9); --radius:14px; --shadow: 0 12px 28px rgba(15,64,100,0.07); --text:#052a3d; --soft:#6ea5bf;
     }
-    /* Dark theme variables */
     body.dark {
-      --bg-light: linear-gradient(180deg,#07182a 0%, #072b3f 100%);
-      --card-light: rgba(9,20,30,0.65);
-      --accent: #53bdf3;
-      --accent-2: #2ad1c9;
-      --muted: #cbeefc;
-      --glass: rgba(255,255,255,0.04);
-      --shadow: 0 10px 30px rgba(0,0,0,0.6);
+      --bg: linear-gradient(180deg,#071526 0%,#04283a 100%);
+      --card: rgba(8,18,28,0.6); --muted:#a7d7f0; --accent1:#5fc9ff; --accent2:#34e1d1;
+      --glass: rgba(255,255,255,0.03); --shadow: 0 12px 28px rgba(0,0,0,0.6); --text:#e6f6ff; --soft:#95bcd4;
     }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--bg);color:var(--text);
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;transition:background .45s,color .35s;padding-top:72px;}
 
-    /* Reset & base */
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: var(--mono);
-      background: linear-gradient(120deg,#eaf6ff 0%, #eef7fb 50%, #f8fbff 100%);
-      color:#0b2b3f;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      transition: background 0.45s ease, color 0.35s ease;
-      padding-top:72px; /* header height */
-    }
+    header{position:fixed;top:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:10px 22px;background:linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55));backdrop-filter:blur(6px);box-shadow:var(--shadow);z-index:1200}
+    body.dark header{background:linear-gradient(180deg, rgba(6,18,30,0.6), rgba(6,18,30,0.35))}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .brand img{width:46px;height:46px;border-radius:10px;object-fit:cover;border:2px solid rgba(255,255,255,0.12)}
+    .brand h1{font-family:'Poppins',sans-serif;margin:0;font-size:1rem;letter-spacing:.3px}
 
-    /* Header / Nav */
-    header{
-      position: fixed;
-      top:0; left:0; right:0;
-      height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:12px 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));
-      backdrop-filter: blur(6px);
-      box-shadow: var(--shadow);
-      z-index:1000;
-      transition: background 0.35s ease;
-    }
-    body.dark header{
-      background: linear-gradient(180deg, rgba(6,18,30,0.6), rgba(6,18,30,0.35));
-    }
-    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-    .brand img { width:44px; height:44px; border-radius:10px; object-fit:cover; border:2px solid rgba(255,255,255,0.35);}
-    .brand h1{font-size:1.05rem;margin:0;font-weight:700;letter-spacing:0.4px}
-    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center}
-    nav a{color:inherit;text-decoration:none;font-weight:500;font-size:0.95rem;opacity:0.95}
-    nav a:hover{color:var(--accent)}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:inherit;text-decoration:none;font-weight:600;opacity:.95}
+    nav a:hover{color:var(--accent1)}
 
-    /* Theme toggle button */
-    .theme-toggle{
-      width:42px;height:42px;border-radius:10px;display:inline-grid;place-items:center;border:none;cursor:pointer;
-      background:var(--card-light); box-shadow: 0 6px 18px rgba(16,64,110,0.06);
-      transition:transform .18s ease, background .25s ease;
-    }
-    .theme-toggle:active{transform:scale(.98)}
-    body.dark .theme-toggle{ background: rgba(255,255,255,0.03); box-shadow: none; color:var(--accent) }
+    .theme-toggle{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;border:none;cursor:pointer;background:var(--card);box-shadow:0 6px 18px rgba(10,40,70,0.06);transition:transform .18s,background .25s;color:inherit}
+    body.dark .theme-toggle{background:rgba(255,255,255,0.04);color:var(--accent1)}
 
-    /* Container */
-    .container{max-width:1100px;margin:0 auto;padding:34px 22px}
+    .container{max-width:1100px;margin:0 auto;padding:32px 22px}
 
-    /* Hero */
-    .hero{
-      display:grid;
-      grid-template-columns: 220px 1fr;
-      gap:28px;
-      align-items:center;
-      margin-top:10px;
-    }
-    .photo-wrap{
-      width:220px; border-radius:16px; overflow:hidden;
-      background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.65));
-      box-shadow: var(--shadow);
-      border: 4px solid rgba(33,150,243,0.08);
-    }
+    .hero{display:grid;grid-template-columns:220px 1fr;gap:26px;align-items:center}
+    .photo-wrap{width:220px;border-radius:16px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));box-shadow:var(--shadow);border:4px solid rgba(26,137,216,0.08)}
     .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
 
-    .hero-card{
-      background: var(--card-light);
-      border-radius: var(--radius);
-      padding:26px;
-      box-shadow: var(--shadow);
-    }
-    .hero-title{font-size:1.9rem;margin:0 0 6px 0;font-weight:700;color:var(--accent)}
-    .hero-sub{font-size:1.05rem;margin:0 0 12px 0;color:var(--muted);font-weight:500}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
-    .badge{
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      color:white;padding:8px 14px;border-radius:999px;font-weight:700;font-size:0.86rem;box-shadow:0 6px 18px rgba(21,135,214,0.12)
-    }
+    .hero-card{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .hero-title{font-family:'Poppins',sans-serif;font-size:1.8rem;margin:0;color:var(--accent1)}
+    .hero-sub{font-weight:600;color:var(--soft);margin-top:6px;font-size:1rem}
+    .badges{display:flex;gap:10px;margin:12px 0;flex-wrap:wrap}
+    .badge{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;padding:8px 14px;border-radius:999px;font-weight:700;font-family:'Poppins',sans-serif;box-shadow:0 8px 26px rgba(16,80,120,0.08)}
+
     .hero-desc{color:var(--muted);line-height:1.55;margin:14px 0 18px 0}
-
     .hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    .btn{
-      padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:700;border:none;cursor:pointer;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 25px rgba(17,84,128,0.12)
-    }
-    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(20,120,180,0.12)}
-    .socials a{margin-right:8px;color:var(--muted);font-size:1.2rem}
-    .socials a:hover{color:var(--accent)}
+    .btn{padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;border:none;cursor:pointer;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;box-shadow:0 10px 26px rgba(16,80,120,0.08)}
+    .btn.secondary{background:transparent;color:var(--accent1);border:1px solid rgba(20,120,180,0.08)}
+    .socials a{margin-right:8px;color:var(--muted);font-size:1.15rem}
+    .socials a:hover{color:var(--accent1)}
 
-    /* Two-column layout for content */
-    .grid-2{
-      display:grid;
-      grid-template-columns: 1fr 340px;
-      gap:24px;
-      margin-top:28px;
-    }
+    .grid-2{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:28px}
+    @media (max-width:980px){.grid-2{grid-template-columns:1fr}.hero{grid-template-columns:160px 1fr}.photo-wrap{width:160px}}
+    @media (max-width:680px){header nav{display:none}.hero{grid-template-columns:1fr;gap:12px}.photo-wrap{height:220px;width:100%}}
 
-    /* Card sections */
-    .card{
-      background:var(--card-light);padding:20px;border-radius:12px;box-shadow:var(--shadow);
-    }
-    h2.section-title{margin:0 0 12px 0;color:var(--accent);font-size:1.05rem}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+    .section-title{font-family:'Poppins',sans-serif;color:var(--accent1);margin:0 0 10px 0;font-size:1rem}
+    .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,252,255,0.96));padding:12px;border-radius:10px;box-shadow:0 8px 20px rgba(8,48,78,0.04)}
+    body.dark .stat{background:rgba(255,255,255,0.02);box-shadow:0 8px 20px rgba(0,0,0,0.45)}
+    .stat strong{display:block;color:var(--accent1);font-family:'Poppins',sans-serif;margin-bottom:6px}
 
-    /* Skill bars */
-    .skill{margin:12px 0}
-    .skill .label{display:flex;justify-content:space-between;font-weight:600;color:var(--muted);font-size:0.95rem;margin-bottom:6px}
-    .bar{
-      height:12px;border-radius:999px;background:linear-gradient(90deg,#e6f6ff, #edf9fb);overflow:hidden;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
-    }
-    .bar-fill{
-      height:100%; width:0%; background: linear-gradient(90deg,var(--accent), var(--accent-2));
-      border-radius:999px; transition: width 1.4s cubic-bezier(.2,.9,.3,1);
-    }
+    .project{margin-bottom:12px;padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,252,255,0.98));box-shadow:var(--shadow)}
+    .project h4{margin:0 0 6px 0;color:var(--accent1);font-family:'Poppins',sans-serif}
+    .muted{color:var(--muted)}
 
-    /* mini analytics SVG */
-    .mini-chart{display:flex;gap:12px;align-items:center}
-    .chart-legend{font-size:0.9rem;color:var(--muted)}
-    .stat-grid{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .stat{background:linear-gradient(90deg,rgba(255,255,255,0.9),rgba(255,255,255,0.98));padding:12px;border-radius:10px;min-width:120px;text-align:center;box-shadow:var(--shadow)}
-    .stat strong{display:block;font-size:1.25rem;color:var(--accent)}
+    .exp-item{margin-bottom:10px;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(250,250,255,0.98), rgba(245,250,255,0.98));box-shadow:var(--shadow)}
+    body.dark .exp-item{background:rgba(255,255,255,0.02)}
 
-    /* Projects */
-    .project{margin-bottom:12px;padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,252,255,0.95));box-shadow:var(--shadow)}
-    .project h4{margin:0 0 6px 0;color:#0d4e72}
-
-    /* Experiences list */
-    .exp-item{margin-bottom:10px;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(250,250,255,0.95), rgba(245,250,255,0.95));box-shadow:var(--shadow)}
-    .muted{color:var(--muted);font-weight:500}
-
-    /* Contact */
     .contact-grid{display:flex;flex-direction:column;gap:10px}
-    .contact a{color:var(--accent);text-decoration:none;font-weight:700}
+    .contact a{color:var(--accent1);text-decoration:none;font-weight:700}
 
-    footer{margin:40px 0 20px;text-align:center;color:var(--muted);font-size:0.95rem}
+    footer{margin:40px 0 22px;text-align:center;color:var(--muted);font-size:0.95rem}
+    .signature{font-family:'Poppins',sans-serif;margin-top:6px;color:var(--soft);position:relative;display:inline-block}
+    .signature::after{content:'';display:block;width:0;height:2px;background:linear-gradient(90deg,var(--accent1),var(--accent2));position:absolute;left:0;bottom:-6px;border-radius:2px;transition:width .9s ease}
+    .signature.animate::after{width:68px}
 
-    /* Responsive */
-    @media (max-width:980px){ .grid-2{grid-template-columns:1fr} .hero{grid-template-columns:160px 1fr} .photo-wrap{width:160px} }
-    @media (max-width:680px){ header{padding:10px} nav{display:none} .brand h1{font-size:0.95rem} .theme-toggle{right:12px} body{padding-top:68px} .hero{grid-template-columns:1fr;gap:16px} .photo-wrap{width:100%;height:220px} .hero-card{padding:18px} }
+    .hide{display:none}
+    .fade-in{opacity:0;transform:translateY(14px);transition:opacity .7s ease, transform .7s ease}
+    .fade-in.visible{opacity:1;transform:none}
+    .modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(2,8,12,0.6);z-index:1500;padding:18px}
+    .modal-card{width:100%;max-width:980px;background:var(--card);border-radius:12px;padding:12px;box-shadow:var(--shadow);position:relative}
+    .modal-card iframe{width:100%;height:72vh;border-radius:8px;border:none}
+    .modal-close{position:absolute;right:12px;top:12px;border:none;background:transparent;color:var(--muted);font-size:1.2rem;cursor:pointer}
+
+    /* Print-friendly styles for resume window handled in JS (new window) */
+
   </style>
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <a class="brand" href="#top" aria-label="Home">
       <img src="profile.jpg" alt="Prabhakar profile" />
-      <h1>Prabhakar</h1>
+      <h1>PRABHAKAR BEHERA</h1>
     </a>
 
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#skills">Expertise</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <div style="display:flex;align-items:center;gap:12px">
-      <a class="btn secondary" href="resume.pdf" download aria-label="Download Resume">Resume</a>
-      <button aria-label="Toggle theme" id="themeToggle" class="theme-toggle" title="Toggle dark/light">
-        <i id="themeIcon" class="fas fa-moon"></i>
-      </button>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="btn secondary" id="openResume">Resume</button>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme"><i id="themeIcon" class="fas fa-moon"></i></button>
     </div>
   </header>
 
@@ -212,8 +129,8 @@
         <img src="profile.jpg" alt="Profile photo of Prabhakar">
       </div>
 
-      <div class="hero-card" role="region" aria-labelledby="introTitle">
-        <div id="introTitle" class="hero-title">Hi, I'm Prabhakar</div>
+      <div class="hero-card">
+        <div class="hero-title">Hi, I'm Prabhakar</div>
         <div class="hero-sub">Officer – SAP | Data Analyst | Power BI Developer</div>
 
         <div class="badges" aria-hidden="true">
@@ -223,7 +140,9 @@
         </div>
 
         <p class="hero-desc">
-          I help companies turn business data into decisive insights using SAP Business One, Power BI and modern analytics practices. From Odisha roots to projects in Gujarat, my work is driven by clarity, efficiency and measurable results.
+          I transform raw organizational data into clear business intelligence through SAP Business One, Power BI, and Crystal Reports.
+          Over the past <strong>2+ years</strong> at Rex-Tone Industries Ltd, I’ve automated critical reporting workflows, built real-time dashboards,
+          and delivered actionable insights to finance, procurement, and sales teams that improved decision accuracy and reduced manual work.
         </p>
 
         <div class="hero-actions">
@@ -235,31 +154,18 @@
           </div>
         </div>
 
-        <!-- mini analytics + stats -->
-        <div style="display:flex;gap:12px;margin-top:18px;align-items:center">
-          <div class="mini-chart card" style="padding:12px;border-radius:12px;display:flex;align-items:center;gap:12px">
-            <!-- Simple donut SVG (animated via stroke-dashoffset) -->
-            <svg id="donut" width="72" height="72" viewBox="0 0 36 36" aria-hidden="true">
-              <defs>
-                <linearGradient id="g1" x1="0" x2="1">
-                  <stop offset="0" stop-color="#1587d6"/>
-                  <stop offset="1" stop-color="#21b6d6"/>
-                </linearGradient>
-              </defs>
-              <circle cx="18" cy="18" r="14" fill="none" stroke="#e6f6ff" stroke-width="6"/>
-              <circle id="donutArc" cx="18" cy="18" r="14" fill="none" stroke="url(#g1)" stroke-width="6" stroke-dasharray="0 88" stroke-linecap="round" transform="rotate(-90 18 18)"></circle>
-            </svg>
-
-            <div>
-              <div style="font-weight:700;color:var(--muted)">Analytics Impact</div>
-              <div style="font-size:0.95rem;color:var(--muted)">Dashboards & automation for decisions</div>
+        <div style="display:flex;gap:12px;align-items:center;margin-top:16px">
+          <div class="stat" style="min-width:220px;padding:14px">
+            <strong>Driving Data-Driven Culture</strong>
+            <div style="font-size:0.93rem;color:var(--muted);margin-top:6px">
+              Empowering teams to make faster, more accurate decisions through automation, dashboards, and clean reporting.
             </div>
           </div>
 
-          <div style="display:flex;gap:8px;flex-direction:column">
-            <div class="stat" style="min-width:140px">
-              <strong id="statReports">0</strong>
-              <div style="font-size:0.85rem;color:var(--muted)">Reports Delivered</div>
+          <div class="stat" style="min-width:160px;padding:14px">
+            <strong>Impact-Focused</strong>
+            <div style="font-size:0.93rem;color:var(--muted);margin-top:6px">
+              Focused on measurable improvements — faster reconciliations, fewer manual steps, clearer visibility.
             </div>
           </div>
         </div>
@@ -267,172 +173,316 @@
       </div>
     </section>
 
-    <!-- GRID: left main content + right sidebar -->
+    <!-- Grid content -->
     <section class="grid-2">
 
-      <!-- LEFT COLUMN -->
+      <!-- LEFT -->
       <div>
 
         <!-- ABOUT -->
-        <div class="card" id="about">
+        <div class="card fade-in" id="about">
           <h2 class="section-title">About</h2>
           <p class="muted">
-            I hail from Gulumunda, Odisha and completed my B.Sc in Computer Science from Gunupur. After moving to Vadodara, I joined Rex-Tone Industries where I specialize in SAP Business One, Crystal Reports, and Power BI. I love converting complex datasets into actionable dashboards and automations that help teams save time and take better decisions.
+            I’m a results-oriented analytics professional with over <strong>2 years</strong> of practical experience at Rex-Tone Industries Ltd.
+            With a B.Sc. in Computer Science and hands-on SAP exposure, I design reporting solutions and dashboards that reduce manual effort and
+            improve operational transparency. I collaborate closely with finance, procurement, and sales leaders to translate business questions
+            into reliable data models and automated reports.
+          </p>
+
+          <p class="muted">
+            I deliver end-to-end solutions: from crafting SQL queries and Crystal Reports in SAP Business One to modeling, visualizing, and automating
+            dashboards in Power BI. I am seeking roles where I can lead SAP reporting improvements, design enterprise-grade dashboards, and
+            mentor teams to adopt data-driven processes — contributing to measurable business outcomes and strategic growth.
           </p>
         </div>
 
-        <!-- SKILLS -->
-        <div class="card" id="skills" style="margin-top:18px">
-          <h2 class="section-title">Key Skills & Tools</h2>
+        <!-- EXPERTISE HIGHLIGHTS -->
+        <div class="card fade-in" id="skills" style="margin-top:18px">
+          <h2 class="section-title">Expertise Highlights</h2>
 
-          <div class="skill" data-percent="85">
-            <div class="label"><span>SAP Business One (SAP B1)</span><span>85%</span></div>
-            <div class="bar"><div class="bar-fill"></div></div>
+          <div class="stat-grid" aria-hidden="false">
+            <div class="stat"><strong>SAP Business One</strong> Functional operations, Query Manager, form/report customization and automation for finance & procurement.</div>
+            <div class="stat"><strong>Power BI & Visualization</strong> Interactive dashboards, DAX modeling, scheduled refreshes and actionable story-focused reports.</div>
+            <div class="stat"><strong>Crystal Reports & Queries</strong> Parameterized/printable reports, scheduled distributions, and optimized queries for reliable reporting.</div>
+            <div class="stat"><strong>SQL & Data Integration</strong> Query optimization, joins, data shaping, and linking SAP data into reporting layers.</div>
+            <div class="stat"><strong>Process Automation</strong> Automating recurring MIS, report scheduling, and reducing manual reconciliation tasks.</div>
           </div>
-
-          <div class="skill" data-percent="78">
-            <div class="label"><span>Power BI (Dashboards)</span><span>78%</span></div>
-            <div class="bar"><div class="bar-fill"></div></div>
-          </div>
-
-          <div class="skill" data-percent="72">
-            <div class="label"><span>Crystal Reports</span><span>72%</span></div>
-            <div class="bar"><div class="bar-fill"></div></div>
-          </div>
-
-          <div class="skill" data-percent="70">
-            <div class="label"><span>SQL & Data Analytics</span><span>70%</span></div>
-            <div class="bar"><div class="bar-fill"></div></div>
-          </div>
-
         </div>
 
         <!-- PROJECTS -->
-        <div class="card" id="projects" style="margin-top:18px">
+        <div class="card fade-in" id="projects" style="margin-top:18px">
           <h2 class="section-title">Selected Projects</h2>
 
           <div class="project">
-            <h4>AP Invoice Analytics Dashboard</h4>
-            <p class="muted">Power BI dashboard with vendor spend trends, aging buckets and exception alerts — reduced month-end reconciliation time by X% (internal metric).</p>
+            <h4>Sales Report (Power BI)</h4>
+            <p class="muted">Built an interactive sales dashboard in Power BI integrating SAP B1 data to visualize regional revenue, product mix, and customer trends with drill-downs and dynamic filters. The solution replaced manual spreadsheets and enabled faster sales reviews.</p>
           </div>
 
           <div class="project">
-            <h4>Custom SAP Crystal Reports</h4>
-            <p class="muted">Built multiple printable & scheduled reports in Crystal for finance and operations to simplify compliance and reporting.</p>
+            <h4>GSTR & Procurement Reports (Finance)</h4>
+            <p class="muted">Designed GSTR reconciliation and procurement analytics using Query Manager and Power BI — improving accuracy for GST filings and helping procurement optimize vendor selection and payment cycles.</p>
+          </div>
+
+          <div class="project">
+            <h4>Crystal Reports & Query Manager</h4>
+            <p class="muted">Developed multiple Crystal Reports tied to SAP B1 modules (Sales, Purchase, Inventory) and automated scheduled distribution to stakeholders, improving report reliability and compliance readiness.</p>
+          </div>
+
+          <div class="project">
+            <h4>Reports Automation in SAP</h4>
+            <p class="muted">Automated recurring reports and MIS workflows using scheduled exports and integration with Power BI — significantly reduced manual effort at month-end and supported quicker management decisions.</p>
           </div>
 
         </div>
 
       </div>
 
-      <!-- RIGHT COLUMN (sidebar) -->
+      <!-- RIGHT SIDEBAR -->
       <aside>
 
-        <div class="card" id="experience">
+        <div class="card fade-in" id="experience">
           <h2 class="section-title">Experience</h2>
           <div class="exp-item">
             <div style="display:flex;justify-content:space-between;align-items:center">
-              <strong>Officer – SAP, Rex-Tone Industries Ltd</strong>
-              <span class="muted">2024 — Present</span>
+              <strong>OFFICER – SAP, Rex-Tone Industries Ltd</strong>
+              <span class="muted">Aug 2023 — Present (2+ years)</span>
             </div>
-            <div class="muted" style="margin-top:8px;font-size:0.95rem">Responsible for SAP B1 operations, Crystal Reports, Power BI dashboards, and internal process improvements.</div>
+            <div class="muted" style="margin-top:8px;font-size:0.95rem">
+              Responsibilities:
+              <ul>
+                <li>Managing and maintaining SAP Business One (SAP B1)</li>
+                <li>Designing & generating Crystal Reports</li>
+                <li>Ensuring data accuracy, consistency, and system integrity</li>
+                <li>Resolving SAP issues & user support</li>
+                <li>Optimizing workflows and automating reports</li>
+                <li>Generating analytical reports to support strategic decisions</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div class="card" style="margin-top:16px">
+        <div class="card fade-in" style="margin-top:16px">
           <h2 class="section-title">Contact</h2>
           <div class="contact-grid">
+            <div><span class="muted">Address:</span> C 29, Priyadarshini Nagar society, Makarpura road, Vadodara, Gujarat, 390010</div>
             <div><span class="muted">Email:</span> <a href="mailto:prabhakarbehera74778@gmail.com">prabhakarbehera74778@gmail.com</a></div>
-            <div><span class="muted">LinkedIn:</span> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">View profile</a></div>
-            <div><span class="muted">Location:</span> Vadodara, Gujarat</div>
+            <div><span class="muted">Phone:</span> <a href="tel:+918114777915">+91 81147 77915</a></div>
+            <div><span class="muted">LinkedIn:</span> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">PrabhakarBehera</a></div>
+            <div><span class="muted">Location:</span> Vadodara, Gujarat, India</div>
           </div>
         </div>
 
-        <div class="card" style="margin-top:16px">
+        <div class="card fade-in" style="margin-top:16px">
           <h2 class="section-title">Career Highlights</h2>
-          <ul style="margin:10px 0 0 18px;color:var(--muted)">
-            <li>1+ year experience in SAP B1 & analytics</li>
-            <li>10+ custom Power BI & Crystal reports</li>
-            <li>Improved reporting efficiency with automation</li>
+          <ul style="margin:8px 0 0 18px;color:var(--muted)">
+            <li>2+ years in SAP B1, Power BI and reporting</li>
+            <li>Multiple custom Crystal and Power BI reports deployed</li>
+            <li>Improved reporting efficiency through automation</li>
           </ul>
         </div>
 
       </aside>
+
     </section>
 
     <!-- Footer -->
     <footer>
-      <div>&copy; <span id="year"></span> Prabhakar — Crafted with focus on analytics & design</div>
+      <div>&copy; <span id="year"></span> PRABHAKAR BEHERA — Crafted with focus on analytics & design</div>
+      <div class="signature" id="signature">— PRABHAKAR BEHERA</div>
     </footer>
+
   </main>
 
-  <!-- Fontawesome for icons (CDN) -->
+  <!-- Resume Modal -->
+  <div id="resumeModal" class="modal hide" role="dialog" aria-modal="true" aria-label="Resume viewer">
+    <div class="modal-card" role="document">
+      <button class="modal-close" id="closeResume" aria-label="Close resume viewer">&times;</button>
+
+      <!-- Tabs: Embedded resume (HTML) and PDF viewer -->
+      <div style="display:flex;gap:10px;margin-bottom:10px">
+        <button id="tabEmbed" class="btn secondary" style="padding:8px 12px;font-size:0.95rem">View Resume</button>
+        <button id="tabPdf" class="btn secondary" style="padding:8px 12px;font-size:0.95rem">Open PDF</button>
+        <div style="margin-left:auto;display:flex;gap:8px">
+          <button id="printResume" class="btn secondary" title="Print resume">Print</button>
+          <a class="btn" href="resume.pdf" download>Download</a>
+        </div>
+      </div>
+
+      <!-- Embedded HTML resume content -->
+      <div id="embedResume" style="max-height:68vh;overflow:auto;padding:6px 8px;border-radius:6px;background:linear-gradient(180deg, rgba(250,250,250,0.95), rgba(245,250,255,0.95));box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)">
+        <!-- Resume content (from your provided text, polished) -->
+        <div style="padding:14px;color:var(--text);font-family:Inter,Arial,Helvetica,sans-serif">
+          <h2 style="margin:0 0 6px 0;font-family:Poppins, sans-serif;color:var(--accent1)">PRABHAKAR BEHERA</h2>
+          <div style="color:var(--muted);margin-bottom:12px">
+            C 29, Priyadarshini Nagar society, Makarpura road, Vadodara, Gujarat, 390010<br>
+            <a href="mailto:prabhakarbehera74778@gmail.com">prabhakarbehera74778@gmail.com</a> | +91 81147 77915 | LinkedIn: PrabhakarBehera
+          </div>
+
+          <h3 style="margin:8px 0 6px 0;color:var(--accent1)">Professional Summary</h3>
+          <p style="margin:0 0 10px 0;color:var(--muted)">
+            Motivated SAP Business One professional with 2+ years of experience in managing business processes, data accuracy, and reporting.
+            Skilled in streamlining workflows, automating reporting, and supporting finance and procurement teams with actionable insights.
+            Seeking to contribute technical expertise and dedication to efficiency within a growth-oriented organisation.
+          </p>
+
+          <h3 style="margin:8px 0 6px 0;color:var(--accent1)">Work Experience</h3>
+          <div style="margin-bottom:10px">
+            <strong>OFFICER - SAP</strong> — Rex-Tone Industries Ltd., Vadodara, Gujarat<br>
+            <span style="color:var(--muted)">Aug 2023 — Present (2+ years)</span>
+            <ul style="margin:8px 0 0 18px;color:var(--muted)">
+              <li>Manage and maintain SAP Business One (SAP B1) system and ensure data integrity.</li>
+              <li>Design and generate customized Crystal Reports and SAP queries.</li>
+              <li>Resolve SAP-related issues and provide user support across departments.</li>
+              <li>Optimize workflows, automate recurring reports, and improve reporting turn-around time.</li>
+              <li>Generate analytical reports to support strategic decision-making for finance and procurement.</li>
+            </ul>
+          </div>
+
+          <h3 style="margin:8px 0 6px 0;color:var(--accent1)">Selected Projects</h3>
+          <ul style="color:var(--muted)">
+            <li><strong>Online Mobile Shop Management</strong> — A project to enable customers to purchase mobile phones online with streamlined UX and backend order flows.</li>
+            <li><strong>Sales Report (Power BI)</strong> — Interactive sales dashboard with drill-downs and dynamic filters to replace spreadsheets and speed reviews.</li>
+            <li><strong>GSTR & Procurement Reports</strong> — Reports and dashboards for GSTR reconciliation and procurement analytics to support finance and compliance.</li>
+            <li><strong>Crystal Reports & Query Manager</strong> — Multiple parameterized reports and scheduled distributions for operational use.</li>
+          </ul>
+
+          <h3 style="margin:8px 0 6px 0;color:var(--accent1)">Certifications</h3>
+          <ul style="color:var(--muted);margin:6px 0 0 18px">
+            <li>SAP Business One B1 - Complete Training with Implementation (Certificate)</li>
+            <li>Microsoft Excel Using AI workshop (Certificate)</li>
+          </ul>
+
+          <h3 style="margin:8px 0 6px 0;color:var(--accent1)">Education</h3>
+          <div style="color:var(--muted);margin-bottom:8px">
+            <strong>Bachelor of Science - Computer Science</strong><br>
+            Gunupur Degree College, Gunupur — Sep 2022 to Aug 2024
+          </div>
+
+          <h3 style="margin:8px 0 6px 0;color:var(--accent1)">Skills</h3>
+          <div style="color:var(--muted)">
+            SAP Business One (SAP B1) | Crystal Reports | SAP Query Manager | Power BI | PBI Dashboards | SQL & Data Integration | MS Office | Reporting Automation | Design (Photoshop/CorelDRAW)
+          </div>
+
+          <h3 style="margin:8px 0 6px 0;color:var(--accent1)">Languages</h3>
+          <div style="color:var(--muted)">Odia (Native) • Telugu (Proficient) • Tamil (Intermediate) • Hindi (Advanced) • English (Advanced)</div>
+
+        </div>
+      </div>
+
+      <!-- PDF viewer (hidden by default) -->
+      <div id="pdfViewer" class="hide" style="max-height:72vh;overflow:auto">
+        <iframe id="pdfIframe" src="resume.pdf"></iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Font Awesome (icons) -->
   <script src="https://kit.fontawesome.com/a2d9b4b7d9.js" crossorigin="anonymous"></script>
 
   <script>
     // Auto year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Theme toggle (detect and remember)
-    const body = document.body;
+    // Theme toggle
+    const bodyEl = document.body;
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-
-    // Initialize theme from localStorage or prefers-color-scheme
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      body.classList.add('dark');
-      themeIcon.className = 'fas fa-sun';
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      bodyEl.classList.add('dark'); themeIcon.className = 'fas fa-sun';
     }
-
     themeToggle.addEventListener('click', () => {
-      const isDark = body.classList.toggle('dark');
+      const isDark = bodyEl.classList.toggle('dark');
       themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 
-    // IntersectionObserver to animate skill bars and counters & donut
-    const skills = document.querySelectorAll('.skill');
-    const statReports = document.getElementById('statReports');
-    const donutArc = document.getElementById('donutArc');
+    // Modal controls
+    const openResume = document.getElementById('openResume');
+    const resumeModal = document.getElementById('resumeModal');
+    const closeResume = document.getElementById('closeResume');
+    const tabEmbed = document.getElementById('tabEmbed');
+    const tabPdf = document.getElementById('tabPdf');
+    const embedResume = document.getElementById('embedResume');
+    const pdfViewer = document.getElementById('pdfViewer');
 
-    let animated = false;
+    openResume.addEventListener('click', () => {
+      resumeModal.classList.remove('hide');
+      document.body.style.overflow = 'hidden';
+      // default to embedded view
+      showEmbedded();
+    });
+    closeResume.addEventListener('click', closeModal);
+    document.getElementById('closeResume').addEventListener('keydown', (e)=>{ if(e.key==='Enter') closeModal(); });
 
-    const animateOnView = (entries, obs) => {
+    function closeModal() { resumeModal.classList.add('hide'); document.body.style.overflow = ''; }
+
+    function showEmbedded() {
+      embedResume.classList.remove('hide'); pdfViewer.classList.add('hide');
+      tabEmbed.classList.add('btn'); tabPdf.classList.remove('btn');
+    }
+    function showPdf() {
+      embedResume.classList.add('hide'); pdfViewer.classList.remove('hide');
+      tabPdf.classList.add('btn'); tabEmbed.classList.remove('btn');
+    }
+    tabEmbed.addEventListener('click', showEmbedded);
+    tabPdf.addEventListener('click', showPdf);
+
+    resumeModal.addEventListener('click', (e) => { if (e.target === resumeModal) closeModal(); });
+
+    // Print resume: open a new window with printable HTML of the embedded resume
+    const printButton = document.getElementById('printResume');
+    printButton.addEventListener('click', () => {
+      // Build printable HTML from embedResume content
+      const resumeHTML = embedResume.innerHTML;
+      const printWindow = window.open('', '_blank', 'width=900,height=700,scrollbars=yes');
+      const doc = printWindow.document;
+      doc.open();
+      doc.write(`
+        <html>
+          <head>
+            <title>Resume - PRABHAKAR BEHERA</title>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+            <style>
+              body{font-family:Inter,Arial;margin:28px;color:#042a3d}
+              h2{font-family:Poppins, sans-serif;color:#1a89d8}
+              .muted{color:#4b6b7d}
+              ul{margin:6px 0 12px 18px}
+            </style>
+          </head>
+          <body>
+            ${resumeHTML}
+            <script>window.onload=function(){window.print();};</script>
+          </body>
+        </html>`);
+      doc.close();
+    });
+
+    // IntersectionObserver for fade-in
+    const faders = document.querySelectorAll('.fade-in');
+    const obsOptions = { threshold: 0.18, rootMargin: '0px 0px -6% 0px' };
+    const onEntry = (entries, observer) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && !animated) {
-          animated = true;
-
-          // animate skill bars
-          skills.forEach((s, idx) => {
-            const percent = s.getAttribute('data-percent') || 70;
-            const fill = s.querySelector('.bar-fill');
-            setTimeout(()=> { fill.style.width = percent + '%'; }, idx * 120);
-          });
-
-          // animate numeric counter (Reports Delivered)
-          let start = 0, target = 12; // change to real value as needed
-          const step = Math.ceil(target / 60);
-          const t = setInterval(() => {
-            start += step;
-            if (start >= target) { statReports.textContent = target; clearInterval(t); }
-            else statReports.textContent = start;
-          }, 18);
-
-          // animate donut arc to e.g., 72% (map to stroke-dasharray)
-          const pct = 72; // percent visual
-          const total = 88; // circumference mapping scale (approx)
-          const dash = (pct/100) * total;
-          donutArc.setAttribute('stroke-dasharray', `${dash} ${total-dash}`);
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
     };
+    const observer = new IntersectionObserver(onEntry, obsOptions);
+    faders.forEach(el => observer.observe(el));
 
-    const obs = new IntersectionObserver(animateOnView, {threshold:0.25});
-    obs.observe(document.querySelector('#skills'));
+    // animate signature underline
+    window.addEventListener('load', () => { document.getElementById('signature').classList.add('animate'); });
 
-    // Smooth light fade when switching themes (optional subtle)
-    // toggled by CSS transitions on body properties
+    // Keyboard accessibility: close modal with Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !resumeModal.classList.contains('hide')) { closeModal(); }
+    });
+
+    // OPTIONAL: Plausible analytics event example (uncomment script at top and this call if using Plausible)
+    // function plausibleEvent(name) { if (window.plausible) window.plausible(name); }
   </script>
 </body>
 </html>
