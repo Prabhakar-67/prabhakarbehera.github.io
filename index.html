@@ -3,197 +3,310 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Prabhakar | Data Analyst & SAP B1 Specialist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Prabhakar | Data Analyst & SAP Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            font-family: 'Poppins', Arial, sans-serif;
             margin: 0;
-            background: linear-gradient(135deg, #f7fbff 0, #c8ebfa 100%);
-            color: #263238;
+            font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+            background: linear-gradient(120deg, #e3f5fd 0%, #b2e0f8 50%, #e6effa 100%);
+            min-height: 100vh;
+            color: #13304f;
         }
-        header {
-            background: linear-gradient(90deg, #51c4fa 60%, #fff 100%);
-            padding: 48px 0 24px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 2px 16px rgba(80,200,250,0.10);
+        .parallax {
+            background: linear-gradient(115deg, #62d0ff 0%, #3797f2 47%, #f2fbff 100%);
+            position: relative;
+            z-index: 1;
+            padding: 0;
         }
         .hero {
             display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 510px;
+            flex-wrap: wrap;
+            padding: 80px 0 50px 0;
+        }
+        .glass {
+            background: rgba(255,255,255,0.47);
+            box-shadow: 0 8px 40px 10px rgba(80,227,255,0.13);
+            border-radius: 32px;
+            backdrop-filter: blur(6px);
+            display: flex;
             flex-direction: row;
             align-items: center;
-            max-width: 950px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 28px 24px 0 24px;
-            gap: 38px;
+            padding: 46px 54px 46px 38px;
+            gap: 56px;
+            max-width: 900px;
+            animation: fadeInMain 1.1s cubic-bezier(.69,.18,.26,.99) 0.1s both;
+            position: relative;
+            z-index: 4;
+        }
+        @keyframes fadeInMain {
+            0% { opacity: 0; transform: translateY(-45px);}
+            100% { opacity: 1; transform: none;}
         }
         .hero-img {
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
+            border-radius: 22px;
+            box-shadow: 0 14px 60px rgba(78,190,255, 0.21);
             object-fit: cover;
-            border-radius: 12px;
-            border: 5px solid #51c4fa;
-            box-shadow: 0 10px 36px rgba(65,185,245, 0.13);
-            background: #e3f5fd;
-            animation: fadeInPhoto 1.3s;
+            border: 6px solid #48b7ff;
+            animation: fadeInPhoto 1.04s cubic-bezier(.67, .13, .24, .97) 0.3s both;
         }
         @keyframes fadeInPhoto {
-            from { opacity: 0; transform: scale(0.92);}
-            to { opacity: 1; transform: scale(1);}
+            0% { opacity: 0; transform: scale(0.85);}
+            100% { opacity: 1; transform: scale(1);}
         }
-        .hero-text {
+        .hero-content {
             flex: 1;
+            text-align: left;
         }
-        .hero h1 {
-            font-size: 2.6em;
-            color: #124785;
-            margin: 0 0 12px 0;
+        .hero-title {
+            font-size: 2.9em;
             font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #124785;
             letter-spacing: 1px;
+            animation: fadeLeft 1s 0.55s both;
         }
-        .hero h2 {
-            font-size: 1.3em;
-            font-weight: 400;
-            color: #167abf;
-            margin: 0 0 20px 0;
+        @keyframes fadeLeft { from{opacity:0;transform:translateX(-25px);} to {opacity:1;transform:none;} }
+        .badges {
+            margin: 18px 0 22px 0;
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
         }
-        .hero p {
-            font-size: 1.1em;
-            color: #205073;
+        .badge {
+            background: linear-gradient(86deg, #26b3ff 80%, #bae2fb 105%);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 16px;
+            font-size: 0.98em;
+            padding: 7px 22px;
+            box-shadow: 0 1px 7px #a3d3f5;
+            letter-spacing: 0.6px;
+            border: none;
+        }
+        .hero-content p {
+            font-size: 1.17em;
+            color: #19547a;
+            margin: 10px 0 12px 0;
+            line-height: 1.65;
+            animation: fadeLeft 1s 0.8s both;
+        }
+        .hero-contact {
+            margin-top: 18px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
         }
         .cta-btn {
-            display: inline-block;
-            margin-top: 22px;
-            padding: 15px 38px;
-            font-size: 1.15em;
-            border-radius: 28px;
-            background: linear-gradient(90deg, #51c4fa, #16b8e7 100%);
+            background: linear-gradient(90deg, #34b9ef 20%, #1fadc8 100%);
             color: #fff;
-            font-weight: 600;
-            text-decoration: none;
+            border: none;
+            border-radius: 22px;
+            padding: 15px 40px;
+            font-size: 1.13em;
+            font-weight: bold;
             letter-spacing: 1px;
-            box-shadow: 0 2px 12px rgba(65,200,255,0.07);
-            transition: transform 0.17s, box-shadow 0.17s;
+            box-shadow: 0 4px 28px rgba(100,210,240,0.11);
+            text-decoration: none;
+            transition: transform 0.18s, box-shadow 0.18s;
         }
         .cta-btn:hover {
-            transform: translateY(-3px) scale(1.04);
-            box-shadow: 0 9px 24px rgba(65,180,240,0.13);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(69,180,245,0.18);
         }
-        nav {
-            margin-top: 18px;
+        .hero-social a {
+            color: #13497f;
+            margin-right: 14px;
+            font-size: 1.4em;
+            transition: color 0.19s, transform 0.17s;
         }
-        nav a {
-            color: #167abf;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.09em;
-            margin: 0 18px;
-            transition: color 0.18s;
+        .hero-social a:hover {
+            color: #3abfff;
+            transform: scale(1.25) translateY(-1px);
         }
-        nav a:hover {
-            color: #124785;
+        /* SVG section divider */
+        .divider-bottom {
+            margin:0;
+            padding:0;
+            line-height: 0;
         }
+        /* Cards and Sections */
         main {
-            max-width: 950px;
-            margin: 44px auto 0 auto;
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 2px 20px rgba(86,185,235, 0.09);
-            padding: 44px 34px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 44px 36px 36px 36px;
         }
         section {
-            margin-bottom: 34px;
+            margin-bottom: 44px;
+            animation: fadeInSection 1s cubic-bezier(.68,.19,.32,.98) both;
+        }
+        @keyframes fadeInSection {
+            0% { opacity: 0; transform: translateY(46px);}
+            100% { opacity: 1; transform: none;}
         }
         h3 {
-            color: #167abf;
+            color: #129adb;
             padding-left: 14px;
-            border-left: 5px solid #51c4fa;
-            font-size: 1.25em;
+            border-left: 6px solid #2ce0ec;
+            font-size: 1.39em;
+            margin-top: 0;
+        }
+        .section-content {
+            background: rgba(255,255,255,0.90);
+            border-radius: 14px;
+            padding: 20px 30px;
+            box-shadow: 0 1px 8px 0 #a3dfff13;
         }
         ul {
-            margin: 14px 0 0 10px;
-            padding-left: 14px;
+            margin: 12px 0 0 0;
+            padding-left: 15px;
         }
+        .project-tiles {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .project-card {
+            flex: 1 1 250px;
+            min-width: 230px;
+            background: linear-gradient(140deg, #f2fbff 35%, #e0f6fc 100%);
+            border-radius: 15px;
+            box-shadow: 0 1px 9px #b7ebff2a;
+            padding: 20px 18px;
+            margin-bottom: 12px;
+            transition: box-shadow 0.16s, transform 0.18s;
+            border: 1px solid #daeffd;
+        }
+        .project-card:hover {
+            box-shadow: 0 6px 23px #9ae8ff55;
+            transform: translateY(-7px) scale(1.03);
+        }
+        .project-title {
+            font-weight: bold;
+            color: #167abf;
+            margin-bottom: 9px;
+        }
+        .project-desc {
+            font-size: 0.99em;
+            color: #144760;
+        }
+        /* Responsive */
+        @media (max-width: 780px) {
+            .glass, main { flex-direction: column; padding: 18px 7px;}
+            .hero { flex-direction: column;}
+            .glass { gap: 26px; }
+            .hero-img { width: 110px;height:110px;}
+        }
+        /* Footer */
         footer {
             text-align: center;
-            color: #3999be;
-            padding: 18px;
-            font-size: 1em;
-            margin-top: 66px;
-        }
-        @media (max-width: 700px) {
-            .hero { flex-direction: column; gap: 20px;}
-            .hero-img { width: 120px; height: 120px;}
-            main { padding: 18px 8px;}
+            color: #246999;
+            padding: 22px 0;
+            margin-top: 44px;
+            font-size: 1.04em;
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="parallax">
         <div class="hero">
-            <img src="profile.jpg" alt="My Profile Photo" class="hero-img">
-            <div class="hero-text">
-                <h1>Hi, I'm Prabhakar.</h1>
-                <h2>Data Analyst &amp; SAP Business One Specialist</h2>
-                <p>
-                    I help companies turn data into business insights using SAP B1, Power BI, and modern analytics tools.<br>
-                    <span style="color: #51c4fa;">From my roots in Odisha to innovative projects in Gujarat, my journey is driven by growth and technology.</span>
-                </p>
-                <a href="#contact" class="cta-btn">Contact Me</a>
+            <div class="glass">
+                <img src="profile.jpg" alt="My Profile Photo" class="hero-img">
+                <div class="hero-content">
+                    <div class="hero-title">Hi, I'm Prabhakar.</div>
+                    <div class="badges">
+                        <span class="badge">Data Analyst</span>
+                        <span class="badge">SAP B1 Specialist</span>
+                        <span class="badge">Power BI Pro</span>
+                    </div>
+                    <p>
+                        Turning data into business advantage with SAP B1, Power BI, and hands-on analytics.<br>
+                        My career spans from Odisha to Gujarat, always driven by growth and curiosity.
+                    </p>
+                    <div class="hero-contact">
+                        <a href="#contact" class="cta-btn">Let's Connect</a>
+                        <span class="hero-social">
+                            <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#summary">Summary</a>
-            <a href="#skills">Skills</a>
-            <a href="#goals">Goals</a>
-        </nav>
-    </header>
+        <!-- SVG Divider -->
+        <div class="divider-bottom">
+            <svg viewBox="0 0 1440 88" width="100%" height="90" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" fill-opacity="1" d="M0,32L60,42.7C120,53,240,75,360,85.3C480,96,600,96,720,80C840,64,960,32,1080,21.3C1200,11,1320,21,1380,26.7L1440,32L1440,160L1380,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,60,160L0,160Z"></path></svg>
+        </div>
+    </div>
     <main>
         <section id="about">
             <h3>About</h3>
-            <p>
-                I come from the village of Gulumunda in the Rayagada district of Odisha.
-                I completed my schooling at Gulumunda High School, +2 Science at Shantiniketan Secondary High School, and BSc in Computer Science from Gunupur Degree College.
-            </p>
-            <p>
-                Currently, I work at Rextone Industries Ltd in Gujarat—starting as an SAP Officer and growing into a Data Analyst with expertise in business intelligence and reporting.
-            </p>
+            <div class="section-content">
+                <p>
+                    I hail from Gulumunda, Odisha, and completed my BSc in Computer Science at Gunupur. Now, based in Gujarat, I specialize in merging business with technology—helping leaders make data-powered decisions and drive results.
+                </p>
+            </div>
         </section>
         <section id="summary">
             <h3>Professional Summary</h3>
-            <p>
-                My journey began while preparing for government jobs, but family needs inspired me to seize a practical career in Vadodara. At Rex-Tone Industries Ltd, I now manage SAP B1, design custom Crystal Reports, and develop Power BI dashboards that unlock actionable decisions for management.
-            </p>
+            <div class="section-content">
+                <p>
+                    My journey began preparing for government jobs, but practical needs brought me to Vadodara—pivoting into the private sector. From SAP B1 operations to building high-impact Power BI dashboards, my work spans reports, analytics, and performance tools for management.
+                </p>
+            </div>
         </section>
         <section id="skills">
             <h3>Key Skills &amp; Tools</h3>
-            <ul>
-                <li><strong>SAP Business One (SAP B1):</strong> Functional operations &amp; custom reports</li>
-                <li><strong>Crystal Reports:</strong> Advanced report design and data structuring</li>
-                <li><strong>Power BI:</strong> Dashboard creation and visualization</li>
-                <li><strong>SQL &amp; Data Analytics:</strong> Business insights, data queries, and optimization</li>
-            </ul>
+            <div class="section-content">
+                <ul>
+                    <li><strong>SAP Business One (SAP B1):</strong> Functional operations &amp; custom reports</li>
+                    <li><strong>Crystal Reports:</strong> Advanced report design and data structuring</li>
+                    <li><strong>Power BI:</strong> Dashboard creation and visualization</li>
+                    <li><strong>SQL &amp; Data Analytics:</strong> Business insights, data queries, and optimization</li>
+                </ul>
+            </div>
+        </section>
+        <section id="projects">
+            <h3>Portfolio Projects</h3>
+            <div class="project-tiles">
+                <div class="project-card">
+                    <div class="project-title">AP Invoice Analytics Dashboard</div>
+                    <div class="project-desc">Designed and implemented a dynamic AP invoice dashboard in Power BI, allowing management to track spend, trends, and exception handling in real time.</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">Custom SAP Reports</div>
+                    <div class="project-desc">Built multiple Crystal Reports for SAP B1, streamlining business processes and improving transparency for finance and operations teams.</div>
+                </div>
+                <!-- Add more project cards as desired. -->
+            </div>
         </section>
         <section id="goals">
             <h3>Future Goals</h3>
-            <p>
-                My aim is to become a leading SAP B1 Consultant and Data Visualization Expert, blending technology, analytics, and creativity to deliver solutions that make an impact.
-            </p>
+            <div class="section-content">
+                <p>
+                    My ambition: become a leader in SAP B1 consulting and data storytelling—delivering solutions that bridge creativity, analytics, and business impact.
+                </p>
+            </div>
         </section>
         <section id="contact">
             <h3>Contact</h3>
-            <p>
-                Reach me via email at <a href="mailto:ipprabha@gmail.com" style="color:#167abf;text-decoration:underline;">your.email@example.com</a>
-                <!-- Replace with your actual email -->
-            </p>
+            <div class="section-content">
+                <p>
+                    <b>Email:</b> <a href="mailto:prabhakarbehera74778@gmail.com" style="color:#167abf;text-decoration:underline;">prabhakarbehera74778@gmail.com</a><br>
+                    <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">View Profile</a>
+                    <!-- Replace links/emails as desired -->
+                </p>
+            </div>
         </section>
     </main>
     <footer>
-        &copy; 2025 Prabhakar | Powered by GitHub Pages
+        &copy; 2025 Prabhakar | Crafted with passion & Powered by GitHub Pages
     </footer>
 </body>
 </html>
