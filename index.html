@@ -1,319 +1,532 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- ───────────────────────────────────────────────────────────────
-       META / SEO / SOCIAL CARDS
-       Update the og:url once hosted (e.g., https://prabhakarbehera.github.io)
-  ─────────────────────────────────────────────────────────────── -->
+  <!-- ======================================================
+       Prabhakar Behera — World-class Corporate-Modern Landing
+       Single file (index.html) — drop profile.jpg and resume.pdf alongside
+       ====================================================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Prabhakar Behera | SAP B1 · Power BI · Data Analyst</title>
-  <meta name="description"
-        content="Prabhakar Behera — SAP Business One Specialist and Power BI Developer turning data into business decisions."/>
-  <meta name="keywords"
-        content="Prabhakar Behera, SAP Business One, Power BI, Data Analyst, Crystal Reports, SQL, Dashboard Developer"/>
+  <meta name="description" content="Prabhakar Behera — SAP Business One Specialist & Power BI Developer turning data into business decisions." />
+  <meta name="keywords" content="Prabhakar Behera, SAP Business One, Power BI, Crystal Reports, Analytics, Dashboard" />
 
-  <!-- Open Graph / Twitter Cards -->
-  <meta property="og:title" content="Prabhakar Behera | SAP B1 · Power BI · Data Analyst"/>
-  <meta property="og:description" content="Corporate-modern professional portfolio · SAP B1 · Power BI · Analytics · Crystal Reports"/>
-  <meta property="og:image" content="prabhakar-og-banner.png"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://your-github-pages-url-here"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Prabhakar Behera | SAP B1 · Power BI · Data Analyst"/>
-  <meta name="twitter:description" content="Data-driven SAP & Power BI professional portfolio"/>
-  <meta name="twitter:image" content="prabhakar-og-banner.png"/>
+  <!-- Open Graph / Social preview (replace og:url with your real URL after deploy) -->
+  <meta property="og:title" content="Prabhakar Behera | SAP B1 · Power BI · Data Analyst" />
+  <meta property="og:description" content="Corporate-modern portfolio — SAP B1, Power BI & Crystal Reports specialist." />
+  <meta property="og:image" content="prabhakar-og-banner.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-github-pages-url-here" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- ───────────────────────────────────────────────────────────────
-       CORE STYLES  (Segoe UI / System fonts)
-  ─────────────────────────────────────────────────────────────── -->
+  <!-- Fonts & icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- Use system fonts for corporate feel -->
   <style>
-  :root{
-    /* Color tokens */
-    --accent1:#138de2;
-    --accent2:#22c1d6;
-    --text:#0a2740;
-    --muted:#325a73;
-    --card:#fff;
-    --bg:#f5f9fb;
-    --shadow:0 8px 22px rgba(0,0,0,0.08);
-  }
-  body.dark{
-    --bg:#06121d;
-    --card:#0b1c2b;
-    --text:#eaf7ff;
-    --muted:#93c0dc;
-    --shadow:0 8px 22px rgba(0,0,0,0.55);
-  }
+    /* ============================
+       THEME VARIABLES
+       ============================ */
+    :root{
+      --accent1:#138de2;   /* azure */
+      --accent2:#22c1d6;   /* aqua */
+      --bg:#f5f9fb;
+      --card:#ffffff;
+      --text:#0a2740;
+      --muted:#3b6b86;
+      --glass: rgba(255,255,255,0.85);
+      --shadow: 0 10px 30px rgba(12,60,90,0.08);
+      --max-width:1100px;
+    }
+    body.dark{
+      --bg: #06121d;
+      --card: rgba(8,18,28,0.7);
+      --text:#eaf7ff;
+      --muted:#93c0dc;
+      --glass: rgba(255,255,255,0.03);
+      --shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
 
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial;
-    background:var(--bg);
-    color:var(--text);
-    transition:background .4s,color .4s;
-    line-height:1.6;
-    scroll-behavior:smooth;
-  }
+    /* ============================
+       BASE / LAYOUT
+       ============================ */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      transition: background .35s ease, color .35s ease;
+      padding-top:78px; /* header height offset */
+    }
+    a{color:inherit}
+    main{max-width:var(--max-width);margin:0 auto;padding:28px 22px 80px 22px}
 
-  /* ── Sticky Header ─────────────────────────────── */
-  header{
-    position:fixed;top:0;width:100%;z-index:1000;
-    background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(6px);
-    box-shadow:var(--shadow);
-    display:flex;align-items:center;justify-content:space-between;
-    padding:10px 24px;
-  }
-  body.dark header{background:rgba(6,18,29,0.8);}
-  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
-  .brand img{width:46px;height:46px;border-radius:10px;object-fit:cover;}
-  .brand h1{font-size:1rem;font-weight:600;}
-  .theme-toggle{
-    border:none;background:var(--card);width:40px;height:40px;border-radius:8px;
-    display:grid;place-items:center;cursor:pointer;color:var(--muted);
-  }
+    /* ============================
+       NAV / HEADER (fixed & always visible)
+       ============================ */
+    header{
+      position:fixed;top:0;left:0;right:0;height:78px;display:flex;align-items:center;justify-content:space-between;
+      padding:10px 26px;z-index:2000;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+      transition: background .35s ease;
+    }
+    body.dark header{background: linear-gradient(180deg, rgba(6,18,30,0.8), rgba(6,18,30,0.6));}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .brand img{width:44px;height:44px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,0.08)}
+    .brand h1{font-size:1.02rem;margin:0;font-weight:700;letter-spacing:0.2px}
 
-  /* ── Main Content Wrapper ──────────────────────── */
-  main{max-width:1100px;margin:0 auto;padding:100px 24px 40px;}
+    nav ul{list-style:none;display:flex;gap:18px;align-items:center;margin:0;padding:0}
+    nav a{font-weight:600;text-decoration:none;color:var(--muted);padding:6px 8px;border-radius:8px}
+    nav a:hover{color:var(--accent1);background:transparent}
+    nav a.active{color:var(--accent1);box-shadow: inset 0 -3px 0 var(--accent1);}
 
-  /* ── HERO SECTION (with animated tech background) ─────────────── */
-  .hero{
-    position:relative;overflow:hidden;
-    border-radius:18px;
-    background:linear-gradient(135deg,var(--accent1),var(--accent2));
-    color:#fff;padding:60px 40px;box-shadow:var(--shadow);
-  }
-  /* Canvas sits behind hero content */
-  #tech-bg{
-    position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:0.25;
-  }
-  .hero-content{position:relative;z-index:1;}
-  .hero h2{font-size:2.5rem;margin-bottom:4px;font-weight:700;}
-  .hero h3{font-size:1.25rem;font-weight:500;margin-bottom:10px;}
-  .hero p.quote{font-style:italic;opacity:.9;margin-bottom:18px;}
+    /* theme toggle */
+    #themeToggle{border:none;background:var(--card);padding:8px;border-radius:10px;cursor:pointer;box-shadow:0 6px 18px rgba(10,40,70,0.06)}
+    body.dark #themeToggle{background:rgba(255,255,255,0.03);color:var(--accent1)}
 
-  /* Button styling */
-  .btn{
-    display:inline-block;padding:12px 26px;border-radius:8px;
-    font-weight:600;text-decoration:none;color:#fff;
-    background:rgba(255,255,255,0.15);
-    border:1px solid rgba(255,255,255,0.25);
-    transition:background .25s,transform .25s;
-  }
-  .btn:hover{background:rgba(255,255,255,0.3);transform:translateY(-2px);}
-  .socials a{color:#fff;margin-right:14px;font-size:1.4em;}
+    /* ============================
+       HERO — with layered tech background
+       ============================ */
+    .hero-wrap{ /* container for hero + background */
+      margin-top:12px;padding:48px;border-radius:18px;position:relative;overflow:hidden;
+      background: linear-gradient(135deg,var(--accent1) 0%, var(--accent2) 100%);
+      box-shadow: 0 18px 60px rgba(6,40,80,0.08);
+    }
 
-  /* ── Section / Card Styling ───────────────────── */
-  section{margin-top:60px;}
-  section h3{
-    color:var(--accent1);font-size:1.3rem;margin-bottom:10px;
-    border-left:4px solid var(--accent2);padding-left:10px;
-  }
-  .card{
-    background:var(--card);border-radius:12px;
-    box-shadow:var(--shadow);padding:24px;margin-top:12px;
-  }
-  ul{padding-left:18px;}
+    /* Hero decorative watermark layers:
+       - svg wires (charts/grid)
+       - keyboard silhouette
+       - canvas (flowing code lines/dots)
+       All back layers are low opacity and sit behind .hero-content */
+    .hero-bg-svg{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0.12;filter:grayscale(10%);}
+    .hero-bg-keyboard{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.06;filter:blur(2px) saturate(.9)}
+    canvas#tech-bg{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0.22;mix-blend-mode:screen;}
 
-  /* ── Footer + Signature ───────────────────────── */
-  footer{text-align:center;padding:32px 0;color:var(--muted);}
-  .signature{display:inline-block;position:relative;}
-  .signature::after{
-    content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;
-    background:linear-gradient(90deg,var(--accent1),var(--accent2));
-    border-radius:2px;transition:width 1s ease;
-  }
-  .signature.show::after{width:80px;}
+    .hero-content{position:relative;z-index:3;padding:36px 40px;max-width:95%}
+    .hero-title{font-size:2.8rem;font-weight:800;margin:0 0 6px;color:#fff;line-height:1}
+    .hero-sub{font-size:1.05rem;font-weight:600;margin:6px 0;color:rgba(255,255,255,0.92)}
+    /* subtitle accent color — tuned to be readable */
+    .hero-sub .highlight{color:rgba(255,255,255,0.95);background:transparent;padding-left:6px}
+
+    .hero-quote{font-style:italic;color:rgba(255,255,255,0.92);margin-top:14px;margin-bottom:18px;opacity:0.95}
+
+    .hero-actions{display:flex;gap:12px;align-items:center;margin-top:18px}
+    .btn-resume{
+      background:transparent;border:1px solid rgba(255,255,255,0.18);color:#fff;padding:12px 22px;border-radius:10px;font-weight:700;
+      text-decoration:none;display:inline-flex;align-items:center;gap:10px;backdrop-filter: blur(2px)
+    }
+    .btn-resume:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.08)}
+
+    /* ============================
+       PAGE SECTIONS
+       ============================ */
+    section{margin-top:48px}
+    .section-title{font-size:1.2rem;color:var(--accent1);margin-bottom:12px;padding-left:12px;border-left:4px solid rgba(255,255,255,0);display:inline-block}
+    .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 10px 26px rgba(22,66,92,0.06)}
+    .muted{color:var(--muted)}
+
+    /* Two-column responsive layout for some sections */
+    .grid-2{display:grid;grid-template-columns:1fr 360px;gap:28px}
+    @media (max-width:980px){.grid-2{grid-template-columns:1fr}}
+
+    /* Footer & signature */
+    footer{text-align:center;margin-top:36px;color:var(--muted);padding-bottom:60px}
+    .signature{font-weight:600;display:inline-block;position:relative}
+    .signature::after{content:"";position:absolute;left:0;bottom:-6px;height:3px;background:linear-gradient(90deg,var(--accent1),var(--accent2));border-radius:3px;width:0;transition:width .9s}
+    .signature.reveal::after{width:84px}
+
+    /* small utilities */
+    .small{font-size:0.95rem}
   </style>
 </head>
-
 <body>
-<!-- ───────────────────────────────────────────────────────────────
-     HEADER SECTION
-─────────────────────────────────────────────────────────────── -->
-<header>
-  <a class="brand" href="#top"><img src="profile.jpg" alt="Profile"><h1>PRABHAKAR BEHERA</h1></a>
-  <button id="themeToggle" class="theme-toggle" title="Toggle theme">☀️</button>
-</header>
 
-<!-- ───────────────────────────────────────────────────────────────
-     MAIN CONTENT START
-─────────────────────────────────────────────────────────────── -->
-<main id="top">
+  <!-- ========== HEADER (fixed) ========== -->
+  <header>
+    <a class="brand" href="#top" aria-label="Home">
+      <img src="profile.jpg" alt="Prabhakar Behera">
+      <h1>PRABHAKAR BEHERA</h1>
+    </a>
 
-  <!-- ── HERO with Animated Tech Background ── -->
-  <section class="hero">
-    <canvas id="tech-bg"></canvas> <!-- animated background canvas -->
-    <div class="hero-content">
-      <h2>Prabhakar Behera</h2>
-      <h3 id="typewriter">SAP B1 | Power BI | Data Analyst</h3>
-      <p class="quote">“Time never moves fast, but when it arrives, it changes the world. Those who wait for it are the true victors.”</p>
-      <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
-      <div class="socials" style="margin-top:14px;">
-        <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+    <!-- NAVIGATION: links scroll to sections. 'active' class set via JS -->
+    <nav aria-label="Main Navigation">
+      <ul id="mainNav">
+        <li><a href="#top" data-target="top" class="active">Home</a></li>
+        <li><a href="#about" data-target="about">About</a></li>
+        <li><a href="#skills" data-target="skills">Skills</a></li>
+        <li><a href="#projects" data-target="projects">Projects</a></li>
+        <li><a href="#experience" data-target="experience">Experience</a></li>
+        <li><a href="#education" data-target="education">Education</a></li>
+        <li><a href="#contact" data-target="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button id="themeToggle" title="Toggle light / dark" aria-pressed="false">🌓</button>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main>
+
+    <!-- =========================
+         HERO: layered tech background (SVG outlines + keyboard + canvas)
+         ========================= -->
+    <section class="hero-wrap" aria-label="Introduction">
+      <!-- SVG overlay: faint dashboard outlines, charts, circuit-grid (static vector so it's crisp) -->
+      <!-- Comment: you can edit shapes below to add/remove icons; opacity kept low for watermark effect -->
+      <svg class="hero-bg-svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <!-- dashboard rectangle outlines -->
+        <g fill="none" stroke="#ffffff" stroke-width="1.6" opacity="0.12">
+          <rect x="90" y="80" width="420" height="220" rx="8"></rect>
+          <rect x="540" y="80" width="380" height="220" rx="8"></rect>
+          <rect x="950" y="80" width="520" height="220" rx="8"></rect>
+
+          <!-- small chart bars inside the first -->
+          <g opacity="0.18" transform="translate(110,110)">
+            <rect x="4" y="60" width="18" height="60"></rect>
+            <rect x="32" y="30" width="18" height="90"></rect>
+            <rect x="60" y="10" width="18" height="110"></rect>
+            <rect x="88" y="45" width="18" height="75"></rect>
+          </g>
+
+          <!-- line chart inside second -->
+          <path d="M560 220 C 600 150, 650 160, 680 130 C 720 90, 760 140, 880 90" stroke-linecap="round" opacity="0.16"></path>
+
+          <!-- small pie chart (third) -->
+          <circle cx="990" cy="170" r="26" stroke-width="2" opacity="0.12"></circle>
+        </g>
+
+        <!-- circuit-grid decorative lines -->
+        <g stroke="#ffffff" stroke-width="1" opacity="0.06">
+          <path d="M40 300 H1560" />
+          <path d="M40 360 H1560" />
+          <path d="M40 420 H1560" />
+          <path d="M200 60 V540" />
+          <path d="M360 60 V540" />
+          <path d="M1280 60 V540" />
+        </g>
+      </svg>
+
+      <!-- keyboard silhouette (raster-like but as vector path for crispness) -->
+      <!-- opacity very low so it feels like watermark at back -->
+      <svg class="hero-bg-keyboard" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="#fff" opacity="0.04">
+          <rect x="120" y="370" width="1360" height="120" rx="20"></rect>
+          <!-- small key blocks -->
+          <g transform="translate(160,395)" opacity="0.06">
+            <!-- repeated keys (just a few blocks to show keyboard feel) -->
+            <rect x="0" y="0" width="40" height="28" rx="3"></rect>
+            <rect x="50" y="0" width="40" height="28" rx="3"></rect>
+            <rect x="100" y="0" width="40" height="28" rx="3"></rect>
+            <rect x="150" y="0" width="40" height="28" rx="3"></rect>
+            <rect x="200" y="0" width="40" height="28" rx="3"></rect>
+            <rect x="260" y="0" width="100" height="28" rx="3"></rect>
+          </g>
+        </g>
+      </svg>
+
+      <!-- Canvas layer for animated flowing code lines + glowing dots -->
+      <canvas id="tech-bg" aria-hidden="true"></canvas>
+
+      <!-- HERO CONTENT -->
+      <div class="hero-content">
+        <h2 class="hero-title">Prabhakar Behera</h2>
+
+        <!-- Typewriter subtitle (color tuned white-ish for contrast) -->
+        <div class="hero-sub small">
+          <span class="highlight" id="typewriter">SAP B1 | Power BI | Data Analyst</span>
+        </div>
+
+        <div class="hero-quote">
+          “Time never moves fast, but when it arrives, it changes the world. Those who wait for it are the true victors.”
+        </div>
+
+        <div class="hero-actions">
+          <!-- Download resume (visible to HR) -->
+          <a class="btn-resume" href="resume.pdf" download aria-label="Download Resume (PDF)">
+            <i class="fa-regular fa-file-lines" style="margin-right:8px"></i> Download Resume
+          </a>
+
+          <!-- small social icons -->
+          <div style="margin-left:14px">
+            <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank" title="LinkedIn" aria-label="LinkedIn" style="color:rgba(255,255,255,0.95);margin-right:10px;">
+              <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+            <a href="https://github.com/" target="_blank" title="GitHub" aria-label="GitHub" style="color:rgba(255,255,255,0.95)">
+              <i class="fab fa-github fa-lg"></i>
+            </a>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <!-- =========================
+         CONTENT SECTIONS (About, Skills, Projects, ...)
+         ========================= -->
+
+    <section id="about" aria-label="About">
+      <h3 class="section-title">About Me</h3>
+      <div class="card">
+        <p class="muted">
+          I’m a results-oriented analytics professional with over <strong>2 years</strong> at Rex-Tone Industries Ltd.
+          With a B.Sc. in Computer Science, I combine SAP Business One expertise with Power BI visualizations and Crystal Reports to
+          deliver accurate, automated, and actionable reporting solutions. I work closely with finance, procurement, and sales teams to
+          reduce manual effort, improve compliance, and enable data-driven decisions.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" aria-label="Skills">
+      <h3 class="section-title">Key Skills & Tools</h3>
+      <div class="card">
+        <ul class="muted">
+          <li><strong>SAP Business One (SAP B1):</strong> functional operations, Query Manager, custom reports & automations</li>
+          <li><strong>Power BI:</strong> DAX modeling, interactive dashboards, scheduled refresh & storytelling</li>
+          <li><strong>Crystal Reports:</strong> advanced printable reports, parameters, scheduled distribution</li>
+          <li><strong>SQL & Data Integration:</strong> joins, optimization, ETL concepts & reporting back-ends</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" aria-label="Projects">
+      <h3 class="section-title">Project Highlights</h3>
+      <div class="card">
+        <ul class="muted">
+          <li><b>Sales Report Dashboard</b> — Interactive Power BI dashboard integrating SAP B1 data for regional performance and product insights.</li>
+          <li><b>GSTR & Procurement Reports</b> — Finance-facing reports and dashboards for GST reconciliation and vendor analytics.</li>
+          <li><b>Crystal Reports Automation</b> — Parameterized scheduled reports in SAP B1 for finance & operations distribution.</li>
+          <li><b>Reports Automation</b> — End-to-end scheduling and exported pipelines that reduced month-end manual work.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <section id="experience" aria-label="Experience">
+        <h3 class="section-title">Experience</h3>
+        <div class="card">
+          <p><strong>Officer — SAP</strong> | Rex-Tone Industries Ltd — Vadodara, Gujarat<br><i>Aug 2023 – Present (2+ years)</i></p>
+          <ul class="muted">
+            <li>Manage and maintain SAP Business One (SAP B1) and ensure data integrity.</li>
+            <li>Design and generate Crystal Reports and SAP queries for finance and procurement.</li>
+            <li>Resolve SAP-related issues; provide training and user support.</li>
+            <li>Optimize workflows and automate recurring MIS and dashboards.</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside id="education" aria-label="Education" style="align-self:start">
+        <h3 class="section-title">Education & Certifications</h3>
+        <div class="card">
+          <p><strong>B.Sc. — Computer Science</strong><br>Gunupur Degree College, Gunupur (2022–2024)</p>
+          <ul class="muted">
+            <li>SAP Business One B1 Complete Training with Implementation (Certificate)</li>
+            <li>Microsoft Excel Using AI Workshop (Certificate)</li>
+          </ul>
+        </div>
+      </aside>
     </div>
-  </section>
 
-  <!-- ── ABOUT SECTION ── -->
-  <section id="about">
-    <h3>About Me</h3>
-    <div class="card">
-      <p>I’m a results-oriented analytics professional with 2+ years of experience at Rex-Tone Industries Ltd.
-         With a B.Sc. in Computer Science and hands-on SAP Business One expertise, I design reporting solutions and dashboards that reduce manual effort and improve operational transparency.
-         I thrive on transforming complex datasets into clear, decision-ready insights that help leaders act faster and smarter.</p>
-    </div>
-  </section>
+    <section id="contact" aria-label="Contact">
+      <h3 class="section-title">Contact</h3>
+      <div class="card">
+        <p class="muted"><strong>Email:</strong> <a href="mailto:prabhakarbehera74778@gmail.com">prabhakarbehera74778@gmail.com</a></p>
+        <p class="muted"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">View Profile</a></p>
+      </div>
+    </section>
 
-  <!-- ── SKILLS SECTION ── -->
-  <section id="skills">
-    <h3>Key Skills & Tools</h3>
-    <div class="card">
-      <ul>
-        <li><b>SAP Business One:</b> Functional operations & custom reports</li>
-        <li><b>Crystal Reports:</b> Advanced report design and data structuring</li>
-        <li><b>Power BI:</b> Dashboard creation and visualization</li>
-        <li><b>SQL & Data Analytics:</b> Queries, optimization & insights</li>
-        <li><b>Automation:</b> MIS & report scheduling within SAP systems</li>
-      </ul>
-    </div>
-  </section>
+    <!-- FOOTER -->
+    <footer>
+      <div class="muted small">&copy; <span id="year"></span> Prabhakar Behera — Crafted with analytics & design excellence</div>
+      <div style="margin-top:8px"><span id="signature" class="signature">— Prabhakar Behera</span></div>
+    </footer>
+  </main>
 
-  <!-- ── PROJECTS SECTION ── -->
-  <section id="projects">
-    <h3>Project Highlights</h3>
-    <div class="card">
-      <ul>
-        <li><b>Sales Report Dashboard:</b> Interactive Power BI dashboard integrating SAP B1 data to visualize sales and product trends.</li>
-        <li><b>GSTR & Procurement Reports:</b> Built finance reports for accurate GST filings and vendor tracking.</li>
-        <li><b>Crystal Reports Automation:</b> Scheduled SAP B1 reports for stakeholders, reducing manual workload significantly.</li>
-      </ul>
-    </div>
-  </section>
+  <!-- =========================
+       SCRIPTS: interactions, canvas animation, nav highlighting
+       Comments explain each block for easy editing later
+       ========================= -->
+  <script>
+    // ---------- AUTO YEAR ----------
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <!-- ── EXPERIENCE SECTION ── -->
-  <section id="experience">
-    <h3>Experience</h3>
-    <div class="card">
-      <p><b>Officer — SAP</b> | Rex-Tone Industries Ltd | Vadodara, Gujarat<br>
-      <i>Aug 2023 – Present (2+ years)</i></p>
-      <ul>
-        <li>Manage and maintain SAP Business One system integrity.</li>
-        <li>Design and generate Crystal Reports for finance and procurement teams.</li>
-        <li>Optimize workflow efficiency through process automation.</li>
-        <li>Provide SAP support and user training across departments.</li>
-      </ul>
-    </div>
-  </section>
+    // ---------- THEME TOGGLE ----------
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      // set aria-pressed for accessibility
+      const pressed = document.body.classList.contains('dark');
+      themeBtn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    });
 
-  <!-- ── EDUCATION & CERTIFICATIONS ── -->
-  <section id="education">
-    <h3>Education & Certifications</h3>
-    <div class="card">
-      <p><b>B.Sc. in Computer Science</b> – Gunupur Degree College, Gunupur (2022–2024)</p>
-      <ul>
-        <li>SAP Business One B1 Complete Training with Implementation (Certificate)</li>
-        <li>Microsoft Excel Using AI Workshop (Certificate)</li>
-      </ul>
-    </div>
-  </section>
+    // ---------- TYPEWRITER SUBTITLE ----------
+    // Simple typewriter effect for subtitle
+    (function typewriter(){
+      const text = "SAP B1 | Power BI | Data Analyst";
+      const el = document.getElementById('typewriter');
+      let i = 0;
+      function step(){
+        el.textContent = text.slice(0, i+1);
+        i++;
+        if(i < text.length) setTimeout(step, 65);
+      }
+      step();
+    })();
 
-  <!-- ── CONTACT SECTION ── -->
-  <section id="contact">
-    <h3>Contact</h3>
-    <div class="card">
-      <p><b>Email:</b> <a href="mailto:prabhakarbehera74778@gmail.com">prabhakarbehera74778@gmail.com</a><br>
-         <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">View Profile</a></p>
-    </div>
-  </section>
+    // ---------- HERO CANVAS: Dots & Flowing Code Lines ----------
+    // This draws glowing data dots and horizontal code-like lines giving motion and depth.
+    (function heroCanvas(){
+      const canvas = document.getElementById('tech-bg');
+      if(!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W, H;
+      // arrays for animated elements
+      const dots = [];
+      const lines = [];
 
-  <!-- ── FOOTER ── -->
-  <footer>
-    &copy; 2025 Prabhakar Behera | Crafted with analytics & design excellence <br>
-    <span class="signature" id="signature">— Prabhakar Behera</span>
-  </footer>
+      function resize(){
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
 
-</main>
+      // initialize dots (glowing)
+      const DOT_COUNT = Math.max(24, Math.floor(W/60));
+      for(let i=0;i<DOT_COUNT;i++){
+        dots.push({
+          x: Math.random()*W,
+          y: Math.random()*H,
+          r: 1 + Math.random()*2.2,
+          dx: (Math.random()-0.5)*0.35,
+          dy: (Math.random()-0.5)*0.35,
+          alpha: 0.25 + Math.random()*0.6
+        });
+      }
 
-<!-- ───────────────────────────────────────────────────────────────
-     ICONS + SCRIPTS
-─────────────────────────────────────────────────────────────── -->
-<script src="https://kit.fontawesome.com/a2d9b4b7d9.js" crossorigin="anonymous"></script>
-<script>
-/* ── THEME TOGGLE ───────────────────────────── */
-const themeBtn=document.getElementById('themeToggle');
-themeBtn.onclick=()=>document.body.classList.toggle('dark');
+      // initialize flowing code lines
+      const LINE_COUNT = Math.max(6, Math.floor(W/250));
+      for(let j=0;j<LINE_COUNT;j++){
+        lines.push({
+          x: Math.random()*W,
+          y: Math.random()*H,
+          len: 120 + Math.random()*240,
+          speed: 0.25 + Math.random()*0.6,
+          alpha: 0.12 + Math.random()*0.15
+        });
+      }
 
-/* ── SIGNATURE ANIMATION ───────────────────── */
-window.addEventListener('load',()=>document.getElementById('signature').classList.add('show'));
+      function drawGrid(){
+        // very faint circuit-grid lines (horizontal)
+        ctx.save();
+        ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+        ctx.lineWidth = 1;
+        for(let gx=0; gx<W; gx+=80){
+          ctx.beginPath(); ctx.moveTo(gx,0); ctx.lineTo(gx,H); ctx.stroke();
+        }
+        for(let gy=0; gy<H; gy+=60){
+          ctx.beginPath(); ctx.moveTo(0,gy); ctx.lineTo(W,gy); ctx.stroke();
+        }
+        ctx.restore();
+      }
 
-/* ── TYPEWRITER EFFECT FOR SUBTITLE ────────── */
-const text="SAP B1 | Power BI | Data Analyst";
-const el=document.getElementById("typewriter");
-let i=0;function type(){if(i<text.length){el.textContent=text.substring(0,i+1);i++;setTimeout(type,80);}}
-type();
+      function draw(){
+        ctx.clearRect(0,0,W,H);
 
-/* ── ANIMATED TECH BACKGROUND  (Canvas) ───── */
-const canvas=document.getElementById('tech-bg');
-const ctx=canvas.getContext('2d');
-let width,height,dots=[],lines=[];
-function resize(){
-  width=canvas.width=canvas.offsetWidth;
-  height=canvas.height=canvas.offsetHeight;
-}
-window.addEventListener('resize',resize);
-resize();
+        // faint grid  
+        drawGrid();
 
-// create glowing dots
-for(let i=0;i<40;i++){
-  dots.push({
-    x:Math.random()*width,y:Math.random()*height,
-    r:Math.random()*2+1,
-    dx:(Math.random()-0.5)*0.3,dy:(Math.random()-0.5)*0.3
-  });
-}
-// create horizontal "code" lines
-for(let i=0;i<8;i++){
-  lines.push({x:Math.random()*width,y:Math.random()*height,l:80+Math.random()*160,s:0.2+Math.random()*0.3});
-}
+        // moving "code" lines
+        ctx.save();
+        ctx.lineWidth = 2;
+        lines.forEach(l => {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(255,255,255,${l.alpha})`;
+          ctx.moveTo(l.x, l.y);
+          // segmented line for a more "code-like" feeling
+          for(let k=0;k<6;k++){
+            const segLen = l.len*(0.14 + 0.12*Math.sin((k+1)*1.2 + performance.now()/3000));
+            ctx.lineTo(l.x + segLen, l.y + (k%2 ? 4 : -4));
+            ctx.moveTo(l.x + segLen + 6, l.y + (k%2 ? 4 : -4));
+          }
+          ctx.stroke();
+          l.x += l.speed;
+          if(l.x - l.len > W) l.x = -l.len;
+        });
+        ctx.restore();
 
-// drawing function
-function draw(){
-  ctx.clearRect(0,0,width,height);
+        // glowing dots
+        dots.forEach(d => {
+          const g = ctx.createRadialGradient(d.x, d.y, 0, d.x, d.y, d.r*6);
+          g.addColorStop(0, `rgba(255,255,255,${0.9 * d.alpha})`);
+          g.addColorStop(1, `rgba(255,255,255,0)`);
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(d.x, d.y, d.r*6, 0, Math.PI*2);
+          ctx.fill();
 
-  // faint grid background
-  ctx.strokeStyle='rgba(255,255,255,0.05)';
-  ctx.lineWidth=1;
-  for(let x=0;x<width;x+=80){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,height);ctx.stroke();}
-  for(let y=0;y<height;y+=60){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(width,y);ctx.stroke();}
+          d.x += d.dx; d.y += d.dy;
+          if(d.x < 0 || d.x > W) d.dx *= -1;
+          if(d.y < 0 || d.y > H) d.dy *= -1;
+        });
 
-  // moving lines
-  ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.lineWidth=2;
-  lines.forEach(l=>{
-    ctx.beginPath();ctx.moveTo(l.x,l.y);ctx.lineTo(l.x+l.l,l.y);ctx.stroke();
-    l.x+=l.s;if(l.x>width)l.x=-l.l;
-  });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
 
-  // glowing dots
-  dots.forEach(d=>{
-    ctx.beginPath();
-    const g=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r*3);
-    g.addColorStop(0,'rgba(255,255,255,0.9)');
-    g.addColorStop(1,'rgba(255,255,255,0)');
-    ctx.fillStyle=g;
-    ctx.arc(d.x,d.y,d.r*3,0,Math.PI*2);
-    ctx.fill();
-    d.x+=d.dx;d.y+=d.dy;
-    if(d.x<0||d.x>width)d.dx*=-1;
-    if(d.y<0||d.y>height)d.dy*=-1;
-  });
+    // ---------- NAV: Smooth scrolling & active link highlighting ----------
+    (function navBehavior(){
+      const navLinks = document.querySelectorAll('nav a');
+      const sections = Array.from(document.querySelectorAll('main section[id]'));
+      // click interception for smooth scroll
+      navLinks.forEach(a => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = a.getAttribute('href').slice(1);
+          const el = document.getElementById(targetId);
+          if(el){
+            // scroll with offset to account for fixed header
+            const offset = 78;
+            const top = el.getBoundingClientRect().top + window.scrollY - offset + 6;
+            window.scrollTo({top, behavior:'smooth'});
+          }
+        });
+      });
 
-  requestAnimationFrame(draw);
-}
-draw();
-/* ─────────────────────────────────────────── */
-</script>
+      // on scroll, update active nav link
+      function onScroll(){
+        const offset = 120;
+        let current = sections[0];
+        for(const sec of sections){
+          const pos = sec.getBoundingClientRect().top;
+          if(pos - offset <= 0) current = sec;
+        }
+        // set active class
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+      }
+      window.addEventListener('scroll', onScroll);
+      // initial run
+      onScroll();
+    })();
+
+    // ---------- REVEAL SIGNATURE ----------
+    window.addEventListener('load', ()=> {
+      document.getElementById('signature').classList.add('reveal');
+    });
+
+    // ---------- OPTIONAL: reduce motion for users who prefer it ----------
+    // Respect prefers-reduced-motion; reduce canvas animations slightly if set
+    (function respectReducedMotion(){
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if(mq && mq.matches){
+        // if reduced motion, stop the heavy animation loops (we could implement a simple fallback)
+        // For simplicity, we won't aggressively change here; developers can add a flag to stop animations.
+        // Keep this as a placeholder for future accessibility tweaks.
+      }
+    })();
+  </script>
 </body>
 </html>
