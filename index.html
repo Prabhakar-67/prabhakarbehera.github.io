@@ -1,91 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About Me - Prabhakar</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prabhakar | Data Analyst & SAP B1 Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
+            font-family: 'Poppins', Arial, sans-serif;
             margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f7fbff;
+            background: linear-gradient(135deg, #f7fbff 0, #c8ebfa 100%);
             color: #263238;
         }
         header {
-            background: linear-gradient(90deg, #51c4fa, #ffffff 80%);
-            padding: 24px 0;
-            box-shadow: 0 1px 8px rgba(80,200,250,0.08);
+            background: linear-gradient(90deg, #51c4fa 60%, #fff 100%);
+            padding: 48px 0 24px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 16px rgba(80,200,250,0.10);
+        }
+        .hero {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            max-width: 950px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 28px 24px 0 24px;
+            gap: 38px;
+        }
+        .hero-img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 5px solid #51c4fa;
+            box-shadow: 0 10px 36px rgba(65,185,245, 0.13);
+            background: #e3f5fd;
+            animation: fadeInPhoto 1.3s;
+        }
+        @keyframes fadeInPhoto {
+            from { opacity: 0; transform: scale(0.92);}
+            to { opacity: 1; transform: scale(1);}
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero h1 {
+            font-size: 2.6em;
+            color: #124785;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .hero h2 {
+            font-size: 1.3em;
+            font-weight: 400;
+            color: #167abf;
+            margin: 0 0 20px 0;
+        }
+        .hero p {
+            font-size: 1.1em;
+            color: #205073;
+        }
+        .cta-btn {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 15px 38px;
+            font-size: 1.15em;
+            border-radius: 28px;
+            background: linear-gradient(90deg, #51c4fa, #16b8e7 100%);
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 12px rgba(65,200,255,0.07);
+            transition: transform 0.17s, box-shadow 0.17s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 9px 24px rgba(65,180,240,0.13);
         }
         nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
+            margin-top: 18px;
         }
         nav a {
             color: #167abf;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1em;
-            padding: 6px 18px;
-            border-radius: 20px;
-            transition: background 0.2s, color 0.2s;
+            font-size: 1.09em;
+            margin: 0 18px;
+            transition: color 0.18s;
         }
         nav a:hover {
-            background: #e5f6fd;
-            color: #0d3756;
+            color: #124785;
         }
-        .container {
-            max-width: 860px;
-            margin: 40px auto 0 auto;
+        main {
+            max-width: 950px;
+            margin: 44px auto 0 auto;
             background: #fff;
             border-radius: 18px;
-            box-shadow: 0 2px 16px rgba(86,185,235, 0.09);
-            padding: 36px 32px;
+            box-shadow: 0 2px 20px rgba(86,185,235, 0.09);
+            padding: 44px 34px;
         }
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 32px;
+        section {
+            margin-bottom: 34px;
         }
-        .profile-img {
-    width: 120px;
-    height: 120px;
-    /* border-radius: 50%; */ /* Remove or comment this out */
-    background: #c8e6fa;
-    object-fit: cover;
-    border: 4px solid #51c4fa;
-}
-
-        }
-        h1 {
-            color: #0d3756;
-        }
-        h2 {
-            border-left: 6px solid #51c4fa;
-            padding-left: 14px;
+        h3 {
             color: #167abf;
-            margin-top: 34px;
+            padding-left: 14px;
+            border-left: 5px solid #51c4fa;
+            font-size: 1.25em;
         }
         ul {
-            margin: 10px 0 0 0;
-            padding-left: 22px;
+            margin: 14px 0 0 10px;
+            padding-left: 14px;
         }
         footer {
             text-align: center;
             color: #3999be;
-            padding: 16px;
+            padding: 18px;
             font-size: 1em;
-            margin-top: 60px;
+            margin-top: 66px;
         }
-        @media (max-width: 600px) {
-            .container { padding: 14px; }
-            .profile { flex-direction: column; gap: 12px; }
-            .profile-img { width: 80px; height: 80px; }
+        @media (max-width: 700px) {
+            .hero { flex-direction: column; gap: 20px;}
+            .hero-img { width: 120px; height: 120px;}
+            main { padding: 18px 8px;}
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="hero">
+            <img src="profile.jpg" alt="My Profile Photo" class="hero-img">
+            <div class="hero-text">
+                <h1>Hi, I'm Prabhakar.</h1>
+                <h2>Data Analyst &amp; SAP Business One Specialist</h2>
+                <p>
+                    I help companies turn data into business insights using SAP B1, Power BI, and modern analytics tools.<br>
+                    <span style="color: #51c4fa;">From my roots in Odisha to innovative projects in Gujarat, my journey is driven by growth and technology.</span>
+                </p>
+                <a href="#contact" class="cta-btn">Contact Me</a>
+            </div>
+        </div>
         <nav>
             <a href="#about">About</a>
             <a href="#summary">Summary</a>
@@ -93,46 +152,48 @@
             <a href="#goals">Goals</a>
         </nav>
     </header>
-    <div class="container">
-        <section class="profile" id="about">
-            <img src="profile.jpg" alt="My Profile Photo" class="profile-img">
-            <div>
-                <h1>Prabhakar</h1>
-                <p>
-                    I come from the village of Gulumunda in the Rayagada district of Odisha.
-                    I completed my schooling at Gulumunda High School up to 10th grade, followed by +2 Science at Shantiniketan Secondary High School, Gunupur.
-                    I earned my BSc in Computer Science from Gunupur Degree College.<br><br>
-                    Currently, I'm working at Rextone Industries Ltd in Gujarat, where I've grown from Officer – SAP Business One to Data Analyst.
-                    My journey has included SAP Business One implementation, Power BI, and Data Analytics—skills I've applied directly within the company's systems.
-                </p>
-            </div>
+    <main>
+        <section id="about">
+            <h3>About</h3>
+            <p>
+                I come from the village of Gulumunda in the Rayagada district of Odisha.
+                I completed my schooling at Gulumunda High School, +2 Science at Shantiniketan Secondary High School, and BSc in Computer Science from Gunupur Degree College.
+            </p>
+            <p>
+                Currently, I work at Rextone Industries Ltd in Gujarat—starting as an SAP Officer and growing into a Data Analyst with expertise in business intelligence and reporting.
+            </p>
         </section>
         <section id="summary">
-            <h2>Professional Summary</h2>
+            <h3>Professional Summary</h3>
             <p>
-                I began by preparing for government jobs, but my family’s situation led me to seize a practical opportunity after moving to Vadodara.
-                My career at Rex-Tone Industries Ltd has transformed me—teaching me continuous learning, professionalism, and adaptability. I now manage SAP B1, design Crystal Reports, and build Power BI dashboards for management insights.
+                My journey began while preparing for government jobs, but family needs inspired me to seize a practical career in Vadodara. At Rex-Tone Industries Ltd, I now manage SAP B1, design custom Crystal Reports, and develop Power BI dashboards that unlock actionable decisions for management.
             </p>
         </section>
         <section id="skills">
-            <h2>Key Skills & Tools</h2>
+            <h3>Key Skills &amp; Tools</h3>
             <ul>
-                <li><strong>SAP Business One (SAP B1):</strong> Functional operations and custom reports</li>
+                <li><strong>SAP Business One (SAP B1):</strong> Functional operations &amp; custom reports</li>
                 <li><strong>Crystal Reports:</strong> Advanced report design and data structuring</li>
                 <li><strong>Power BI:</strong> Dashboard creation and visualization</li>
-                <li><strong>SQL & Data Analytics:</strong> Business insights and query optimization</li>
+                <li><strong>SQL &amp; Data Analytics:</strong> Business insights, data queries, and optimization</li>
             </ul>
         </section>
         <section id="goals">
-            <h2>Future Goals</h2>
+            <h3>Future Goals</h3>
             <p>
-                I aim to become a skilled SAP B1 Consultant and Data Visualization Expert—bridging technology, analytics, and creativity to deliver impactful business outcomes.
+                My aim is to become a leading SAP B1 Consultant and Data Visualization Expert, blending technology, analytics, and creativity to deliver solutions that make an impact.
             </p>
         </section>
-    </div>
+        <section id="contact">
+            <h3>Contact</h3>
+            <p>
+                Reach me via email at <a href="mailto:ipprabha@gmail.com" style="color:#167abf;text-decoration:underline;">your.email@example.com</a>
+                <!-- Replace with your actual email -->
+            </p>
+        </section>
+    </main>
     <footer>
         &copy; 2025 Prabhakar | Powered by GitHub Pages
     </footer>
 </body>
 </html>
-
