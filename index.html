@@ -1,223 +1,169 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Prabhakar Behera | SAP B1 · Power BI · Data Analyst</title>
-  <meta name="description" content="Prabhakar Behera — SAP Business One Specialist & Power BI Developer. Turning data into business decisions." />
-  <link rel="icon" href="profile.jpg" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Prabhakar Behera | SAP B1 · Power BI · Data Analyst</title>
+<meta name="description" content="Prabhakar Behera — SAP Business One Specialist and Power BI Developer who turns data into business decisions." />
+<meta name="keywords" content="Prabhakar Behera, SAP Business One, Power BI, Data Analyst, Crystal Reports, SQL, Dashboard Developer" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!--  Open-Graph / Twitter  -->
+<meta property="og:title" content="Prabhakar Behera | SAP B1 · Power BI · Data Analyst" />
+<meta property="og:description" content="Corporate-modern professional portfolio · SAP B1 · Power BI · Analytics · Crystal Reports" />
+<meta property="og:image" content="prabhakar-og-banner.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-github-pages-url-here" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Prabhakar Behera | SAP B1 · Power BI · Data Analyst" />
+<meta name="twitter:description" content="Data-driven SAP & Power BI professional portfolio" />
+<meta name="twitter:image" content="prabhakar-og-banner.png" />
 
-  <!-- Plausible Analytics (privacy-friendly). Replace 'yourdomain.com' with your domain or remove if not needed -->
-  <!-- <script async defer data-domain="yourdomain.com" src="https://plausible.io/js/plausible.js"></script> -->
-
-  <style>
-    :root{
-      --bg:#f3f8fb; --card:#ffffff; --muted:#22506f; --accent1:#1a89d8; --accent2:#22c1d6;
-      --glass: rgba(255,255,255,0.9); --radius:14px; --shadow: 0 12px 28px rgba(15,64,100,0.07);
-      --text:#052a3d; --soft:#6ea5bf;
-    }
-    body.dark {
-      --bg: linear-gradient(180deg,#071526 0%,#04283a 100%);
-      --card: rgba(8,18,28,0.6); --muted:#a7d7f0; --accent1:#5fc9ff; --accent2:#34e1d1;
-      --glass: rgba(255,255,255,0.03); --shadow: 0 12px 28px rgba(0,0,0,0.6);
-      --text:#e6f6ff; --soft:#95bcd4;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-      background:var(--bg);color:var(--text);
-      transition:background .45s ease,color .35s ease;
-      padding-top:72px;
-    }
-
-    /* Header */
-    header{position:fixed;top:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:space-between;
-      padding:10px 22px;background:linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55));backdrop-filter:blur(6px);
-      box-shadow:var(--shadow);z-index:1200}
-    body.dark header{background:linear-gradient(180deg, rgba(6,18,30,0.6), rgba(6,18,30,0.35))}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-    .brand img{width:46px;height:46px;border-radius:10px;object-fit:cover;border:2px solid rgba(255,255,255,0.12)}
-    .brand h1{font-family:'Poppins',sans-serif;margin:0;font-size:1rem;letter-spacing:.3px}
-    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    nav a{color:inherit;text-decoration:none;font-weight:600;opacity:.95}
-    nav a:hover{color:var(--accent1)}
-    .theme-toggle{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;border:none;cursor:pointer;
-      background:var(--card);box-shadow:0 6px 18px rgba(10,40,70,0.06)}
-    .theme-toggle:active{transform:scale(.97)}
-    body.dark .theme-toggle{background:rgba(255,255,255,0.04);color:var(--accent1)}
-    .container{max-width:1100px;margin:0 auto;padding:32px 22px}
-    .hero{display:grid;grid-template-columns:220px 1fr;gap:26px;align-items:center}
-    .photo-wrap{width:220px;border-radius:16px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
-      box-shadow:var(--shadow);border:4px solid rgba(26,137,216,0.08)}
-    .photo-wrap img{width:100%;height:100%;object-fit:cover}
-    .hero-card{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
-    .hero-title{font-family:'Poppins',sans-serif;font-size:1.8rem;margin:0;color:var(--accent1)}
-    .hero-sub{font-weight:600;color:var(--soft);margin-top:6px;font-size:1rem}
-    .badges{display:flex;gap:10px;margin:12px 0;flex-wrap:wrap}
-    .badge{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;padding:8px 14px;border-radius:999px;
-      font-weight:700;font-family:'Poppins',sans-serif}
-    .hero-desc{color:var(--muted);line-height:1.55;margin:14px 0 18px}
-    .hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    .btn{padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;border:none;cursor:pointer;
-      background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white}
-    .btn.secondary{background:transparent;color:var(--accent1);border:1px solid rgba(20,120,180,0.08)}
-    .socials a{margin-right:8px;color:var(--muted);font-size:1.15rem}
-    .socials a:hover{color:var(--accent1)}
-    .grid-2{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:28px}
-    @media(max-width:980px){.grid-2{grid-template-columns:1fr}.hero{grid-template-columns:160px 1fr}.photo-wrap{width:160px}}
-    @media(max-width:680px){header nav{display:none}.hero{grid-template-columns:1fr;gap:12px}.photo-wrap{width:100%;height:220px}}
-
-    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
-    .section-title{font-family:'Poppins',sans-serif;color:var(--accent1);margin:0 0 10px;font-size:1rem}
-    .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,252,255,0.96));padding:12px;border-radius:10px;box-shadow:0 8px 20px rgba(8,48,78,0.04)}
-    body.dark .stat{background:rgba(255,255,255,0.02);box-shadow:0 8px 20px rgba(0,0,0,0.45)}
-    .stat strong{display:block;color:var(--accent1);font-family:'Poppins',sans-serif;margin-bottom:6px}
-    .project{margin-bottom:12px;padding:14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(245,252,255,0.98));
-      box-shadow:var(--shadow)}
-    .project h4{margin:0 0 6px;color:var(--accent1);font-family:'Poppins',sans-serif}
-    .muted{color:var(--muted)}
-    .exp-item{margin-bottom:10px;padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(250,250,255,0.98),rgba(245,250,255,0.98));
-      box-shadow:var(--shadow)}
-    body.dark .exp-item{background:rgba(255,255,255,0.02)}
-    .contact-grid{display:flex;flex-direction:column;gap:10px}
-    .contact a{color:var(--accent1);text-decoration:none;font-weight:700}
-    footer{text-align:center;color:var(--muted);font-size:0.95rem;margin:40px 0 22px}
-    .signature{font-family:'Poppins',sans-serif;margin-top:6px;color:var(--soft);position:relative;display:inline-block}
-    .signature::after{content:'';display:block;width:0;height:2px;background:linear-gradient(90deg,var(--accent1),var(--accent2));
-      position:absolute;left:0;bottom:-6px;border-radius:2px;transition:width .9s ease}
-    .signature.animate::after{width:68px}
-    .hide{display:none}
-    .fade-in{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s}
-    .fade-in.visible{opacity:1;transform:none}
-    .modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(2,8,12,0.6);z-index:1500;padding:18px}
-    .modal-card{width:100%;max-width:980px;background:var(--card);border-radius:12px;padding:12px;box-shadow:var(--shadow);position:relative}
-    .modal-card iframe{width:100%;height:72vh;border-radius:8px;border:none}
-    .modal-close{position:absolute;right:12px;top:12px;border:none;background:transparent;color:var(--muted);font-size:1.2rem;cursor:pointer}
-  </style>
+<style>
+:root{
+ --accent1:#138de2;--accent2:#22c1d6;--text:#0a2740;--muted:#325a73;
+ --card:#fff;--bg:#f5f9fb;--shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+body.dark{--bg:#06121d;--card:#0b1c2b;--text:#eaf7ff;--muted:#93c0dc;--shadow:0 8px 22px rgba(0,0,0,0.55);}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+ font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial;
+ background:var(--bg);color:var(--text);transition:background .4s,color .4s;
+ line-height:1.6;scroll-behavior:smooth;
+}
+header{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.85);
+ backdrop-filter:blur(6px);box-shadow:var(--shadow);z-index:1000;
+ display:flex;align-items:center;justify-content:space-between;padding:10px 24px;}
+body.dark header{background:rgba(6,18,29,0.8);}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand img{width:46px;height:46px;border-radius:10px;object-fit:cover;}
+.brand h1{font-size:1rem;font-weight:600;}
+.theme-toggle{border:none;background:var(--card);width:40px;height:40px;border-radius:8px;
+ display:grid;place-items:center;cursor:pointer;color:var(--muted);}
+main{max-width:1100px;margin:0 auto;padding:100px 24px 40px;}
+.hero{position:relative;overflow:hidden;border-radius:18px;background:linear-gradient(135deg,var(--accent1),var(--accent2));
+ color:#fff;padding:60px 40px;box-shadow:var(--shadow);}
+.hero::before{content:"";position:absolute;inset:0;background:url('prabhakar-og-banner.png') center/cover no-repeat;opacity:.15;}
+.hero-content{position:relative;z-index:2;}
+.hero h2{font-size:2.5rem;margin-bottom:4px;font-weight:700;}
+.hero h3{font-size:1.25rem;font-weight:500;margin-bottom:10px;}
+.hero p.quote{font-style:italic;opacity:.9;margin-bottom:18px;}
+.btn{display:inline-block;padding:12px 26px;border-radius:8px;font-weight:600;
+ text-decoration:none;color:#fff;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);
+ transition:background .25s,transform .25s;}
+.btn:hover{background:rgba(255,255,255,0.3);transform:translateY(-2px);}
+.socials a{color:#fff;margin-right:14px;font-size:1.4em;}
+section{margin-top:60px;}
+section h3{color:var(--accent1);font-size:1.3rem;margin-bottom:10px;border-left:4px solid var(--accent2);padding-left:10px;}
+.card{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:24px;margin-top:12px;}
+ul{padding-left:18px;}
+footer{text-align:center;padding:32px 0;color:var(--muted);}
+.signature{display:inline-block;position:relative;}
+.signature::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;
+ background:linear-gradient(90deg,var(--accent1),var(--accent2));border-radius:2px;
+ transition:width 1s ease;}
+.signature.show::after{width:80px;}
+</style>
 </head>
 <body>
+
 <header>
-  <a class="brand" href="#top"><img src="profile.jpg" alt="profile"><h1>PRABHAKAR BEHERA</h1></a>
-  <nav><ul><li><a href="#about">About</a></li><li><a href="#skills">Expertise</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul></nav>
-  <div style="display:flex;gap:10px;align-items:center">
-    <button class="btn secondary" id="openResume">Resume</button>
-    <button id="themeToggle" class="theme-toggle"><i id="themeIcon" class="fas fa-moon"></i></button>
-  </div>
+  <a class="brand" href="#top"><img src="profile.jpg" alt="Profile"><h1>PRABHAKAR BEHERA</h1></a>
+  <button id="themeToggle" class="theme-toggle" title="Toggle theme">☀️</button>
 </header>
 
-<main class="container" id="top">
-  <!-- HERO -->
+<main id="top">
   <section class="hero">
-    <div class="photo-wrap"><img src="profile.jpg" alt=""></div>
-    <div class="hero-card">
-      <div class="hero-title">Hi, I'm Prabhakar</div>
-      <div class="hero-sub">Officer – SAP | Data Analyst | Power BI Developer</div>
-      <div class="badges"><span class="badge">SAP B1</span><span class="badge">Power BI</span><span class="badge">Crystal Reports</span></div>
-      <p class="hero-desc">I transform raw organizational data into clear business intelligence through SAP Business One, Power BI, and Crystal Reports. Over the past <strong>2+ years</strong> at Rex-Tone Industries Ltd, I’ve automated critical reporting workflows, built real-time dashboards, and delivered actionable insights to finance, procurement, and sales teams.</p>
-      <div class="hero-actions">
-        <a class="btn" href="#contact">Let's Connect</a>
-        <a class="btn secondary" href="mailto:prabhakarbehera74778@gmail.com">Email Me</a>
-        <div class="socials" style="margin-left:auto"><a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank"><i class="fab fa-linkedin"></i></a><a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a></div>
+    <div class="hero-content">
+      <h2>Prabhakar Behera</h2>
+      <h3 id="typewriter">SAP B1 | Power BI | Data Analyst</h3>
+      <p class="quote">“Time never moves fast, but when it arrives, it changes the world. Those who wait for it are the true victors.”</p>
+      <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
+      <div class="socials" style="margin-top:14px;">
+        <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
       </div>
     </div>
   </section>
 
-  <section class="grid-2">
-    <div>
-      <div class="card fade-in" id="about">
-        <h2 class="section-title">About</h2>
-        <p class="muted">I’m a results-oriented analytics professional with over <strong>2 years</strong> of experience at Rex-Tone Industries Ltd. With a B.Sc. in Computer Science and hands-on SAP exposure, I design reporting solutions and dashboards that reduce manual effort and improve operational transparency. I collaborate closely with finance, procurement, and sales leaders to translate business questions into automated data-driven insights.</p>
-      </div>
-      <div class="card fade-in" id="skills" style="margin-top:18px">
-        <h2 class="section-title">Expertise Highlights</h2>
-        <div class="stat-grid">
-          <div class="stat"><strong>SAP Business One</strong> Query Manager, report customization & automation for finance and procurement.</div>
-          <div class="stat"><strong>Power BI</strong> Interactive dashboards, DAX modeling, and automated refresh pipelines.</div>
-          <div class="stat"><strong>Crystal Reports</strong> Parameterized, printable SAP B1 reports with scheduling.</div>
-          <div class="stat"><strong>SQL & Data Integration</strong> Optimized joins, data shaping, and back-end logic for SAP and BI layers.</div>
-        </div>
-      </div>
+  <section id="about">
+    <h3>About Me</h3>
+    <div class="card">
+      <p>I’m a results-oriented analytics professional with 2+ years of experience at Rex-Tone Industries Ltd. 
+      With a B.Sc. in Computer Science and hands-on SAP Business One expertise, I design reporting solutions and dashboards that reduce manual effort and improve operational transparency. 
+      I thrive on transforming complex datasets into clear, decision-ready insights that help leaders act faster and smarter.</p>
     </div>
-    <aside>
-      <div class="card fade-in" id="experience"><h2 class="section-title">Experience</h2>
-        <div class="exp-item"><strong>OFFICER – SAP, Rex-Tone Industries Ltd</strong><br><span class="muted">Aug 2023 — Present</span></div>
-      </div>
-      <div class="card fade-in" id="contact" style="margin-top:16px"><h2 class="section-title">Contact</h2>
-        <div class="contact-grid">
-          <div><b>Email:</b> <a href="mailto:prabhakarbehera74778@gmail.com">prabhakarbehera74778@gmail.com</a></div>
-          <div><b>Phone:</b> <a href="tel:+918114777915">+91 81147 77915</a></div>
-          <div><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">PrabhakarBehera</a></div>
-        </div>
-      </div>
-    </aside>
   </section>
+
+  <section id="skills">
+    <h3>Key Skills & Tools</h3>
+    <div class="card">
+      <ul>
+        <li><b>SAP Business One:</b> Functional operations & custom reports</li>
+        <li><b>Crystal Reports:</b> Advanced report design and data structuring</li>
+        <li><b>Power BI:</b> Dashboard creation and visualization</li>
+        <li><b>SQL & Data Analytics:</b> Queries, optimization, and business insights</li>
+        <li><b>Automation:</b> MIS & report scheduling within SAP systems</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3>Projects Highlights</h3>
+    <div class="card">
+      <ul>
+        <li><b>Sales Report Dashboard:</b> Interactive Power BI dashboard integrating SAP B1 data to visualize regional sales and product trends.</li>
+        <li><b>GSTR & Procurement Reports:</b> Built finance reports for accurate GST filings and vendor performance tracking.</li>
+        <li><b>Crystal Reports Automation:</b> Scheduled SAP B1 reports for stakeholders, reducing manual workload significantly.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h3>Experience</h3>
+    <div class="card">
+      <p><b>Officer — SAP</b> | Rex-Tone Industries Ltd | Vadodara, Gujarat<br>
+      <i>Aug 2023 – Present (2+ years)</i></p>
+      <ul>
+        <li>Manage and maintain SAP Business One system integrity.</li>
+        <li>Design and generate Crystal Reports for finance and procurement teams.</li>
+        <li>Optimize workflow efficiency through process automation.</li>
+        <li>Provide SAP support and user training across departments.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h3>Education & Certifications</h3>
+    <div class="card">
+      <p><b>B.Sc. in Computer Science</b> – Gunupur Degree College, Gunupur (2022–2024)</p>
+      <ul>
+        <li>SAP Business One B1 Complete Training with Implementation </li>
+        <li>Microsoft Excel Using AI Workshop </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <div class="card">
+      <p><b>Email:</b> <a href="mailto:prabhakarbehera74778@gmail.com">prabhakarbehera74778@gmail.com</a><br>
+      <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">View Profile</a></p>
+    </div>
+  </section>
+
   <footer>
-    <div>&copy; <span id="year"></span> PRABHAKAR BEHERA — Crafted with focus on analytics & design</div>
-    <div class="signature" id="signature">— PRABHAKAR BEHERA</div>
+    &copy; 2025 Prabhakar Behera | Crafted with analytics & design excellence <br>
+    <span class="signature" id="signature">— Prabhakar Behera</span>
   </footer>
 </main>
 
-<!-- Resume Modal -->
-<div id="resumeModal" class="modal hide">
-  <div class="modal-card">
-    <button class="modal-close" id="closeResume">&times;</button>
-    <div style="display:flex;gap:10px;margin-bottom:10px">
-      <button id="tabEmbed" class="btn secondary" style="padding:8px 12px;font-size:0.95rem">View Resume</button>
-      <button id="tabPdf" class="btn secondary" style="padding:8px 12px;font-size:0.95rem">Open PDF</button>
-      <div style="margin-left:auto;display:flex;gap:8px">
-        <button id="printResume" class="btn secondary">Print</button>
-        <a class="btn" href="resume.pdf" download>Download</a>
-        <button id="closeResumeMobile" class="btn secondary">Close Resume</button>
-      </div>
-    </div>
-    <div id="embedResume" style="max-height:68vh;overflow:auto;padding:8px;background:rgba(250,250,250,0.95)">
-      <div style="padding:14px;color:var(--text)">
-        <h2 style="color:var(--accent1)">PRABHAKAR BEHERA</h2>
-        <p style="color:var(--muted)">C 29, Priyadarshini Nagar Society, Makarpura Road, Vadodara, Gujarat<br>
-        <a href="mailto:prabhakarbehera74778@gmail.com">prabhakarbehera74778@gmail.com</a> | +91 81147 77915</p>
-        <h3 style="color:var(--accent1)">Professional Summary</h3>
-        <p>Motivated SAP Business One professional with 2+ years of experience managing data accuracy and reporting. Skilled in streamlining workflows, automating reports, and supporting finance and procurement with actionable insights.</p>
-      </div>
-    </div>
-    <div id="pdfViewer" class="hide" style="max-height:72vh"><iframe id="pdfIframe" src="resume.pdf"></iframe></div>
-  </div>
-</div>
-
 <script src="https://kit.fontawesome.com/a2d9b4b7d9.js" crossorigin="anonymous"></script>
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-const body=document.body,themeToggle=document.getElementById('themeToggle'),themeIcon=document.getElementById('themeIcon');
-const saved=localStorage.getItem('theme');
-if(saved==='dark'||(!saved&&window.matchMedia('(prefers-color-scheme: dark)').matches)){body.classList.add('dark');themeIcon.className='fas fa-sun';}
-themeToggle.onclick=()=>{const d=body.classList.toggle('dark');themeIcon.className=d?'fas fa-sun':'fas fa-moon';localStorage.setItem('theme',d?'dark':'light');};
-
-const openResume=document.getElementById('openResume'),resumeModal=document.getElementById('resumeModal'),
-closeResume=document.getElementById('closeResume'),tabEmbed=document.getElementById('tabEmbed'),
-tabPdf=document.getElementById('tabPdf'),embedResume=document.getElementById('embedResume'),
-pdfViewer=document.getElementById('pdfViewer'),printButton=document.getElementById('printResume'),
-closeResumeMobile=document.getElementById('closeResumeMobile');
-
-openResume.onclick=()=>{resumeModal.classList.remove('hide');body.style.overflow='hidden';showEmbedded();};
-function closeModal(){resumeModal.classList.add('hide');body.style.overflow='';}
-closeResume.onclick=closeModal;closeResumeMobile.onclick=closeModal;
-resumeModal.onclick=e=>{if(e.target===resumeModal)closeModal();};
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!resumeModal.classList.contains('hide'))closeModal();});
-
-function showEmbedded(){embedResume.classList.remove('hide');pdfViewer.classList.add('hide');tabEmbed.classList.add('btn');tabPdf.classList.remove('btn');}
-function showPdf(){embedResume.classList.add('hide');pdfViewer.classList.remove('hide');tabPdf.classList.add('btn');tabEmbed.classList.remove('btn');}
-tabEmbed.onclick=showEmbedded;tabPdf.onclick=showPdf;
-
-printButton.onclick=()=>{const html=embedResume.innerHTML;const w=window.open('','_blank','width=900,height=700');const d=w.document;
-d.open();d.write(`<html><head><title>Resume - PRABHAKAR BEHERA</title><style>body{font-family:Inter;margin:28px;color:#042a3d}h2{color:#1a89d8}</style></head><body>${html}<script>window.onload=()=>window.print();<\/script></body></html>`);d.close();};
-
-window.addEventListener('load',()=>document.getElementById('signature').classList.add('animate'));
-const obs=new IntersectionObserver((entries,obs)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
-document.querySelectorAll('.fade-in').forEach(e=>obs.observe(e));
+const themeBtn=document.getElementById('themeToggle');
+themeBtn.onclick=()=>{document.body.classList.toggle('dark');};
+window.addEventListener('load',()=>document.getElementById('signature').classList.add('show'));
+const text="SAP B1 | Power BI | Data Analyst",el=document.getElementById("typewriter");
+let i=0;function type(){if(i<text.length){el.textContent=text.substring(0,i+1);i++;setTimeout(type,80);} }type();
 </script>
 </body>
 </html>
