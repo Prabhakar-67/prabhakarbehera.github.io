@@ -1,74 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About Me</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Me - Prabhakar</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f7fbff;
+            color: #263238;
+        }
+        header {
+            background: linear-gradient(90deg, #51c4fa, #ffffff 80%);
+            padding: 24px 0;
+            box-shadow: 0 1px 8px rgba(80,200,250,0.08);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        nav a {
+            color: #167abf;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 6px 18px;
+            border-radius: 20px;
+            transition: background 0.2s, color 0.2s;
+        }
+        nav a:hover {
+            background: #e5f6fd;
+            color: #0d3756;
+        }
+        .container {
+            max-width: 860px;
+            margin: 40px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(86,185,235, 0.09);
+            padding: 36px 32px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #c8e6fa;
+            object-fit: cover;
+            border: 4px solid #51c4fa;
+        }
+        h1 {
+            color: #0d3756;
         }
         h2 {
-            color: #0056b3;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 5px;
-        }
-        section {
-            background: white;
-            padding: 20px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 0 6px rgba(0,0,0,0.1);
+            border-left: 6px solid #51c4fa;
+            padding-left: 14px;
+            color: #167abf;
+            margin-top: 34px;
         }
         ul {
-            list-style-type: square;
-            margin-left: 20px;
+            margin: 10px 0 0 0;
+            padding-left: 22px;
+        }
+        footer {
+            text-align: center;
+            color: #3999be;
+            padding: 16px;
+            font-size: 1em;
+            margin-top: 60px;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 14px; }
+            .profile { flex-direction: column; gap: 12px; }
+            .profile-img { width: 80px; height: 80px; }
         }
     </style>
 </head>
 <body>
-    <section>
-        <h2>About Me</h2>
-        <p>
-            I come from the village of Gulumunda in the Rayagada district of Odisha. I completed my schooling at Gulumunda High School up to 10th grade, followed by +2 Science at Shantiniketan Secondary High School, Gunupur. I earned my BSc in Computer Science from Gunupur Degree College.
-        </p>
-        <p>
-            Currently, I am working at Rextone Industries Ltd in Gujarat, where I have been employed since August 2023. Starting as an Officer in SAP Business One, I have grown into a Data Analyst role. During this time, I have enhanced my skills through courses in SAP Business One implementation, Power BI, and Data Analytics. My company has generously supported my learning journey, allowing me to apply these skills practically in our systems.
-        </p>
-        <p>
-            I am passionate about leveraging data and technology to drive business improvements and look forward to continued growth in this field.
-        </p>
-    </section>
-
-    <section>
-        <h2>Professional Summary</h2>
-        <p>
-            After earning my B.Sc. in Computer Science, I initially prepared for government jobs but chose to pursue a practical career path due to my family’s financial situation. Moving to Vadodara, I secured a job through my first interview, which became a turning point in my professional journey. This experience taught me dedication, continuous learning, and adaptability.
-        </p>
-        <p>
-            At Rex-Tone Industries Ltd, I work as an Officer – SAP, managing SAP Business One operations, Crystal Reports, and Power BI dashboards. I have designed interactive dashboards for management, created custom reports, and contributed to improved departmental efficiency through creative solutions.
-        </p>
-    </section>
-
-    <section>
-        <h2>Key Skills & Tools</h2>
-        <ul>
-            <li><strong>SAP Business One (SAP B1):</strong> Functional operations and custom report development</li>
-            <li><strong>Crystal Reports:</strong> Advanced report design and data structuring</li>
-            <li><strong>Power BI:</strong> Interactive dashboard creation and data visualization</li>
-            <li><strong>SQL & Data Analytics:</strong> Query optimization and business insights generation</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Future Goals</h2>
-        <p>
-            I aspire to become a skilled SAP B1 Consultant and Data Visualization Expert, combining technical knowledge with business insight to deliver efficient and visually impactful reporting solutions. My goal is to bridge technology, analytics, and creativity for meaningful business outcomes.
-        </p>
-    </section>
+    <header>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#summary">Summary</a>
+            <a href="#skills">Skills</a>
+            <a href="#goals">Goals</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="profile" id="about">
+            <img src="profile.jpg" alt="My Profile Photo" class="profile-img">
+            <div>
+                <h1>Prabhakar</h1>
+                <p>
+                    I come from the village of Gulumunda in the Rayagada district of Odisha.
+                    I completed my schooling at Gulumunda High School up to 10th grade, followed by +2 Science at Shantiniketan Secondary High School, Gunupur.
+                    I earned my BSc in Computer Science from Gunupur Degree College.<br><br>
+                    Currently, I'm working at Rextone Industries Ltd in Gujarat, where I've grown from Officer – SAP Business One to Data Analyst.
+                    My journey has included SAP Business One implementation, Power BI, and Data Analytics—skills I've applied directly within the company's systems.
+                </p>
+            </div>
+        </section>
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <p>
+                I began by preparing for government jobs, but my family’s situation led me to seize a practical opportunity after moving to Vadodara.
+                My career at Rex-Tone Industries Ltd has transformed me—teaching me continuous learning, professionalism, and adaptability. I now manage SAP B1, design Crystal Reports, and build Power BI dashboards for management insights.
+            </p>
+        </section>
+        <section id="skills">
+            <h2>Key Skills & Tools</h2>
+            <ul>
+                <li><strong>SAP Business One (SAP B1):</strong> Functional operations and custom reports</li>
+                <li><strong>Crystal Reports:</strong> Advanced report design and data structuring</li>
+                <li><strong>Power BI:</strong> Dashboard creation and visualization</li>
+                <li><strong>SQL & Data Analytics:</strong> Business insights and query optimization</li>
+            </ul>
+        </section>
+        <section id="goals">
+            <h2>Future Goals</h2>
+            <p>
+                I aim to become a skilled SAP B1 Consultant and Data Visualization Expert—bridging technology, analytics, and creativity to deliver impactful business outcomes.
+            </p>
+        </section>
+    </div>
+    <footer>
+        &copy; 2025 Prabhakar | Powered by GitHub Pages
+    </footer>
 </body>
 </html>
