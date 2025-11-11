@@ -1,232 +1,535 @@
-<!doctype html>
+do one thing add accordingly in the below Script
+
+
+<!doctype html> 
 <html lang="en">
 <head>
   <!-- ======================================================
-       Prabhakar Behera — Corporate-Modern Landing + Village Tribute
+       Prabhakar Behera — World-class Corporate-Modern Landing
+       Single file (index.html) — drop profile.jpg and resume.pdf alongside
        ====================================================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Prabhakar Behera | SAP B1 · Power BI · Data Analyst</title>
   <meta name="description" content="Prabhakar Behera — SAP Business One Specialist & Power BI Developer turning data into business decisions." />
+  <meta name="keywords" content="Prabhakar Behera, SAP Business One, Power BI, Crystal Reports, Analytics, Dashboard" />
 
+  <!-- Open Graph / Social preview (replace og:url with your real URL after deploy) -->
+  <meta property="og:title" content="Prabhakar Behera | SAP B1 · Power BI · Data Analyst" />
+  <meta property="og:description" content="Corporate-modern portfolio — SAP B1, Power BI & Crystal Reports specialist." />
+  <meta property="og:image" content="prabhakar-og-banner.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-github-pages-url-here" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts & icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-
+  <!-- Use system fonts for corporate feel -->
   <style>
+    /* ============================
+       THEME VARIABLES
+       ============================ */
     :root{
-      --accent1:#138de2;
-      --accent2:#22c1d6;
+      --accent1:#138de2;   /* azure */
+      --accent2:#22c1d6;   /* aqua */
       --bg:#f5f9fb;
       --card:#ffffff;
       --text:#0a2740;
       --muted:#3b6b86;
-      --shadow:0 10px 30px rgba(12,60,90,0.08);
+      --glass: rgba(255,255,255,0.85);
+      --shadow: 0 10px 30px rgba(12,60,90,0.08);
+      --max-width:1100px;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
+    body.dark{
+      --bg: #06121d;
+      --card: rgba(8,18,28,0.7);
+      --text:#eaf7ff;
+      --muted:#93c0dc;
+      --glass: rgba(255,255,255,0.03);
+      --shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* ============================
+       BASE / LAYOUT
+       ============================ */
+    *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      font-family:"Segoe UI",system-ui,Arial;
+      margin:0;
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial;
       background:var(--bg);
       color:var(--text);
-      padding-top:78px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      transition: background .35s ease, color .35s ease;
+      padding-top:78px; /* header height offset */
     }
+    a{color:inherit}
+    main{max-width:var(--max-width);margin:0 auto;padding:28px 22px 80px 22px}
 
-    /* ===== HEADER ===== */
+    /* ============================
+       NAV / HEADER (fixed & always visible)
+       ============================ */
     header{
-      position:fixed;top:0;left:0;right:0;height:78px;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:10px 26px;
-      z-index:1000;background:rgba(255,255,255,0.9);
-      backdrop-filter:blur(6px);
-      box-shadow:var(--shadow);
+      position:fixed;top:0;left:0;right:0;height:78px;display:flex;align-items:center;justify-content:space-between;
+      padding:10px 26px;z-index:2000;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+      transition: background .35s ease;
     }
-    nav ul{display:flex;list-style:none;gap:20px}
-    nav a{text-decoration:none;color:var(--muted);font-weight:600}
-    nav a:hover,nav a.active{color:var(--accent1)}
+    body.dark header{background: linear-gradient(180deg, rgba(6,18,30,0.8), rgba(6,18,30,0.6));}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .brand img{width:44px;height:44px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,0.08)}
+    .brand h1{font-size:1.02rem;margin:0;font-weight:700;letter-spacing:0.2px}
 
-    main{max-width:1100px;margin:auto;padding:20px}
+    nav ul{list-style:none;display:flex;gap:18px;align-items:center;margin:0;padding:0}
+    nav a{font-weight:600;text-decoration:none;color:var(--muted);padding:6px 8px;border-radius:8px}
+    nav a:hover{color:var(--accent1);background:transparent}
+    nav a.active{color:var(--accent1);box-shadow: inset 0 -3px 0 var(--accent1);}
 
-    /* ===== HERO ===== */
-    .hero-wrap{position:relative;margin-top:12px;padding:48px;border-radius:18px;overflow:hidden;
-      background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#fff;box-shadow:var(--shadow);}
-    .hero-content{position:relative;z-index:3;padding:36px 40px;}
-    .hero-title{font-size:2.8rem;font-weight:800;margin-bottom:10px;}
-    .hero-sub{font-size:1rem;font-weight:600;color:rgba(255,255,255,0.9);}
-    .hero-quote{font-style:italic;margin-top:12px;}
-    .btn-resume{margin-top:18px;display:inline-block;padding:12px 22px;
-      border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:#fff;text-decoration:none;font-weight:700;}
-    .btn-resume:hover{background:rgba(255,255,255,0.1)}
+    /* theme toggle */
+    #themeToggle{border:none;background:var(--card);padding:8px;border-radius:10px;cursor:pointer;box-shadow:0 6px 18px rgba(10,40,70,0.06)}
+    body.dark #themeToggle{background:rgba(255,255,255,0.03);color:var(--accent1)}
 
-    /* ===== CONTENT SECTIONS ===== */
-    section{margin-top:60px}
-    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--shadow);}
-    .section-title{color:var(--accent1);font-size:1.3rem;margin-bottom:12px;border-left:5px solid var(--accent2);padding-left:10px}
+    /* ============================
+       HERO — with layered tech background
+       ============================ */
+    .hero-wrap{ /* container for hero + background */
+      margin-top:12px;padding:48px;border-radius:18px;position:relative;overflow:hidden;
+      background: linear-gradient(135deg,var(--accent1) 0%, var(--accent2) 100%);
+      box-shadow: 0 18px 60px rgba(6,40,80,0.08);
+    }
+
+    /* Hero decorative watermark layers:
+       - svg wires (charts/grid)
+       - keyboard silhouette
+       - canvas (flowing code lines/dots)
+       All back layers are low opacity and sit behind .hero-content */
+    .hero-bg-svg{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0.12;filter:grayscale(10%);}
+    .hero-bg-keyboard{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.06;filter:blur(2px) saturate(.9)}
+    canvas#tech-bg{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0.22;mix-blend-mode:screen;}
+
+    .hero-content{position:relative;z-index:3;padding:36px 40px;max-width:95%}
+    .hero-title{font-size:2.8rem;font-weight:800;margin:0 0 6px;color:#fff;line-height:1}
+    .hero-sub{font-size:1.05rem;font-weight:600;margin:6px 0;color:rgba(255,255,255,0.92)}
+    /* subtitle accent color — tuned to be readable */
+    .hero-sub .highlight{color:rgba(255,255,255,0.95);background:transparent;padding-left:6px}
+
+    .hero-quote{font-style:italic;color:rgba(255,255,255,0.92);margin-top:14px;margin-bottom:18px;opacity:0.95}
+
+    .hero-actions{display:flex;gap:12px;align-items:center;margin-top:18px}
+    .btn-resume{
+      background:transparent;border:1px solid rgba(255,255,255,0.18);color:#fff;padding:12px 22px;border-radius:10px;font-weight:700;
+      text-decoration:none;display:inline-flex;align-items:center;gap:10px;backdrop-filter: blur(2px)
+    }
+    .btn-resume:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.08)}
+
+    /* ============================
+       PAGE SECTIONS
+       ============================ */
+    section{margin-top:48px}
+    .section-title{font-size:1.2rem;color:var(--accent1);margin-bottom:12px;padding-left:12px;border-left:4px solid rgba(255,255,255,0);display:inline-block}
+    .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 10px 26px rgba(22,66,92,0.06)}
     .muted{color:var(--muted)}
 
-    /* ===== VILLAGE SECTION ===== */
-    #village{margin-top:80px;padding:60px 0;
-      background:linear-gradient(to bottom,#f0f9ff,#e9f5f9,#f8fbfd);}
-    #village h2{font-size:1.8rem;color:var(--accent1);margin-bottom:10px;border-left:6px solid var(--accent2);padding-left:12px;}
-    #village p{line-height:1.8;font-size:1.05rem;color:var(--muted);margin-bottom:20px;}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:30px;}
-    .gallery img{width:100%;border-radius:12px;box-shadow:0 5px 18px rgba(0,0,0,0.08);transition:transform .3s;}
-    .gallery img:hover{transform:scale(1.03);}
+    /* Two-column responsive layout for some sections */
+    .grid-2{display:grid;grid-template-columns:1fr 360px;gap:28px}
+    @media (max-width:980px){.grid-2{grid-template-columns:1fr}}
 
-    /* ===== FOOTER ===== */
-    footer{text-align:center;margin-top:60px;padding:20px;color:var(--muted)}
+    /* Footer & signature */
+    footer{text-align:center;margin-top:36px;color:var(--muted);padding-bottom:60px}
+    .signature{font-weight:600;display:inline-block;position:relative}
+    .signature::after{content:"";position:absolute;left:0;bottom:-6px;height:3px;background:linear-gradient(90deg,var(--accent1),var(--accent2));border-radius:3px;width:0;transition:width .9s}
+    .signature.reveal::after{width:84px}
+
+    /* small utilities */
+    .small{font-size:0.95rem}
   </style>
 </head>
 <body>
 
-<header>
-  <a href="#top" class="brand"><strong>PRABHAKAR BEHERA</strong></a>
-  <nav>
-    <ul>
-      <li><a href="#top" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#village">Know More</a></li> <!-- ✅ NEW TAB -->
-    </ul>
-  </nav>
-</header>
+  <!-- ========== HEADER (fixed) ========== -->
+  <header>
+    <a class="brand" href="#top" aria-label="Home">
+      <img src="profile.jpg" alt="Prabhakar Behera">
+      <h1>PRABHAKAR BEHERA</h1>
+    </a>
 
-<main>
-  <!-- ===== HERO ===== -->
-  <section id="top" class="hero-wrap">
-    <div class="hero-content">
-      <h2 class="hero-title">Prabhakar Behera</h2>
-      <div class="hero-sub">SAP B1 | Power BI | Data Analyst</div>
-      <div class="hero-quote">“Time never moves fast, but when it arrives, it changes the world. Those who wait for it are the true victors.”</div>
-      <a href="resume.pdf" download class="btn-resume"><i class="fa-regular fa-file-lines"></i> Download Resume</a>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section id="about">
-    <h3 class="section-title">About Me</h3>
-    <div class="card">
-      <p class="muted">
-        I’m a results-oriented analytics professional with over <strong>2 years</strong> at Rex-Tone Industries Ltd.
-        With a B.Sc. in Computer Science, I combine SAP Business One expertise with Power BI visualizations and Crystal Reports
-        to deliver accurate, automated, and actionable reporting solutions.
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section id="skills">
-    <h3 class="section-title">Key Skills & Tools</h3>
-    <div class="card">
-      <ul class="muted">
-        <li><strong>SAP Business One (SAP B1):</strong> operations, Query Manager, custom reports & automation</li>
-        <li><strong>Power BI:</strong> interactive dashboards & storytelling</li>
-        <li><strong>Crystal Reports:</strong> report design & distribution</li>
-        <li><strong>SQL & Data Analytics:</strong> joins, optimization & data insight</li>
+    <!-- NAVIGATION: links scroll to sections. 'active' class set via JS -->
+    <nav aria-label="Main Navigation">
+      <ul id="mainNav">
+        <li><a href="#top" data-target="top" class="active">Home</a></li>
+        <li><a href="#about" data-target="about">About</a></li>
+        <li><a href="#skills" data-target="skills">Skills</a></li>
+        <li><a href="#projects" data-target="projects">Projects</a></li>
+        <li><a href="#experience" data-target="experience">Experience</a></li>
+        <li><a href="#education" data-target="education">Education</a></li>
+        <li><a href="#contact" data-target="contact">Contact</a></li>
       </ul>
+    </nav>
+
+    <button id="themeToggle" title="Toggle light / dark" aria-pressed="false">🌓</button>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main>
+
+    <!-- =========================
+         HERO: layered tech background (SVG outlines + keyboard + canvas)
+         ========================= -->
+    <section class="hero-wrap" aria-label="Introduction">
+      <!-- SVG overlay: faint dashboard outlines, charts, circuit-grid (static vector so it's crisp) -->
+      <!-- Comment: you can edit shapes below to add/remove icons; opacity kept low for watermark effect -->
+      <svg class="hero-bg-svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <!-- dashboard rectangle outlines -->
+        <g fill="none" stroke="#ffffff" stroke-width="1.6" opacity="0.12">
+          <rect x="90" y="80" width="420" height="220" rx="8"></rect>
+          <rect x="540" y="80" width="380" height="220" rx="8"></rect>
+          <rect x="950" y="80" width="520" height="220" rx="8"></rect>
+
+          <!-- small chart bars inside the first -->
+          <g opacity="0.18" transform="translate(110,110)">
+            <rect x="4" y="60" width="18" height="60"></rect>
+            <rect x="32" y="30" width="18" height="90"></rect>
+            <rect x="60" y="10" width="18" height="110"></rect>
+            <rect x="88" y="45" width="18" height="75"></rect>
+          </g>
+
+          <!-- line chart inside second -->
+          <path d="M560 220 C 600 150, 650 160, 680 130 C 720 90, 760 140, 880 90" stroke-linecap="round" opacity="0.16"></path>
+
+          <!-- small pie chart (third) -->
+          <circle cx="990" cy="170" r="26" stroke-width="2" opacity="0.12"></circle>
+        </g>
+
+        <!-- circuit-grid decorative lines -->
+        <g stroke="#ffffff" stroke-width="1" opacity="0.06">
+          <path d="M40 300 H1560" />
+          <path d="M40 360 H1560" />
+          <path d="M40 420 H1560" />
+          <path d="M200 60 V540" />
+          <path d="M360 60 V540" />
+          <path d="M1280 60 V540" />
+        </g>
+      </svg>
+
+      <!-- keyboard silhouette (raster-like but as vector path for crispness) -->
+      <!-- opacity very low so it feels like watermark at back -->
+      <svg class="hero-bg-keyboard" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="#fff" opacity="0.04">
+          <rect x="120" y="370" width="1360" height="120" rx="20"></rect>
+          <!-- small key blocks -->
+          <g transform="translate(160,395)" opacity="0.06">
+            <!-- repeated keys (just a few blocks to show keyboard feel) -->
+            <rect x="0" y="0" width="40" height="28" rx="3"></rect>
+            <rect x="50" y="0" width="40" height="28" rx="3"></rect>
+            <rect x="100" y="0" width="40" height="28" rx="3"></rect>
+            <rect x="150" y="0" width="40" height="28" rx="3"></rect>
+            <rect x="200" y="0" width="40" height="28" rx="3"></rect>
+            <rect x="260" y="0" width="100" height="28" rx="3"></rect>
+          </g>
+        </g>
+      </svg>
+
+      <!-- Canvas layer for animated flowing code lines + glowing dots -->
+      <canvas id="tech-bg" aria-hidden="true"></canvas>
+
+      <!-- HERO CONTENT -->
+      <div class="hero-content">
+        <h2 class="hero-title">Prabhakar Behera</h2>
+
+        <!-- Typewriter subtitle (color tuned white-ish for contrast) -->
+        <div class="hero-sub small">
+          <span class="highlight" id="typewriter">SAP B1 | Power BI | Data Analyst</span>
+        </div>
+
+        <div class="hero-quote">
+          “Time never moves fast, but when it arrives, it changes the world. Those who wait for it are the true victors.”
+        </div>
+
+        <div class="hero-actions">
+          <!-- Download resume (visible to HR) -->
+          <a class="btn-resume" href="resume.pdf" download aria-label="Download Resume (PDF)">
+            <i class="fa-regular fa-file-lines" style="margin-right:8px"></i> Download Resume
+          </a>
+
+          <!-- small social icons -->
+          <div style="margin-left:14px">
+            <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank" title="LinkedIn" aria-label="LinkedIn" style="color:rgba(255,255,255,0.95);margin-right:10px;">
+              <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+            <a href="https://github.com/" target="_blank" title="GitHub" aria-label="GitHub" style="color:rgba(255,255,255,0.95)">
+              <i class="fab fa-github fa-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CONTENT SECTIONS (About, Skills, Projects, ...)
+         ========================= -->
+
+    <section id="about" aria-label="About">
+      <h3 class="section-title">About Me</h3>
+      <div class="card">
+        <p class="muted">
+          I’m a results-oriented analytics professional with over <strong>2 years</strong> at Rex-Tone Industries Ltd.
+          With a B.Sc. in Computer Science, I combine SAP Business One expertise with Power BI visualizations and Crystal Reports to
+          deliver accurate, automated, and actionable reporting solutions. I work closely with finance, procurement, and sales teams to
+          reduce manual effort, improve compliance, and enable data-driven decisions.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" aria-label="Skills">
+      <h3 class="section-title">Key Skills & Tools</h3>
+      <div class="card">
+        <ul class="muted">
+          <li><strong>SAP Business One (SAP B1):</strong> functional operations, Query Manager, custom reports & automations</li>
+          <li><strong>Power BI:</strong> DAX modeling, interactive dashboards, scheduled refresh & storytelling</li>
+          <li><strong>Crystal Reports:</strong> advanced printable reports, parameters, scheduled distribution</li>
+          <li><strong>SQL & Data Integration:</strong> joins, optimization, ETL concepts & reporting back-ends</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" aria-label="Projects">
+      <h3 class="section-title">Project Highlights</h3>
+      <div class="card">
+        <ul class="muted">
+          <li><b>Sales Report Dashboard</b> — Interactive Power BI dashboard integrating SAP B1 data for regional performance and product insights.</li>
+          <li><b>GSTR & Procurement Reports</b> — Finance-facing reports and dashboards for GST reconciliation and vendor analytics.</li>
+          <li><b>Crystal Reports Automation</b> — Parameterized scheduled reports in SAP B1 for finance & operations distribution.</li>
+          <li><b>Reports Automation</b> — End-to-end scheduling and exported pipelines that reduced month-end manual work.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <section id="experience" aria-label="Experience">
+        <h3 class="section-title">Experience</h3>
+        <div class="card">
+          <p><strong>Officer — SAP</strong> | Rex-Tone Industries Ltd — Vadodara, Gujarat<br><i>Aug 2023 – Present (2+ years)</i></p>
+          <ul class="muted">
+            <li>Manage and maintain SAP Business One (SAP B1) and ensure data integrity.</li>
+            <li>Design and generate Crystal Reports and SAP queries for finance and procurement.</li>
+            <li>Resolve SAP-related issues; provide training and user support.</li>
+            <li>Optimize workflows and automate recurring MIS and dashboards.</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside id="education" aria-label="Education" style="align-self:start">
+        <h3 class="section-title">Education & Certifications</h3>
+        <div class="card">
+          <p><strong>B.Sc. — Computer Science</strong><br>Gunupur Degree College, Gunupur (2022–2024)</p>
+          <ul class="muted">
+            <li>SAP Business One B1 Complete Training with Implementation (Certificate)</li>
+            <li>Microsoft Excel Using AI Workshop (Certificate)</li>
+          </ul>
+        </div>
+      </aside>
     </div>
-  </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects">
-    <h3 class="section-title">Project Highlights</h3>
-    <div class="card">
-      <ul class="muted">
-        <li><b>Sales Report Dashboard</b> — Interactive Power BI dashboard integrating SAP B1 data for regional performance and product insights.</li>
-        <li><b>GSTR & Procurement Reports</b> — Finance-facing reports and dashboards for GST reconciliation and vendor analytics.</li>
-        <li><b>Crystal Reports Automation</b> — Parameterized scheduled reports in SAP B1 for finance & operations distribution.</li>
-        <li><b>Reports Automation</b> — End-to-end scheduling and exported pipelines that reduced month-end manual work.</li>
-      </ul>
-    </div>
-  </section>
+    <section id="contact" aria-label="Contact">
+      <h3 class="section-title">Contact</h3>
+      <div class="card">
+        <p class="muted"><strong>Email:</strong> <a href="mailto:prabhakarbehera74778@gmail.com">prabhakarbehera74778@gmail.com</a></p>
+        <p class="muted"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">View Profile</a></p>
+      </div>
+    </section>
 
-  <!-- ===== EXPERIENCE ===== -->
-  <section id="experience">
-    <h3 class="section-title">Experience</h3>
-    <div class="card">
-      <p><strong>Officer — SAP</strong> | Rex-Tone Industries Ltd — Vadodara, Gujarat<br><i>Aug 2023 – Present (2+ years)</i></p>
-      <ul class="muted">
-        <li>Manage SAP B1 system & ensure data integrity.</li>
-        <li>Design Crystal Reports & SAP queries for finance and procurement.</li>
-        <li>Resolve SAP issues and provide user training.</li>
-      </ul>
-    </div>
-  </section>
+    <!-- FOOTER -->
+    <footer>
+      <div class="muted small">&copy; <span id="year"></span> Prabhakar Behera — Crafted with analytics & design excellence</div>
+      <div style="margin-top:8px"><span id="signature" class="signature">— Prabhakar Behera</span></div>
+    </footer>
+  </main>
 
-  <!-- ===== EDUCATION ===== -->
-  <section id="education">
-    <h3 class="section-title">Education</h3>
-    <div class="card">
-      <p><strong>B.Sc. — Computer Science</strong><br>Gunupur Degree College, Gunupur (2022–2024)</p>
-      <ul class="muted">
-        <li>SAP Business One Implementation Training (Certificate)</li>
-        <li>Microsoft Excel Using AI Workshop (Certificate)</li>
-      </ul>
-    </div>
-  </section>
+  <!-- =========================
+       SCRIPTS: interactions, canvas animation, nav highlighting
+       Comments explain each block for easy editing later
+       ========================= -->
+  <script>
+    // ---------- AUTO YEAR ----------
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact">
-    <h3 class="section-title">Contact</h3>
-    <div class="card">
-      <p class="muted"><strong>Email:</strong> <a href="mailto:prabhakarbehera74778@gmail.com">prabhakarbehera74778@gmail.com</a></p>
-      <p class="muted"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">View Profile</a></p>
-    </div>
-  </section>
-
-  <!-- ===== 🌾 VILLAGE SECTION (NEW) ===== -->
-  <section id="village">
-    <h2>The Village — Gulumunda</h2>
-    <p>
-      When dawn paints its first light across the quiet fields and the sun peeks lazily through the mist,  
-      <strong>Gulumunda</strong> awakens not with noise, but with rhythm —  
-      the rhythm of farmers speaking to the soil, of temple bells greeting the morning breeze,  
-      and of children chasing the light toward school with laughter echoing across the paddies.
-    </p>
-    <p>
-      Here, time flows with meaning. Clouds are stories, rain is memory,  
-      and every breeze carries a blessing whispered by generations.  
-      Beneath its banyan trees and age-old temples, Gulumunda lives — proud, poetic, and pure.
-    </p>
-
-    <!-- Responsive Image Gallery -->
-    <div class="gallery">
-      <img src="img1.jpg" alt="Gulumunda Image 1">
-      <img src="img2.jpg" alt="Gulumunda Image 2">
-      <img src="img03.jpg" alt="Gulumunda Image 3">
-      <img src="img4.jpg" alt="Gulumunda Image 4">
-      <img src="img5.jpg" alt="Gulumunda Image 5">
-      <img src="img6.jpg" alt="Gulumunda Image 6">
-      <img src="img7.jpg" alt="Gulumunda Image 7">
-      <img src="img8.jpg" alt="Gulumunda Image 8">
-      <img src="img9.jpg" alt="Gulumunda Image 9">
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>&copy; <span id="year"></span> Prabhakar Behera — From Gulumunda to the world 🌾</p>
-  </footer>
-</main>
-
-<script>
-  // Auto Year Update
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Nav active link highlight
-  const navLinks=document.querySelectorAll('nav a');
-  window.addEventListener('scroll',()=>{
-    let fromTop=window.scrollY+120;
-    navLinks.forEach(link=>{
-      const sec=document.querySelector(link.getAttribute('href'));
-      if(sec && sec.offsetTop<=fromTop && sec.offsetTop+sec.offsetHeight>fromTop){
-        link.classList.add('active');
-      }else link.classList.remove('active');
+    // ---------- THEME TOGGLE ----------
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      // set aria-pressed for accessibility
+      const pressed = document.body.classList.contains('dark');
+      themeBtn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
     });
-  });
-</script>
 
+    // ---------- TYPEWRITER SUBTITLE ----------
+    // Simple typewriter effect for subtitle
+    (function typewriter(){
+      const text = "SAP B1 | Power BI | Data Analyst";
+      const el = document.getElementById('typewriter');
+      let i = 0;
+      function step(){
+        el.textContent = text.slice(0, i+1);
+        i++;
+        if(i < text.length) setTimeout(step, 65);
+      }
+      step();
+    })();
+
+    // ---------- HERO CANVAS: Dots & Flowing Code Lines ----------
+    // This draws glowing data dots and horizontal code-like lines giving motion and depth.
+    (function heroCanvas(){
+      const canvas = document.getElementById('tech-bg');
+      if(!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W, H;
+      // arrays for animated elements
+      const dots = [];
+      const lines = [];
+
+      function resize(){
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      // initialize dots (glowing)
+      const DOT_COUNT = Math.max(24, Math.floor(W/60));
+      for(let i=0;i<DOT_COUNT;i++){
+        dots.push({
+          x: Math.random()*W,
+          y: Math.random()*H,
+          r: 1 + Math.random()*2.2,
+          dx: (Math.random()-0.5)*0.35,
+          dy: (Math.random()-0.5)*0.35,
+          alpha: 0.25 + Math.random()*0.6
+        });
+      }
+
+      // initialize flowing code lines
+      const LINE_COUNT = Math.max(6, Math.floor(W/250));
+      for(let j=0;j<LINE_COUNT;j++){
+        lines.push({
+          x: Math.random()*W,
+          y: Math.random()*H,
+          len: 120 + Math.random()*240,
+          speed: 0.25 + Math.random()*0.6,
+          alpha: 0.12 + Math.random()*0.15
+        });
+      }
+
+      function drawGrid(){
+        // very faint circuit-grid lines (horizontal)
+        ctx.save();
+        ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+        ctx.lineWidth = 1;
+        for(let gx=0; gx<W; gx+=80){
+          ctx.beginPath(); ctx.moveTo(gx,0); ctx.lineTo(gx,H); ctx.stroke();
+        }
+        for(let gy=0; gy<H; gy+=60){
+          ctx.beginPath(); ctx.moveTo(0,gy); ctx.lineTo(W,gy); ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      function draw(){
+        ctx.clearRect(0,0,W,H);
+
+        // faint grid  
+        drawGrid();
+
+        // moving "code" lines
+        ctx.save();
+        ctx.lineWidth = 2;
+        lines.forEach(l => {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(255,255,255,${l.alpha})`;
+          ctx.moveTo(l.x, l.y);
+          // segmented line for a more "code-like" feeling
+          for(let k=0;k<6;k++){
+            const segLen = l.len*(0.14 + 0.12*Math.sin((k+1)*1.2 + performance.now()/3000));
+            ctx.lineTo(l.x + segLen, l.y + (k%2 ? 4 : -4));
+            ctx.moveTo(l.x + segLen + 6, l.y + (k%2 ? 4 : -4));
+          }
+          ctx.stroke();
+          l.x += l.speed;
+          if(l.x - l.len > W) l.x = -l.len;
+        });
+        ctx.restore();
+
+        // glowing dots
+        dots.forEach(d => {
+          const g = ctx.createRadialGradient(d.x, d.y, 0, d.x, d.y, d.r*6);
+          g.addColorStop(0, `rgba(255,255,255,${0.9 * d.alpha})`);
+          g.addColorStop(1, `rgba(255,255,255,0)`);
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(d.x, d.y, d.r*6, 0, Math.PI*2);
+          ctx.fill();
+
+          d.x += d.dx; d.y += d.dy;
+          if(d.x < 0 || d.x > W) d.dx *= -1;
+          if(d.y < 0 || d.y > H) d.dy *= -1;
+        });
+
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    // ---------- NAV: Smooth scrolling & active link highlighting ----------
+    (function navBehavior(){
+      const navLinks = document.querySelectorAll('nav a');
+      const sections = Array.from(document.querySelectorAll('main section[id]'));
+      // click interception for smooth scroll
+      navLinks.forEach(a => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = a.getAttribute('href').slice(1);
+          const el = document.getElementById(targetId);
+          if(el){
+            // scroll with offset to account for fixed header
+            const offset = 78;
+            const top = el.getBoundingClientRect().top + window.scrollY - offset + 6;
+            window.scrollTo({top, behavior:'smooth'});
+          }
+        });
+      });
+
+      // on scroll, update active nav link
+      function onScroll(){
+        const offset = 120;
+        let current = sections[0];
+        for(const sec of sections){
+          const pos = sec.getBoundingClientRect().top;
+          if(pos - offset <= 0) current = sec;
+        }
+        // set active class
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+      }
+      window.addEventListener('scroll', onScroll);
+      // initial run
+      onScroll();
+    })();
+
+    // ---------- REVEAL SIGNATURE ----------
+    window.addEventListener('load', ()=> {
+      document.getElementById('signature').classList.add('reveal');
+    });
+
+    // ---------- OPTIONAL: reduce motion for users who prefer it ----------
+    // Respect prefers-reduced-motion; reduce canvas animations slightly if set
+    (function respectReducedMotion(){
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if(mq && mq.matches){
+        // if reduced motion, stop the heavy animation loops (we could implement a simple fallback)
+        // For simplicity, we won't aggressively change here; developers can add a flag to stop animations.
+        // Keep this as a placeholder for future accessibility tweaks.
+      }
+    })();
+  </script>
 </body>
 </html>
