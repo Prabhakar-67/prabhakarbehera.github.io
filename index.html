@@ -484,20 +484,27 @@
     (function navBehavior(){
       const navLinks = document.querySelectorAll('nav a');
       const sections = Array.from(document.querySelectorAll('main section[id]'));
-      // click interception for smooth scroll
-      navLinks.forEach(a => {
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetId = a.getAttribute('href').slice(1);
-          const el = document.getElementById(targetId);
-          if(el){
-            // scroll with offset to account for fixed header
-            const offset = 78;
-            const top = el.getBoundingClientRect().top + window.scrollY - offset + 6;
-            window.scrollTo({top, behavior:'smooth'});
-          }
-        });
-      });
+  // click interception for smooth scroll
+navLinks.forEach(a => {
+  a.addEventListener('click', (e) => {
+    const href = a.getAttribute('href');
+
+    // ✅ Only intercept internal links that start with "#"
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.slice(1);
+      const el = document.getElementById(targetId);
+      if (el) {
+        // scroll with offset to account for fixed header
+        const offset = 78;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset + 6;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+    // ✅ Allow normal behavior for other links like "village.html"
+  });
+});
+
 
       // on scroll, update active nav link
       function onScroll(){
@@ -533,5 +540,6 @@
   </script>
 </body>
 </html>
+
 
 
