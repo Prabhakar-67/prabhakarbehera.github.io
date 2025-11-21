@@ -1,9 +1,9 @@
-<!doctype html> 
+<!doctype html>  
 <html lang="en">
 <head>
   <!-- ======================================================
-       Prabhakar Behera — World-class Corporate-Modern Landing
-       Single file (index.html) — drop profile.jpg and resume.pdf alongside
+       Prabhakar Behera — Ultra-Premium Corporate Landing
+       With Persistent Theme & Animated Sun/Moon Morph Toggle
        ====================================================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -11,361 +11,335 @@
   <meta name="description" content="Prabhakar Behera — SAP Business One Specialist & Power BI Developer turning data into business decisions." />
   <meta name="keywords" content="Prabhakar Behera, SAP Business One, Power BI, Crystal Reports, Analytics, Dashboard" />
 
-  <!-- Open Graph / Social preview (replace og:url with your real URL after deploy) -->
-  <meta property="og:title" content="Prabhakar Behera | SAP B1 · Power BI · Data Analyst" />
-  <meta property="og:description" content="Corporate-modern portfolio — SAP B1, Power BI & Crystal Reports specialist." />
-  <meta property="og:image" content="prabhakar-og-banner.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-github-pages-url-here" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Fonts & icons -->
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <!-- Use system fonts for corporate feel -->
+
   <style>
-    /* ============================
+    /* =======================================================
        THEME VARIABLES
-       ============================ */
+       ======================================================= */
     :root{
-      --accent1:#138de2;   /* azure */
-      --accent2:#22c1d6;   /* aqua */
+      --accent1:#138de2;
+      --accent2:#22c1d6;
       --bg:#f5f9fb;
       --card:#ffffff;
       --text:#0a2740;
       --muted:#3b6b86;
-      --glass: rgba(255,255,255,0.85);
-      --shadow: 0 10px 30px rgba(12,60,90,0.08);
+      --shadow:0 10px 30px rgba(12,60,90,0.08);
       --max-width:1100px;
     }
     body.dark{
-      --bg: #06121d;
-      --card: rgba(8,18,28,0.7);
+      --bg:#06121d;
+      --card:rgba(8,18,28,0.7);
       --text:#eaf7ff;
       --muted:#93c0dc;
-      --glass: rgba(255,255,255,0.03);
-      --shadow: 0 10px 30px rgba(0,0,0,0.5);
+      --shadow:0 10px 30px rgba(0,0,0,0.45);
     }
 
-    /* ============================
-       BASE / LAYOUT
-       ============================ */
+    /* =======================================================
+       RESET & BASE LAYOUT
+       ======================================================= */
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial;
       background:var(--bg);
       color:var(--text);
+      font-family:"Segoe UI",system-ui;
+      padding-top:78px;
+      transition:background .35s,color .35s;
       -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      transition: background .35s ease, color .35s ease;
-      padding-top:78px; /* header height offset */
     }
-    a{color:inherit}
-    main{max-width:var(--max-width);margin:0 auto;padding:28px 22px 80px 22px}
 
-    /* ============================
-       NAV / HEADER (fixed & always visible)
-       ============================ */
+    /* =======================================================
+       HEADER (FIXED)
+       ======================================================= */
     header{
-      position:fixed;top:0;left:0;right:0;height:78px;display:flex;align-items:center;justify-content:space-between;
-      padding:10px 26px;z-index:2000;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
-      backdrop-filter: blur(6px);
-      box-shadow: var(--shadow);
-      transition: background .35s ease;
+      position:fixed;top:0;left:0;right:0;height:78px;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:10px 26px;z-index:2000;
+      background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.75));
+      backdrop-filter:blur(8px);
+      box-shadow:var(--shadow);
+      transition:background .35s ease;
     }
-    body.dark header{background: linear-gradient(180deg, rgba(6,18,30,0.8), rgba(6,18,30,0.6));}
+    body.dark header{
+      background:linear-gradient(180deg,rgba(6,18,30,0.85),rgba(6,18,30,0.65));
+    }
+
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-    .brand img{width:44px;height:44px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,0.08)}
-    .brand h1{font-size:1.02rem;margin:0;font-weight:700;letter-spacing:0.2px}
+    .brand img{width:44px;height:44px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,0.06)}
+    .brand h1{font-size:1.05rem;margin:0;font-weight:700}
 
-    nav ul{list-style:none;display:flex;gap:18px;align-items:center;margin:0;padding:0}
-    nav a{font-weight:600;text-decoration:none;color:var(--muted);padding:6px 8px;border-radius:8px}
-    nav a:hover{color:var(--accent1);background:transparent}
-    nav a.active{color:var(--accent1);box-shadow: inset 0 -3px 0 var(--accent1);}
-
-    /* theme toggle */
-    #themeToggle{border:none;background:var(--card);padding:8px;border-radius:10px;cursor:pointer;box-shadow:0 6px 18px rgba(10,40,70,0.06)}
-    body.dark #themeToggle{background:rgba(255,255,255,0.03);color:var(--accent1)}
-
-    /* ============================
-       HERO — with layered tech background
-       ============================ */
-    .hero-wrap{ /* container for hero + background */
-      margin-top:12px;padding:48px;border-radius:18px;position:relative;overflow:hidden;
-      background: linear-gradient(135deg,var(--accent1) 0%, var(--accent2) 100%);
-      box-shadow: 0 18px 60px rgba(6,40,80,0.08);
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+    nav a{
+      font-weight:600;color:var(--muted);
+      text-decoration:none;padding:6px 8px;border-radius:8px;
+      transition:0.25s
+    }
+    nav a:hover{color:var(--accent1);}
+    nav a.active{
+      color:var(--accent1);
+      box-shadow:inset 0 -3px 0 var(--accent1);
     }
 
-    /* Hero decorative watermark layers:
-       - svg wires (charts/grid)
-       - keyboard silhouette
-       - canvas (flowing code lines/dots)
-       All back layers are low opacity and sit behind .hero-content */
-    .hero-bg-svg{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0.12;filter:grayscale(10%);}
-    .hero-bg-keyboard{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.06;filter:blur(2px) saturate(.9)}
-    canvas#tech-bg{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0.22;mix-blend-mode:screen;}
+    /* =======================================================
+       ULTRA-PREMIUM SUN/MOON MORPH TOGGLE
+       Option A — Floating Animated Morph
+       ======================================================= */
+    #themeToggle{
+      width:48px;height:48px;
+      border-radius:50%;
+      border:none;
+      cursor:pointer;
+      position:relative;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(255,255,255,0.55);
+      backdrop-filter:blur(6px);
+      box-shadow:0 6px 20px rgba(0,0,0,0.15);
+      transition:0.3s;
+    }
+    body.dark #themeToggle{
+      background:rgba(255,255,255,0.08);
+      box-shadow:0 6px 20px rgba(0,0,0,0.45);
+    }
+
+    /* Sun/Moon icon layering */
+    .icon-sun,.icon-moon{
+      position:absolute;
+      font-size:1.4rem;
+      transition:opacity .5s,transform .6s ease;
+    }
+    .icon-sun{color:#f5c900;opacity:1;transform:scale(1) rotate(0deg);}
+    .icon-moon{color:#cce5ff;opacity:0;transform:scale(0.2) rotate(-180deg);}
+
+    body.dark .icon-sun{opacity:0;transform:scale(0.2) rotate(180deg);}
+    body.dark .icon-moon{opacity:1;transform:scale(1) rotate(0deg);}
+
+    /* Floating animation */
+    @keyframes floatUp{
+      0%{transform:translateY(0px);}
+      50%{transform:translateY(-3px);}
+      100%{transform:translateY(0px);}
+    }
+    #themeToggle{animation:floatUp 3s ease-in-out infinite;}
+
+
+    /* =======================================================
+       HERO SECTION
+       ======================================================= */
+    .hero-wrap{
+      margin-top:12px;padding:48px;
+      border-radius:18px;position:relative;overflow:hidden;
+      background:linear-gradient(135deg,var(--accent1),var(--accent2));
+      box-shadow:0 18px 60px rgba(6,40,80,0.08);
+    }
 
     .hero-content{position:relative;z-index:3;padding:36px 40px;max-width:95%}
-    .hero-title{font-size:2.8rem;font-weight:800;margin:0 0 6px;color:#fff;line-height:1}
-    .hero-sub{font-size:1.05rem;font-weight:600;margin:6px 0;color:rgba(255,255,255,0.92)}
-    /* subtitle accent color — tuned to be readable */
-    .hero-sub .highlight{color:rgba(255,255,255,0.95);background:transparent;padding-left:6px}
+    .hero-title{font-size:2.8rem;font-weight:800;color:#fff;margin:0}
+    .hero-sub{color:#fff;font-weight:600;margin-top:6px}
 
-    .hero-quote{font-style:italic;color:rgba(255,255,255,0.92);margin-top:14px;margin-bottom:18px;opacity:0.95}
-
-    .hero-actions{display:flex;gap:12px;align-items:center;margin-top:18px}
-    .btn-resume{
-      background:transparent;border:1px solid rgba(255,255,255,0.18);color:#fff;padding:12px 22px;border-radius:10px;font-weight:700;
-      text-decoration:none;display:inline-flex;align-items:center;gap:10px;backdrop-filter: blur(2px)
+    .hero-quote{
+      margin-top:14px;
+      color:rgba(255,255,255,0.92);
+      font-style:italic;
     }
-    .btn-resume:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.08)}
 
-    /* ============================
-       PAGE SECTIONS
-       ============================ */
+    .hero-actions{margin-top:18px;display:flex;gap:12px;align-items:center}
+    .btn-resume{
+      padding:12px 22px;border-radius:10px;font-weight:700;
+      color:white;text-decoration:none;border:1px solid rgba(255,255,255,0.25);
+      backdrop-filter:blur(3px);
+    }
+
+    /* =======================================================
+       CONTENT SECTIONS
+       ======================================================= */
+    main{max-width:var(--max-width);margin:0 auto;padding:28px}
+
     section{margin-top:48px}
-    .section-title{font-size:1.2rem;color:var(--accent1);margin-bottom:12px;padding-left:12px;border-left:4px solid rgba(255,255,255,0);display:inline-block}
-    .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 10px 26px rgba(22,66,92,0.06)}
+    .section-title{font-size:1.2rem;color:var(--accent1);margin-bottom:12px}
+
+    .card{
+      background:var(--card);
+      padding:22px;border-radius:12px;
+      box-shadow:0 10px 26px rgba(22,66,92,0.06);
+    }
     .muted{color:var(--muted)}
 
-    /* Two-column responsive layout for some sections */
-    .grid-2{display:grid;grid-template-columns:1fr 360px;gap:28px}
-    @media (max-width:980px){.grid-2{grid-template-columns:1fr}}
+    .grid-2{display:grid;grid-template-columns:1fr 360px;gap:28px;}
+    @media(max-width:980px){.grid-2{grid-template-columns:1fr}}
 
-    /* Footer & signature */
-    footer{text-align:center;margin-top:36px;color:var(--muted);padding-bottom:60px}
-    .signature{font-weight:600;display:inline-block;position:relative}
-    .signature::after{content:"";position:absolute;left:0;bottom:-6px;height:3px;background:linear-gradient(90deg,var(--accent1),var(--accent2));border-radius:3px;width:0;transition:width .9s}
-    .signature.reveal::after{width:84px}
-
-    /* small utilities */
-    .small{font-size:0.95rem}
+    footer{text-align:center;margin-top:36px;color:var(--muted);padding-bottom:40px}
   </style>
 </head>
 <body>
 
   <!-- ========== HEADER (fixed) ========== -->
   <header>
-    <a class="brand" href="#top" aria-label="Home">
+    <a class="brand" href="#top">
       <img src="profile.jpg" alt="Prabhakar Behera">
       <h1>PRABHAKAR BEHERA</h1>
     </a>
 
-    <!-- NAVIGATION: links scroll to sections. 'active' class set via JS -->
-  <nav aria-label="Main Navigation">
-  <ul id="mainNav">
-    <li><a href="#top" data-target="top" class="active">Home</a></li>
-    <li><a href="#about" data-target="about">About</a></li>
-    <li><a href="#skills" data-target="skills">Skills</a></li>
-    <li><a href="#projects" data-target="projects">Projects</a></li>
-    <li><a href="#experience" data-target="experience">Experience</a></li>
-    <li><a href="#education" data-target="education">Education</a></li>
-    <li><a href="#contact" data-target="contact">Contact</a></li>
-   <!-- 🌾 Updated Page Link (points to Know More selection page) -->
-<li><a href="knowmore.html">Know More</a></li>
-  </ul>
-</nav>
+    <nav>
+      <ul id="mainNav">
+        <li><a href="#top" data-target="top" class="active">Home</a></li>
+        <li><a href="#about" data-target="about">About</a></li>
+        <li><a href="#skills" data-target="skills">Skills</a></li>
+        <li><a href="#projects" data-target="projects">Projects</a></li>
+        <li><a href="#experience" data-target="experience">Experience</a></li>
+        <li><a href="#education" data-target="education">Education</a></li>
+        <li><a href="#contact" data-target="contact">Contact</a></li>
+        <li><a href="knowmore.html">Know More</a></li>
+      </ul>
+    </nav>
 
-
-    <button id="themeToggle" title="Toggle light / dark" aria-pressed="false">🌓</button>
+    <!-- ⭐ Animated Theme Toggle -->
+    <button id="themeToggle">
+      <i class="fa-solid fa-sun icon-sun"></i>
+      <i class="fa-solid fa-moon icon-moon"></i>
+    </button>
   </header>
 
-  <!-- ========== MAIN ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
   <main>
 
-    <!-- =========================
-         HERO: layered tech background (SVG outlines + keyboard + canvas)
-         ========================= -->
-    <section class="hero-wrap" aria-label="Introduction">
-      <!-- SVG overlay: faint dashboard outlines, charts, circuit-grid (static vector so it's crisp) -->
-      <!-- Comment: you can edit shapes below to add/remove icons; opacity kept low for watermark effect -->
-      <svg class="hero-bg-svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <!-- dashboard rectangle outlines -->
-        <g fill="none" stroke="#ffffff" stroke-width="1.6" opacity="0.12">
-          <rect x="90" y="80" width="420" height="220" rx="8"></rect>
-          <rect x="540" y="80" width="380" height="220" rx="8"></rect>
-          <rect x="950" y="80" width="520" height="220" rx="8"></rect>
-
-          <!-- small chart bars inside the first -->
-          <g opacity="0.18" transform="translate(110,110)">
-            <rect x="4" y="60" width="18" height="60"></rect>
-            <rect x="32" y="30" width="18" height="90"></rect>
-            <rect x="60" y="10" width="18" height="110"></rect>
-            <rect x="88" y="45" width="18" height="75"></rect>
-          </g>
-
-          <!-- line chart inside second -->
-          <path d="M560 220 C 600 150, 650 160, 680 130 C 720 90, 760 140, 880 90" stroke-linecap="round" opacity="0.16"></path>
-
-          <!-- small pie chart (third) -->
-          <circle cx="990" cy="170" r="26" stroke-width="2" opacity="0.12"></circle>
-        </g>
-
-        <!-- circuit-grid decorative lines -->
-        <g stroke="#ffffff" stroke-width="1" opacity="0.06">
-          <path d="M40 300 H1560" />
-          <path d="M40 360 H1560" />
-          <path d="M40 420 H1560" />
-          <path d="M200 60 V540" />
-          <path d="M360 60 V540" />
-          <path d="M1280 60 V540" />
-        </g>
-      </svg>
-
-      <!-- keyboard silhouette (raster-like but as vector path for crispness) -->
-      <!-- opacity very low so it feels like watermark at back -->
-      <svg class="hero-bg-keyboard" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <g fill="#fff" opacity="0.04">
-          <rect x="120" y="370" width="1360" height="120" rx="20"></rect>
-          <!-- small key blocks -->
-          <g transform="translate(160,395)" opacity="0.06">
-            <!-- repeated keys (just a few blocks to show keyboard feel) -->
-            <rect x="0" y="0" width="40" height="28" rx="3"></rect>
-            <rect x="50" y="0" width="40" height="28" rx="3"></rect>
-            <rect x="100" y="0" width="40" height="28" rx="3"></rect>
-            <rect x="150" y="0" width="40" height="28" rx="3"></rect>
-            <rect x="200" y="0" width="40" height="28" rx="3"></rect>
-            <rect x="260" y="0" width="100" height="28" rx="3"></rect>
-          </g>
-        </g>
-      </svg>
-
-      <!-- Canvas layer for animated flowing code lines + glowing dots -->
-      <canvas id="tech-bg" aria-hidden="true"></canvas>
-
-      <!-- HERO CONTENT -->
+    <!-- HERO SECTION -->
+    <section class="hero-wrap" id="top">
       <div class="hero-content">
         <h2 class="hero-title">Prabhakar Behera</h2>
-
-        <!-- Typewriter subtitle (color tuned white-ish for contrast) -->
-        <div class="hero-sub small">
-          <span class="highlight" id="typewriter">SAP B1 | Power BI | Data Analyst</span>
-        </div>
+        <div class="hero-sub"><span id="typewriter">SAP B1 | Power BI | Data Analyst</span></div>
 
         <div class="hero-quote">
-          “Time never moves fast, but when it arrives, it changes the world. Those who wait for it are the true victors.”
+          “Time never moves fast, but when it arrives, it changes the world.  
+          Those who wait for it are the true victors.”
         </div>
 
         <div class="hero-actions">
-          <!-- Download resume (visible to HR) -->
-          <a class="btn-resume" href="resume.pdf" download aria-label="Download Resume (PDF)">
-            <i class="fa-regular fa-file-lines" style="margin-right:8px"></i> Download Resume
+          <a class="btn-resume" href="resume.pdf" download>
+            <i class="fa-regular fa-file-lines"></i> Download Resume
           </a>
-
-          <!-- small social icons -->
-          <div style="margin-left:14px">
-            <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank" title="LinkedIn" aria-label="LinkedIn" style="color:rgba(255,255,255,0.95);margin-right:10px;">
-              <i class="fab fa-linkedin fa-lg"></i>
-            </a>
-            <a href="https://github.com/" target="_blank" title="GitHub" aria-label="GitHub" style="color:rgba(255,255,255,0.95)">
-              <i class="fab fa-github fa-lg"></i>
-            </a>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================
-         CONTENT SECTIONS (About, Skills, Projects, ...)
-         ========================= -->
 
-    <section id="about" aria-label="About">
+    <!-- ABOUT -->
+    <section id="about">
       <h3 class="section-title">About Me</h3>
       <div class="card">
         <p class="muted">
           I’m a results-oriented analytics professional with over <strong>2 years</strong> at Rex-Tone Industries Ltd.
-          With a B.Sc. in Computer Science, I combine SAP Business One expertise with Power BI visualizations and Crystal Reports to
-          deliver accurate, automated, and actionable reporting solutions. I work closely with finance, procurement, and sales teams to
-          reduce manual effort, improve compliance, and enable data-driven decisions.
+          With a B.Sc. in Computer Science, I combine SAP B1 expertise with Power BI and Crystal Reports to deliver automated,
+          accurate, and actionable insights.
         </p>
       </div>
     </section>
 
-    <section id="skills" aria-label="Skills">
-      <h3 class="section-title">Key Skills & Tools</h3>
-      <div class="card">
-        <ul class="muted">
-          <li><strong>SAP Business One (SAP B1):</strong> functional operations, Query Manager, custom reports & automations</li>
-          <li><strong>Power BI:</strong> DAX modeling, interactive dashboards, scheduled refresh & storytelling</li>
-          <li><strong>Crystal Reports:</strong> advanced printable reports, parameters, scheduled distribution</li>
-          <li><strong>SQL & Data Integration:</strong> joins, optimization, ETL concepts & reporting back-ends</li>
+    <!-- SKILLS -->
+    <section id="skills">
+      <h3 class="section-title">Key Skills</h3>
+      <div class="card muted">
+        <ul>
+          <li><strong>SAP B1:</strong> Functional operations, custom queries & automation</li>
+          <li><strong>Power BI:</strong> Dashboards, DAX & analytics storytelling</li>
+          <li><strong>Crystal Reports:</strong> Advanced parameters & distribution</li>
+          <li><strong>SQL & Data:</strong> Optimized joins, ETL logic, backend reporting</li>
         </ul>
       </div>
     </section>
 
-    <section id="projects" aria-label="Projects">
-      <h3 class="section-title">Project Highlights</h3>
-      <div class="card">
-        <ul class="muted">
-          <li><b>Sales Report Dashboard</b> — Interactive Power BI dashboard integrating SAP B1 data for regional performance and product insights.</li>
-          <li><b>GSTR & Procurement Reports</b> — Finance-facing reports and dashboards for GST reconciliation and vendor analytics.</li>
-          <li><b>Crystal Reports Automation</b> — Parameterized scheduled reports in SAP B1 for finance & operations distribution.</li>
-          <li><b>Reports Automation</b> — End-to-end scheduling and exported pipelines that reduced month-end manual work.</li>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h3 class="section-title">Projects</h3>
+      <div class="card muted">
+        <ul>
+          <li>Sales Dashboard — SAP B1 integrated real-time Power BI analytics</li>
+          <li>GSTR Reports — Automated reconciliation for finance</li>
+          <li>Crystal Scheduling — Fully automated MIS distribution</li>
         </ul>
       </div>
     </section>
 
+    <!-- EXPERIENCE + EDUCATION -->
     <div class="grid-2">
-      <section id="experience" aria-label="Experience">
+      <section id="experience">
         <h3 class="section-title">Experience</h3>
-        <div class="card">
-          <p><strong>Officer — SAP</strong> | Rex-Tone Industries Ltd — Vadodara, Gujarat<br><i>Aug 2023 – Present (2+ years)</i></p>
-          <ul class="muted">
-            <li>Manage and maintain SAP Business One (SAP B1) and ensure data integrity.</li>
-            <li>Design and generate Crystal Reports and SAP queries for finance and procurement.</li>
-            <li>Resolve SAP-related issues; provide training and user support.</li>
-            <li>Optimize workflows and automate recurring MIS and dashboards.</li>
+        <div class="card muted">
+          <p><strong>Officer — SAP</strong> | Rex-Tone Industries Ltd  
+          <br><i>Aug 2023 – Present</i></p>
+
+          <ul>
+            <li>Maintain SAP B1 system integrity & performance</li>
+            <li>Create dynamic Crystal Reports & custom SAP queries</li>
+            <li>Automate workflows and reduce manual tasks</li>
           </ul>
         </div>
       </section>
 
-      <aside id="education" aria-label="Education" style="align-self:start">
+      <aside id="education">
         <h3 class="section-title">Education & Certifications</h3>
-        <div class="card">
-          <p><strong>B.Sc. — Computer Science</strong><br>Gunupur Degree College, Gunupur (2022–2024)</p>
-          <ul class="muted">
-            <li>SAP Business One B1 Complete Training with Implementation (Certificate)</li>
-            <li>Microsoft Excel Using AI Workshop (Certificate)</li>
+        <div class="card muted">
+          <p><strong>B.Sc. Computer Science</strong><br>Gunupur Degree College</p>
+          <ul>
+            <li>SAP B1 Implementation Training — Certified</li>
+            <li>Excel Using AI — Certified</li>
           </ul>
         </div>
       </aside>
     </div>
 
-    <section id="contact" aria-label="Contact">
+    <!-- CONTACT -->
+    <section id="contact">
       <h3 class="section-title">Contact</h3>
-      <div class="card">
-        <p class="muted"><strong>Email:</strong> <a href="mailto:prabhakarbehera74778@gmail.com">prabhakarbehera74778@gmail.com</a></p>
-        <p class="muted"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">View Profile</a></p>
+      <div class="card muted">
+        <p><strong>Email:</strong> prabhakarbehera74778@gmail.com</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">View Profile</a></p>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-      <div class="muted small">&copy; <span id="year"></span> Prabhakar Behera — Crafted with analytics & design excellence</div>
-      <div style="margin-top:8px"><span id="signature" class="signature">— Prabhakar Behera</span></div>
+      © <span id="year"></span> Prabhakar Behera — Built with precision & passion.
     </footer>
+
   </main>
 
-  <!-- =========================
-       SCRIPTS: interactions, canvas animation, nav highlighting
-       Comments explain each block for easy editing later
-       ========================= -->
+
+  <!-- ======================================================
+       JAVASCRIPT SECTION (THEME MEMORY + UI ENHANCEMENTS)
+       ====================================================== -->
   <script>
-    // ---------- AUTO YEAR ----------
+    /* -----------------------------------------
+       YEAR AUTO UPDATE
+    ----------------------------------------- */
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // ---------- THEME TOGGLE ----------
-    const themeBtn = document.getElementById('themeToggle');
-    themeBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      // set aria-pressed for accessibility
-      const pressed = document.body.classList.contains('dark');
-      themeBtn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    /* -----------------------------------------
+       THEME PERSISTENCE (LocalStorage)
+       ----------------------------------------- */
+    const themeBtn = document.getElementById("themeToggle");
+
+    // Load theme from storage
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") document.body.classList.add("dark");
+
+    // Toggle theme
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+
+      // Save preference
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
     });
 
-    // ---------- TYPEWRITER SUBTITLE ----------
-    // Simple typewriter effect for subtitle
+    /* -----------------------------------------
+       TYPEWRITER EFFECT
+    ----------------------------------------- */
     (function typewriter(){
       const text = "SAP B1 | Power BI | Data Analyst";
       const el = document.getElementById('typewriter');
@@ -373,174 +347,28 @@
       function step(){
         el.textContent = text.slice(0, i+1);
         i++;
-        if(i < text.length) setTimeout(step, 65);
+        if(i < text.length) setTimeout(step, 55);
       }
       step();
     })();
 
-    // ---------- HERO CANVAS: Dots & Flowing Code Lines ----------
-    // This draws glowing data dots and horizontal code-like lines giving motion and depth.
-    (function heroCanvas(){
-      const canvas = document.getElementById('tech-bg');
-      if(!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let W, H;
-      // arrays for animated elements
-      const dots = [];
-      const lines = [];
+    /* -----------------------------------------
+       NAV ACTIVE LINK ON SCROLL
+    ----------------------------------------- */
+    const navLinks = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("main section[id]");
 
-      function resize(){
-        W = canvas.width = canvas.offsetWidth;
-        H = canvas.height = canvas.offsetHeight;
-      }
-      window.addEventListener('resize', resize);
-      resize();
+    function highlightNav(){
+      let index = sections.length;
 
-      // initialize dots (glowing)
-      const DOT_COUNT = Math.max(24, Math.floor(W/60));
-      for(let i=0;i<DOT_COUNT;i++){
-        dots.push({
-          x: Math.random()*W,
-          y: Math.random()*H,
-          r: 1 + Math.random()*2.2,
-          dx: (Math.random()-0.5)*0.35,
-          dy: (Math.random()-0.5)*0.35,
-          alpha: 0.25 + Math.random()*0.6
-        });
-      }
-
-      // initialize flowing code lines
-      const LINE_COUNT = Math.max(6, Math.floor(W/250));
-      for(let j=0;j<LINE_COUNT;j++){
-        lines.push({
-          x: Math.random()*W,
-          y: Math.random()*H,
-          len: 120 + Math.random()*240,
-          speed: 0.25 + Math.random()*0.6,
-          alpha: 0.12 + Math.random()*0.15
-        });
-      }
-
-      function drawGrid(){
-        // very faint circuit-grid lines (horizontal)
-        ctx.save();
-        ctx.strokeStyle = 'rgba(255,255,255,0.03)';
-        ctx.lineWidth = 1;
-        for(let gx=0; gx<W; gx+=80){
-          ctx.beginPath(); ctx.moveTo(gx,0); ctx.lineTo(gx,H); ctx.stroke();
-        }
-        for(let gy=0; gy<H; gy+=60){
-          ctx.beginPath(); ctx.moveTo(0,gy); ctx.lineTo(W,gy); ctx.stroke();
-        }
-        ctx.restore();
-      }
-
-      function draw(){
-        ctx.clearRect(0,0,W,H);
-
-        // faint grid  
-        drawGrid();
-
-        // moving "code" lines
-        ctx.save();
-        ctx.lineWidth = 2;
-        lines.forEach(l => {
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(255,255,255,${l.alpha})`;
-          ctx.moveTo(l.x, l.y);
-          // segmented line for a more "code-like" feeling
-          for(let k=0;k<6;k++){
-            const segLen = l.len*(0.14 + 0.12*Math.sin((k+1)*1.2 + performance.now()/3000));
-            ctx.lineTo(l.x + segLen, l.y + (k%2 ? 4 : -4));
-            ctx.moveTo(l.x + segLen + 6, l.y + (k%2 ? 4 : -4));
-          }
-          ctx.stroke();
-          l.x += l.speed;
-          if(l.x - l.len > W) l.x = -l.len;
-        });
-        ctx.restore();
-
-        // glowing dots
-        dots.forEach(d => {
-          const g = ctx.createRadialGradient(d.x, d.y, 0, d.x, d.y, d.r*6);
-          g.addColorStop(0, `rgba(255,255,255,${0.9 * d.alpha})`);
-          g.addColorStop(1, `rgba(255,255,255,0)`);
-          ctx.fillStyle = g;
-          ctx.beginPath();
-          ctx.arc(d.x, d.y, d.r*6, 0, Math.PI*2);
-          ctx.fill();
-
-          d.x += d.dx; d.y += d.dy;
-          if(d.x < 0 || d.x > W) d.dx *= -1;
-          if(d.y < 0 || d.y > H) d.dy *= -1;
-        });
-
-        requestAnimationFrame(draw);
-      }
-      draw();
-    })();
-
-    // ---------- NAV: Smooth scrolling & active link highlighting ----------
-    (function navBehavior(){
-      const navLinks = document.querySelectorAll('nav a');
-      const sections = Array.from(document.querySelectorAll('main section[id]'));
-  // click interception for smooth scroll
-navLinks.forEach(a => {
-  a.addEventListener('click', (e) => {
-    const href = a.getAttribute('href');
-
-    // ✅ Only intercept internal links that start with "#"
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.slice(1);
-      const el = document.getElementById(targetId);
-      if (el) {
-        // scroll with offset to account for fixed header
-        const offset = 78;
-        const top = el.getBoundingClientRect().top + window.scrollY - offset + 6;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+      while(--index && window.scrollY + 120 < sections[index].offsetTop){}
+      navLinks.forEach(link => link.classList.remove("active"));
+      navLinks[index].classList.add("active");
     }
-    // ✅ Allow normal behavior for other links like "village.html"
-  });
-});
+    highlightNav();
+    window.addEventListener("scroll", highlightNav);
 
-
-      // on scroll, update active nav link
-      function onScroll(){
-        const offset = 120;
-        let current = sections[0];
-        for(const sec of sections){
-          const pos = sec.getBoundingClientRect().top;
-          if(pos - offset <= 0) current = sec;
-        }
-        // set active class
-        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
-      }
-      window.addEventListener('scroll', onScroll);
-      // initial run
-      onScroll();
-    })();
-
-    // ---------- REVEAL SIGNATURE ----------
-    window.addEventListener('load', ()=> {
-      document.getElementById('signature').classList.add('reveal');
-    });
-
-    // ---------- OPTIONAL: reduce motion for users who prefer it ----------
-    // Respect prefers-reduced-motion; reduce canvas animations slightly if set
-    (function respectReducedMotion(){
-      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if(mq && mq.matches){
-        // if reduced motion, stop the heavy animation loops (we could implement a simple fallback)
-        // For simplicity, we won't aggressively change here; developers can add a flag to stop animations.
-        // Keep this as a placeholder for future accessibility tweaks.
-      }
-    })();
   </script>
+
 </body>
 </html>
-
-
-
-
