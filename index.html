@@ -1,374 +1,440 @@
-<!doctype html>  
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ======================================================
-       Prabhakar Behera — Ultra-Premium Corporate Landing
-       With Persistent Theme & Animated Sun/Moon Morph Toggle
-       ====================================================== -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Prabhakar Behera | SAP B1 · Power BI · Data Analyst</title>
-  <meta name="description" content="Prabhakar Behera — SAP Business One Specialist & Power BI Developer turning data into business decisions." />
-  <meta name="keywords" content="Prabhakar Behera, SAP Business One, Power BI, Crystal Reports, Analytics, Dashboard" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Prabhakar Behera — SAP B1 | Power BI | Data Analyst. Results-oriented analytics professional with 2+ years at Rex-Tone Industries Ltd."/>
+<meta name="keywords" content="Prabhakar Behera, SAP B1, Power BI, Data Analyst, Crystal Reports, SQL"/>
+<meta property="og:title" content="Prabhakar Behera | SAP B1 · Power BI · Data Analyst"/>
+<meta property="og:description" content="Results-oriented analytics professional combining SAP B1 with Power BI and Crystal Reports."/>
+<title>Prabhakar Behera | SAP B1 · Power BI · Data Analyst</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#C9A84C;--gold2:#E8C97A;--gold3:#F5E4B0;
+  --dark:#07090F;--dark2:#0D1117;--dark3:#131A24;--dark4:#1A2235;
+  --cyan:#00C8FF;--text:#E8EAF0;--muted:#7A8499;
+  --border:rgba(201,168,76,0.15);--border2:rgba(201,168,76,0.3);
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;overflow-x:hidden}
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(7,9,15,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-img{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--gold);object-fit:cover}
+.logo-txt{font-size:0.9rem;font-weight:700;letter-spacing:0.08em;color:var(--gold);text-transform:uppercase}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07090F;font-size:0.75rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:9px 20px;border-radius:7px;text-decoration:none;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.85}
 
-  <style>
-    /* =======================================================
-       THEME VARIABLES
-       ======================================================= */
-    :root{
-      --accent1:#138de2;
-      --accent2:#22c1d6;
-      --bg:#f5f9fb;
-      --card:#ffffff;
-      --text:#0a2740;
-      --muted:#3b6b86;
-      --shadow:0 10px 30px rgba(12,60,90,0.08);
-      --max-width:1100px;
-    }
-    body.dark{
-      --bg:#06121d;
-      --card:rgba(8,18,28,0.7);
-      --text:#eaf7ff;
-      --muted:#93c0dc;
-      --shadow:0 10px 30px rgba(0,0,0,0.45);
-    }
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;align-items:center;padding:80px 6% 0;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 65% 45%,rgba(30,111,217,0.13) 0%,transparent 65%),radial-gradient(ellipse 50% 40% at 15% 85%,rgba(201,168,76,0.08) 0%,transparent 55%);pointer-events:none}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.035) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;width:100%}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.28);border-radius:100px;padding:6px 16px;font-size:0.72rem;letter-spacing:0.1em;color:var(--gold);text-transform:uppercase;margin-bottom:2rem}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+h1.name{font-size:clamp(3rem,6vw,5.2rem);font-weight:900;line-height:1.0;letter-spacing:-0.03em;color:#fff;margin-bottom:1.1rem}
+h1.name .grad{background:linear-gradient(130deg,var(--gold) 0%,var(--gold2) 45%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.role-row{display:flex;align-items:center;gap:10px;margin-bottom:1.8rem;flex-wrap:wrap}
+.role-pill{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:5px 14px;font-size:0.8rem;color:var(--text)}
+.hero-quote{font-size:0.92rem;font-style:italic;color:var(--muted);border-left:2px solid var(--gold);padding-left:1.1rem;line-height:1.75;max-width:500px;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07090F;font-weight:700;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;padding:14px 28px;border-radius:8px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;border:none}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(201,168,76,0.35)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--gold);font-weight:600;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;padding:13px 28px;border-radius:8px;border:1px solid rgba(201,168,76,0.38);text-decoration:none;transition:all 0.2s}
+.btn-outline:hover{background:rgba(201,168,76,0.08);border-color:var(--gold)}
+.hero-right{display:flex;flex-direction:column;align-items:center;gap:2rem}
+.profile-wrap{position:relative}
+.profile-ring{width:200px;height:200px;border-radius:50%;border:2px solid rgba(201,168,76,0.3);padding:6px;background:rgba(201,168,76,0.04)}
+.profile-img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid rgba(201,168,76,0.5)}
+.profile-glow{position:absolute;inset:-12px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-stats{display:flex;gap:2rem}
+.stat{text-align:center}
+.stat-n{font-size:2rem;font-weight:900;color:var(--gold);letter-spacing:-0.02em}
+.stat-l{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:2px}
 
-    /* =======================================================
-       RESET & BASE LAYOUT
-       ======================================================= */
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:"Segoe UI",system-ui;
-      padding-top:78px;
-      transition:background .35s,color .35s;
-      -webkit-font-smoothing:antialiased;
-    }
+/* ── SECTION COMMONS ── */
+section{padding:5.5rem 6%}
+.sec-label{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem}
+.sec-title{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;letter-spacing:-0.02em;color:#fff;margin-bottom:0.8rem}
+.sec-sub{font-size:0.95rem;color:var(--muted);max-width:500px;line-height:1.7;margin-bottom:1rem}
+.gold-line{width:44px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:2px;margin-bottom:3rem}
 
-    /* =======================================================
-       HEADER (FIXED)
-       ======================================================= */
-    header{
-      position:fixed;top:0;left:0;right:0;height:78px;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:10px 26px;z-index:2000;
-      background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.75));
-      backdrop-filter:blur(8px);
-      box-shadow:var(--shadow);
-      transition:background .35s ease;
-    }
-    body.dark header{
-      background:linear-gradient(180deg,rgba(6,18,30,0.85),rgba(6,18,30,0.65));
-    }
+/* ── ABOUT ── */
+#about{background:var(--dark2)}
+.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:start}
+.about-p{font-size:1rem;color:var(--muted);line-height:1.9;margin-bottom:1.2rem}
+.about-p strong{color:var(--text)}
+.about-cards{display:flex;flex-direction:column;gap:1rem}
+.acard{background:var(--dark3);border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.6rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.25s,transform 0.25s}
+.acard:hover{border-color:var(--border2);transform:translateX(4px)}
+.acard-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.acard-title{font-size:0.93rem;font-weight:700;color:#fff;margin-bottom:0.3rem}
+.acard-desc{font-size:0.82rem;color:var(--muted);line-height:1.55}
 
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-    .brand img{width:44px;height:44px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,0.06)}
-    .brand h1{font-size:1.05rem;margin:0;font-weight:700}
+/* ── SKILLS ── */
+#skills{background:var(--dark)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.sk-card{background:var(--dark3);border:1px solid var(--border);border-radius:18px;padding:2rem;position:relative;overflow:hidden;transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s}
+.sk-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform 0.35s}
+.sk-card:hover{transform:translateY(-7px);border-color:var(--border2);box-shadow:0 22px 52px rgba(0,0,0,0.45)}
+.sk-card:hover::after{transform:scaleX(1)}
+.sk-ico{width:50px;height:50px;border-radius:13px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.3rem}
+.sk-nm{font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.45rem}
+.sk-ds{font-size:0.82rem;color:var(--muted);line-height:1.6;margin-bottom:1.4rem}
+.bar-bg{height:4px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--cyan));border-radius:2px}
+.bar-pct{font-size:0.73rem;color:var(--gold);text-align:right;margin-top:5px;font-weight:600}
 
-    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
-    nav a{
-      font-weight:600;color:var(--muted);
-      text-decoration:none;padding:6px 8px;border-radius:8px;
-      transition:0.25s
-    }
-    nav a:hover{color:var(--accent1);}
-    nav a.active{
-      color:var(--accent1);
-      box-shadow:inset 0 -3px 0 var(--accent1);
-    }
+/* ── PROJECTS ── */
+#projects{background:var(--dark2)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:2rem}
+.pj-card{background:var(--dark3);border:1px solid var(--border);border-radius:20px;padding:2.2rem;position:relative;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s}
+.pj-card:hover{transform:translateY(-8px);box-shadow:0 28px 64px rgba(0,0,0,0.5)}
+.pj-num{font-size:5rem;font-weight:900;color:rgba(201,168,76,0.06);position:absolute;top:0.8rem;right:1.2rem;line-height:1;pointer-events:none;letter-spacing:-0.05em}
+.pj-tag{display:inline-block;background:rgba(0,200,255,0.09);border:1px solid rgba(0,200,255,0.22);color:var(--cyan);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:1.1rem}
+.pj-title{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:0.7rem}
+.pj-desc{font-size:0.86rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.pj-tech{display:flex;flex-wrap:wrap;gap:7px}
+.tbadge{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);color:var(--gold);font-size:0.7rem;padding:4px 10px;border-radius:6px}
 
-    /* =======================================================
-       ULTRA-PREMIUM SUN/MOON MORPH TOGGLE
-       Option A — Floating Animated Morph
-       ======================================================= */
-    #themeToggle{
-      width:48px;height:48px;
-      border-radius:50%;
-      border:none;
-      cursor:pointer;
-      position:relative;
-      display:flex;align-items:center;justify-content:center;
-      background:rgba(255,255,255,0.55);
-      backdrop-filter:blur(6px);
-      box-shadow:0 6px 20px rgba(0,0,0,0.15);
-      transition:0.3s;
-    }
-    body.dark #themeToggle{
-      background:rgba(255,255,255,0.08);
-      box-shadow:0 6px 20px rgba(0,0,0,0.45);
-    }
+/* ── EXPERIENCE ── */
+#experience{background:var(--dark)}
+.tl{position:relative;padding-left:2.5rem}
+.tl::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--gold),rgba(201,168,76,0.1))}
+.tl-item{position:relative;margin-bottom:3rem}
+.tl-dot{position:absolute;left:-2.5rem;top:5px;width:16px;height:16px;border-radius:50%;background:var(--dark);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center}
+.tl-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.tl-date{font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.45rem;display:inline-flex;align-items:center;gap:6px}
+.tl-live{width:6px;height:6px;border-radius:50%;background:#2ECC71;animation:blink 1.5s infinite;display:inline-block}
+.tl-role{font-size:1.25rem;font-weight:800;color:#fff;margin-bottom:0.25rem}
+.tl-co{font-size:0.88rem;color:var(--muted);margin-bottom:1.3rem}
+.tl-list{list-style:none;display:flex;flex-direction:column;gap:0.65rem}
+.tl-list li{display:flex;gap:10px;font-size:0.88rem;color:var(--muted);line-height:1.6}
+.tl-list li::before{content:'▸';color:var(--gold);flex-shrink:0;margin-top:1px}
 
-    /* Sun/Moon icon layering */
-    .icon-sun,.icon-moon{
-      position:absolute;
-      font-size:1.4rem;
-      transition:opacity .5s,transform .6s ease;
-    }
-    .icon-sun{color:#f5c900;opacity:1;transform:scale(1) rotate(0deg);}
-    .icon-moon{color:#cce5ff;opacity:0;transform:scale(0.2) rotate(-180deg);}
+/* ── EDUCATION ── */
+#education{background:var(--dark2)}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.edu-card{background:var(--dark3);border:1px solid var(--border);border-radius:18px;padding:2rem;transition:border-color 0.2s,transform 0.2s}
+.edu-card:hover{border-color:var(--border2);transform:translateY(-4px)}
+.edu-ico{width:52px;height:52px;border-radius:14px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.4rem}
+.edu-deg{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.3rem}
+.edu-inst{font-size:0.85rem;color:var(--gold);margin-bottom:1.1rem}
+.cert-item{display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--muted);margin-bottom:0.7rem}
+.cert-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);flex-shrink:0}
 
-    body.dark .icon-sun{opacity:0;transform:scale(0.2) rotate(180deg);}
-    body.dark .icon-moon{opacity:1;transform:scale(1) rotate(0deg);}
+/* ── KNOW MORE ── */
+#knowmore{background:var(--dark)}
+.km-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.km-card{border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:transform 0.25s,box-shadow 0.25s}
+.km-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,0.5)}
+.km-img{width:100%;height:220px;object-fit:cover;display:block;filter:brightness(0.75)}
+.km-body{padding:1.8rem;background:var(--dark3)}
+.km-emoji{font-size:1.5rem;margin-bottom:0.7rem;display:block}
+.km-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.5rem}
+.km-desc{font-size:0.85rem;color:var(--muted);line-height:1.65}
 
-    /* Floating animation */
-    @keyframes floatUp{
-      0%{transform:translateY(0px);}
-      50%{transform:translateY(-3px);}
-      100%{transform:translateY(0px);}
-    }
-    #themeToggle{animation:floatUp 3s ease-in-out infinite;}
+/* ── CONTACT ── */
+#contact{background:var(--dark2)}
+.contact-box{background:linear-gradient(135deg,var(--dark3) 0%,var(--dark4) 100%);border:1px solid var(--border);border-radius:24px;padding:4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.ct-title{font-size:2rem;font-weight:900;color:#fff;margin-bottom:0.9rem;line-height:1.15}
+.ct-sub{font-size:0.93rem;color:var(--muted);line-height:1.75;margin-bottom:2rem}
+.ct-links{display:flex;flex-direction:column;gap:1rem}
+.ct-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--text);padding:0.9rem 1.1rem;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,0.02);transition:all 0.2s}
+.ct-link:hover{border-color:var(--border2);background:rgba(201,168,76,0.05);color:var(--gold)}
+.ct-ico{width:42px;height:42px;border-radius:11px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.ct-lbl{font-size:0.69rem;color:var(--muted);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:2px}
+.ct-val{font-size:0.88rem;font-weight:500}
+.ct-right h3{font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:0.7rem}
+.ct-right p{font-size:0.88rem;color:var(--muted);margin-bottom:2rem;line-height:1.75}
+.avail-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:100px;padding:6px 14px;font-size:0.75rem;color:#2ECC71;margin-bottom:1.5rem}
+.avail-dot{width:6px;height:6px;border-radius:50%;background:#2ECC71;animation:blink 1.5s infinite;display:inline-block}
 
+/* ── FOOTER ── */
+footer{background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-logo{font-size:0.9rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase}
+.ft-txt{font-size:0.78rem;color:var(--muted)}
+.ft-links{display:flex;gap:1.5rem}
+.ft-links a{font-size:0.78rem;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.ft-links a:hover{color:var(--gold)}
 
-    /* =======================================================
-       HERO SECTION
-       ======================================================= */
-    .hero-wrap{
-      margin-top:12px;padding:48px;
-      border-radius:18px;position:relative;overflow:hidden;
-      background:linear-gradient(135deg,var(--accent1),var(--accent2));
-      box-shadow:0 18px 60px rgba(6,40,80,0.08);
-    }
-
-    .hero-content{position:relative;z-index:3;padding:36px 40px;max-width:95%}
-    .hero-title{font-size:2.8rem;font-weight:800;color:#fff;margin:0}
-    .hero-sub{color:#fff;font-weight:600;margin-top:6px}
-
-    .hero-quote{
-      margin-top:14px;
-      color:rgba(255,255,255,0.92);
-      font-style:italic;
-    }
-
-    .hero-actions{margin-top:18px;display:flex;gap:12px;align-items:center}
-    .btn-resume{
-      padding:12px 22px;border-radius:10px;font-weight:700;
-      color:white;text-decoration:none;border:1px solid rgba(255,255,255,0.25);
-      backdrop-filter:blur(3px);
-    }
-
-    /* =======================================================
-       CONTENT SECTIONS
-       ======================================================= */
-    main{max-width:var(--max-width);margin:0 auto;padding:28px}
-
-    section{margin-top:48px}
-    .section-title{font-size:1.2rem;color:var(--accent1);margin-bottom:12px}
-
-    .card{
-      background:var(--card);
-      padding:22px;border-radius:12px;
-      box-shadow:0 10px 26px rgba(22,66,92,0.06);
-    }
-    .muted{color:var(--muted)}
-
-    .grid-2{display:grid;grid-template-columns:1fr 360px;gap:28px;}
-    @media(max-width:980px){.grid-2{grid-template-columns:1fr}}
-
-    footer{text-align:center;margin-top:36px;color:var(--muted);padding-bottom:40px}
-  </style>
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-right{flex-direction:row;justify-content:flex-start;margin-top:2rem}
+  .about-grid{grid-template-columns:1fr}
+  .edu-grid{grid-template-columns:1fr}
+  .km-grid{grid-template-columns:1fr}
+  .contact-box{grid-template-columns:1fr;padding:2.5rem}
+}
+@media(max-width:600px){
+  section{padding:4rem 5%}
+  nav{padding:0 5%}
+  .nav-cta{display:none}
+  .profile-ring{width:140px;height:140px}
+  .hero-stats{gap:1.2rem}
+}
+</style>
 </head>
 <body>
 
-  <!-- ========== HEADER (fixed) ========== -->
-  <header>
-    <a class="brand" href="#top">
-      <img src="profile.jpg" alt="Prabhakar Behera">
-      <h1>PRABHAKAR BEHERA</h1>
-    </a>
+<!-- NAV -->
+<nav>
+  <div class="logo-wrap">
+    <img class="logo-img" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/profile.jpg" alt="Prabhakar Behera"/>
+    <span class="logo-txt">Prabhakar Behera</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#knowmore">Know More</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://prabhakar-67.github.io/prabhakarbehera.github.io/resume.pdf" target="_blank" class="nav-cta">Resume ↗</a>
+</nav>
 
-    <nav>
-      <ul id="mainNav">
-        <li><a href="#top" data-target="top" class="active">Home</a></li>
-        <li><a href="#about" data-target="about">About</a></li>
-        <li><a href="#skills" data-target="skills">Skills</a></li>
-        <li><a href="#projects" data-target="projects">Projects</a></li>
-        <li><a href="#experience" data-target="experience">Experience</a></li>
-        <li><a href="#education" data-target="education">Education</a></li>
-        <li><a href="#contact" data-target="contact">Contact</a></li>
-        <li><a href="knowmore.html">Know More</a></li>
-      </ul>
-    </nav>
-
-    <!-- ⭐ Animated Theme Toggle -->
-    <button id="themeToggle">
-      <i class="fa-solid fa-sun icon-sun"></i>
-      <i class="fa-solid fa-moon icon-moon"></i>
-    </button>
-  </header>
-
-
-  <!-- ========== MAIN CONTENT ========== -->
-  <main>
-
-    <!-- HERO SECTION -->
-    <section class="hero-wrap" id="top">
-      <div class="hero-content">
-        <h2 class="hero-title">Prabhakar Behera</h2>
-        <div class="hero-sub"><span id="typewriter">SAP B1 | Power BI | Data Analyst</span></div>
-
-        <div class="hero-quote">
-          “Time never moves fast, but when it arrives, it changes the world.  
-          Those who wait for it are the true victors.”
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn-resume" href="resume.pdf" download>
-            <i class="fa-regular fa-file-lines"></i> Download Resume
-          </a>
-        </div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="grid-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="badge"><span class="badge-dot"></span>Open to New Opportunities</div>
+      <h1 class="name">Prabhakar<br><span class="grad">Behera</span></h1>
+      <div class="role-row">
+        <span class="role-pill">SAP B1</span>
+        <span class="role-pill">Power BI</span>
+        <span class="role-pill">Data Analyst</span>
+        <span class="role-pill">Crystal Reports</span>
       </div>
-    </section>
-
-
-    <!-- ABOUT -->
-    <section id="about">
-      <h3 class="section-title">About Me</h3>
-      <div class="card">
-        <p class="muted">
-          I’m a results-oriented analytics professional with over <strong>2 years</strong> at Rex-Tone Industries Ltd.
-          With a B.Sc. in Computer Science, I combine SAP B1 expertise with Power BI and Crystal Reports to deliver automated,
-          accurate, and actionable insights.
-        </p>
+      <p class="hero-quote">"Time never moves fast, but when it arrives, it changes the world. Those who wait for it are the true victors."</p>
+      <div class="hero-btns">
+        <a href="https://prabhakar-67.github.io/prabhakarbehera.github.io/resume.pdf" target="_blank" class="btn-gold">📄 Download Resume</a>
+        <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank" class="btn-outline">LinkedIn →</a>
       </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <h3 class="section-title">Key Skills</h3>
-      <div class="card muted">
-        <ul>
-          <li><strong>SAP B1:</strong> Functional operations, custom queries & automation</li>
-          <li><strong>Power BI:</strong> Dashboards, DAX & analytics storytelling</li>
-          <li><strong>Crystal Reports:</strong> Advanced parameters & distribution</li>
-          <li><strong>SQL & Data:</strong> Optimized joins, ETL logic, backend reporting</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h3 class="section-title">Projects</h3>
-      <div class="card muted">
-        <ul>
-          <li>Sales Dashboard — SAP B1 integrated real-time Power BI analytics</li>
-          <li>GSTR Reports — Automated reconciliation for finance</li>
-          <li>Crystal Scheduling — Fully automated MIS distribution</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE + EDUCATION -->
-    <div class="grid-2">
-      <section id="experience">
-        <h3 class="section-title">Experience</h3>
-        <div class="card muted">
-          <p><strong>Officer — SAP</strong> | Rex-Tone Industries Ltd  
-          <br><i>Aug 2023 – Present</i></p>
-
-          <ul>
-            <li>Maintain SAP B1 system integrity & performance</li>
-            <li>Create dynamic Crystal Reports & custom SAP queries</li>
-            <li>Automate workflows and reduce manual tasks</li>
-          </ul>
-        </div>
-      </section>
-
-      <aside id="education">
-        <h3 class="section-title">Education & Certifications</h3>
-        <div class="card muted">
-          <p><strong>B.Sc. Computer Science</strong><br>Gunupur Degree College</p>
-          <ul>
-            <li>SAP B1 Implementation Training — Certified</li>
-            <li>Excel Using AI — Certified</li>
-          </ul>
-        </div>
-      </aside>
     </div>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h3 class="section-title">Contact</h3>
-      <div class="card muted">
-        <p><strong>Email:</strong> prabhakarbehera74778@gmail.com</p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">View Profile</a></p>
+    <div class="hero-right">
+      <div class="profile-wrap">
+        <div class="profile-ring">
+          <img class="profile-img" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/profile.jpg" alt="Prabhakar Behera"/>
+        </div>
+        <div class="profile-glow"></div>
       </div>
-    </section>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-n">2+</div><div class="stat-l">Years Exp</div></div>
+        <div class="stat"><div class="stat-n">3</div><div class="stat-l">Projects</div></div>
+        <div class="stat"><div class="stat-n">2</div><div class="stat-l">Certs</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-      © <span id="year"></span> Prabhakar Behera — Built with precision & passion.
-    </footer>
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-label">About Me</div>
+  <div class="gold-line"></div>
+  <div class="about-grid">
+    <div>
+      <h2 class="sec-title">Analytics meets<br>precision.</h2>
+      <p class="about-p">I'm a results-oriented analytics professional with over <strong>2 years</strong> at Rex-Tone Industries Ltd. With a B.Sc. in Computer Science, I combine <strong>SAP B1 expertise</strong> with Power BI and Crystal Reports to deliver automated, accurate, and actionable insights.</p>
+      <p class="about-p">My work eliminates manual bottlenecks, transforms raw enterprise data into <strong>intelligent dashboards</strong>, and keeps business operations running with precision — every single day.</p>
+    </div>
+    <div class="about-cards">
+      <div class="acard"><div class="acard-icon">⚡</div><div><div class="acard-title">Automation First</div><div class="acard-desc">Eliminating manual tasks through smart SAP B1 workflows and Crystal Report scheduling.</div></div></div>
+      <div class="acard"><div class="acard-icon">📊</div><div><div class="acard-title">Data Storytelling</div><div class="acard-desc">Turning complex datasets into Power BI dashboards executives actually understand and use.</div></div></div>
+      <div class="acard"><div class="acard-icon">🎯</div><div><div class="acard-title">Accuracy Obsessed</div><div class="acard-desc">GSTR reconciliation and ETL pipelines built for zero-error, compliance-ready reporting.</div></div></div>
+      <div class="acard"><div class="acard-icon">🔗</div><div><div class="acard-title">SAP Integration</div><div class="acard-desc">Deep expertise connecting SAP B1 live data with Power BI for real-time business visibility.</div></div></div>
+    </div>
+  </div>
+</section>
 
-  </main>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-label">Key Skills</div>
+  <h2 class="sec-title">The toolkit.</h2>
+  <div class="gold-line"></div>
+  <div class="skills-grid">
+    <div class="sk-card">
+      <div class="sk-ico">🏢</div>
+      <div class="sk-nm">SAP B1</div>
+      <div class="sk-ds">Functional operations, custom queries, automation &amp; system integrity management across enterprise workflows.</div>
+      <div class="bar-bg"><div class="bar-fill" style="width:90%"></div></div>
+      <div class="bar-pct">Expert · 90%</div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-ico">📈</div>
+      <div class="sk-nm">Power BI</div>
+      <div class="sk-ds">Interactive dashboards, DAX measures, analytics storytelling &amp; live SAP-connected report distribution.</div>
+      <div class="bar-bg"><div class="bar-fill" style="width:85%"></div></div>
+      <div class="bar-pct">Advanced · 85%</div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-ico">💎</div>
+      <div class="sk-nm">Crystal Reports</div>
+      <div class="sk-ds">Advanced parameters, subreports, dynamic scheduling &amp; fully automated MIS distribution pipelines.</div>
+      <div class="bar-bg"><div class="bar-fill" style="width:88%"></div></div>
+      <div class="bar-pct">Advanced · 88%</div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-ico">🗄️</div>
+      <div class="sk-nm">SQL &amp; Data</div>
+      <div class="sk-ds">Optimized joins, ETL logic, backend reporting queries &amp; database performance tuning for enterprise scale.</div>
+      <div class="bar-bg"><div class="bar-fill" style="width:82%"></div></div>
+      <div class="bar-pct">Proficient · 82%</div>
+    </div>
+  </div>
+</section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-label">Projects</div>
+  <h2 class="sec-title">Work that delivers.</h2>
+  <div class="gold-line"></div>
+  <div class="proj-grid">
+    <div class="pj-card">
+      <div class="pj-num">01</div>
+      <div class="pj-tag">Analytics</div>
+      <div class="pj-title">Sales Dashboard</div>
+      <div class="pj-desc">SAP B1 integrated real-time Power BI analytics platform giving leadership live visibility into revenue, KPIs, and sales performance across all channels — zero manual refresh.</div>
+      <div class="pj-tech"><span class="tbadge">SAP B1</span><span class="tbadge">Power BI</span><span class="tbadge">DAX</span><span class="tbadge">SQL</span></div>
+    </div>
+    <div class="pj-card">
+      <div class="pj-num">02</div>
+      <div class="pj-tag">Finance</div>
+      <div class="pj-title">GSTR Reports</div>
+      <div class="pj-desc">Fully automated GST reconciliation engine for finance — eliminating manual entry errors, saving dozens of hours per cycle, and ensuring 100% compliance accuracy.</div>
+      <div class="pj-tech"><span class="tbadge">Crystal Reports</span><span class="tbadge">SAP B1</span><span class="tbadge">ETL</span><span class="tbadge">SQL</span></div>
+    </div>
+    <div class="pj-card">
+      <div class="pj-num">03</div>
+      <div class="pj-tag">Automation</div>
+      <div class="pj-title">Crystal Scheduling</div>
+      <div class="pj-desc">End-to-end automated MIS report distribution system — scheduling, generating, and dispatching Crystal Reports to stakeholders with zero manual intervention, every time.</div>
+      <div class="pj-tech"><span class="tbadge">Crystal Reports</span><span class="tbadge">Automation</span><span class="tbadge">MIS</span><span class="tbadge">SAP B1</span></div>
+    </div>
+  </div>
+</section>
 
-  <!-- ======================================================
-       JAVASCRIPT SECTION (THEME MEMORY + UI ENHANCEMENTS)
-       ====================================================== -->
-  <script>
-    /* -----------------------------------------
-       YEAR AUTO UPDATE
-    ----------------------------------------- */
-    document.getElementById('year').textContent = new Date().getFullYear();
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-label">Experience</div>
+  <h2 class="sec-title">The journey.</h2>
+  <div class="gold-line"></div>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date"><span class="tl-live"></span>Aug 2023 — Present</div>
+      <div class="tl-role">Officer — SAP</div>
+      <div class="tl-co">Rex-Tone Industries Ltd</div>
+      <ul class="tl-list">
+        <li>Maintain SAP B1 system integrity, performance, and uptime across all enterprise operations.</li>
+        <li>Create dynamic Crystal Reports and custom SAP queries for finance, sales, and management teams.</li>
+        <li>Automate recurring workflows, systematically reducing manual tasks across all departments.</li>
+        <li>Deliver real-time Power BI dashboards integrated with live SAP B1 data feeds for leadership.</li>
+        <li>Handle ETL logic and SQL-based backend reporting to ensure data accuracy and consistency.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    /* -----------------------------------------
-       THEME PERSISTENCE (LocalStorage)
-       ----------------------------------------- */
-    const themeBtn = document.getElementById("themeToggle");
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-label">Education &amp; Certifications</div>
+  <h2 class="sec-title">Built on knowledge.</h2>
+  <div class="gold-line"></div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-ico">🎓</div>
+      <div class="edu-deg">B.Sc. Computer Science</div>
+      <div class="edu-inst">Gunupur Degree College</div>
+      <p style="font-size:0.84rem;color:var(--muted);line-height:1.65">A strong foundation in algorithms, data structures, and computational thinking — the backbone of every analytical solution I build.</p>
+    </div>
+    <div class="edu-card">
+      <div class="edu-ico">🏆</div>
+      <div class="edu-deg">Professional Certifications</div>
+      <div class="edu-inst">Verified Training</div>
+      <div class="cert-item"><span class="cert-dot"></span>SAP B1 Implementation Training — Certified</div>
+      <div class="cert-item"><span class="cert-dot"></span>Excel Using AI — Certified</div>
+    </div>
+  </div>
+</section>
 
-    // Load theme from storage
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") document.body.classList.add("dark");
+<!-- KNOW MORE -->
+<section id="knowmore">
+  <div class="sec-label">Know More</div>
+  <h2 class="sec-title">Roots &amp; journey.</h2>
+  <div class="gold-line"></div>
+  <div class="km-grid">
+    <div class="km-card">
+      <img class="km-img" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/img1.jpg" alt="Gulumunda Village"/>
+      <div class="km-body">
+        <span class="km-emoji">🌾</span>
+        <div class="km-title">Gulumunda</div>
+        <div class="km-desc">The village where dawn meets devotion — a poetic embrace of nature and peace. Where it all began.</div>
+      </div>
+    </div>
+    <div class="km-card">
+      <img class="km-img" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/collage1.jpg" alt="Gunupur Degree College"/>
+      <div class="km-body">
+        <span class="km-emoji">🎓</span>
+        <div class="km-title">Gunupur Degree College</div>
+        <div class="km-desc">My academic roots — where curiosity met opportunity and passion found its purpose. The foundation of everything.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    // Toggle theme
-    themeBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-box">
+    <div>
+      <div class="sec-label">Get In Touch</div>
+      <div class="ct-title">Let's build<br>something great.</div>
+      <p class="ct-sub">Whether you're looking for a data analytics expert, an SAP B1 specialist, or someone who can automate your reporting — I'm ready to make it happen.</p>
+      <div class="ct-links">
+        <a href="mailto:prabhakarbehera74778@gmail.com" class="ct-link">
+          <div class="ct-ico">✉</div>
+          <div><div class="ct-lbl">Email</div><div class="ct-val">prabhakarbehera74778@gmail.com</div></div>
+        </a>
+        <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank" class="ct-link">
+          <div class="ct-ico" style="font-size:0.8rem;font-weight:700;color:var(--gold)">in</div>
+          <div><div class="ct-lbl">LinkedIn</div><div class="ct-val">prabhakar-behera-44107a21a →</div></div>
+        </a>
+        <a href="https://prabhakar-67.github.io/prabhakarbehera.github.io/resume.pdf" target="_blank" class="ct-link">
+          <div class="ct-ico">📄</div>
+          <div><div class="ct-lbl">Resume</div><div class="ct-val">Download PDF →</div></div>
+        </a>
+      </div>
+    </div>
+    <div class="ct-right">
+      <div class="avail-badge"><span class="avail-dot"></span>Currently Available</div>
+      <h3>Open to opportunities</h3>
+      <p>Full-time roles, freelance analytics projects, and consulting engagements in SAP B1, Power BI, and data automation.</p>
+      <a href="mailto:prabhakarbehera74778@gmail.com" class="btn-gold">Send a Message →</a>
+    </div>
+  </div>
+</section>
 
-      // Save preference
-      if (document.body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
-      }
-    });
-
-    /* -----------------------------------------
-       TYPEWRITER EFFECT
-    ----------------------------------------- */
-    (function typewriter(){
-      const text = "SAP B1 | Power BI | Data Analyst";
-      const el = document.getElementById('typewriter');
-      let i = 0;
-      function step(){
-        el.textContent = text.slice(0, i+1);
-        i++;
-        if(i < text.length) setTimeout(step, 55);
-      }
-      step();
-    })();
-
-    /* -----------------------------------------
-       NAV ACTIVE LINK ON SCROLL
-    ----------------------------------------- */
-    const navLinks = document.querySelectorAll("nav a");
-    const sections = document.querySelectorAll("main section[id]");
-
-    function highlightNav(){
-      let index = sections.length;
-
-      while(--index && window.scrollY + 120 < sections[index].offsetTop){}
-      navLinks.forEach(link => link.classList.remove("active"));
-      navLinks[index].classList.add("active");
-    }
-    highlightNav();
-    window.addEventListener("scroll", highlightNav);
-
-  </script>
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo">Prabhakar Behera</div>
+  <div class="ft-txt">© 2026 · Built with precision &amp; passion</div>
+  <div class="ft-links">
+    <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">LinkedIn</a>
+    <a href="https://prabhakar-67.github.io/prabhakarbehera.github.io/resume.pdf" target="_blank">Resume</a>
+    <a href="mailto:prabhakarbehera74778@gmail.com">Email</a>
+  </div>
+</footer>
 
 </body>
 </html>
