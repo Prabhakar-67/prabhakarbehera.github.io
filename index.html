@@ -129,31 +129,41 @@ section{padding:5.5rem 6%}
 .cert-item{display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--muted);margin-bottom:0.7rem}
 .cert-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);flex-shrink:0}
 
-/* ── KNOW MORE ── */
+/* ── KNOW MORE GALLERY ── */
 #knowmore{background:var(--dark)}
-.km-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.km-card{border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:transform 0.25s,box-shadow 0.25s;cursor:pointer}
-.km-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,0.5)}
-.km-img-wrap{position:relative;overflow:hidden;height:240px;background:var(--dark3)}
-.km-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.75);transition:transform 0.4s,filter 0.4s}
-.km-card:hover .km-img{transform:scale(1.05);filter:brightness(0.9)}
-.km-img-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;background:rgba(201,168,76,0.15)}
-.km-card:hover .km-img-overlay{opacity:1}
-.km-zoom-icon{width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#07090F}
-.km-img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;background:var(--dark4);border-bottom:1px solid var(--border)}
-.km-placeholder-icon{font-size:3rem;opacity:0.4}
-.km-placeholder-txt{font-size:0.78rem;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
-.km-body{padding:1.8rem;background:var(--dark3)}
-.km-emoji{font-size:1.5rem;margin-bottom:0.7rem;display:block}
-.km-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.5rem}
-.km-desc{font-size:0.85rem;color:var(--muted);line-height:1.65}
+.km-tabs{display:flex;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.km-tab{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:0.85rem;font-weight:600;padding:10px 22px;border-radius:100px;cursor:pointer;transition:all 0.2s;font-family:inherit}
+.km-tab.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07090F;border-color:transparent}
+.km-tab:hover:not(.active){border-color:var(--border2);color:var(--text)}
+.km-gallery{display:grid;grid-template-columns:1fr;gap:1.5rem}
+.km-featured{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;height:400px;background:var(--dark3)}
+.km-featured img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s,filter 0.3s;filter:brightness(0.85)}
+.km-featured:hover img{transform:scale(1.03);filter:brightness(1)}
+.km-featured-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;background:rgba(201,168,76,0.12)}
+.km-featured:hover .km-featured-overlay{opacity:1}
+.km-zoom-icon{width:56px;height:56px;border-radius:50%;background:rgba(201,168,76,0.92);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#07090F}
+.km-thumbs{display:flex;gap:10px;flex-wrap:wrap}
+.km-thumb{width:80px;height:60px;border-radius:10px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color 0.2s,transform 0.2s;flex-shrink:0}
+.km-thumb:hover{transform:scale(1.06)}
+.km-thumb.active{border-color:var(--gold)}
+.km-thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.8);transition:filter 0.2s}
+.km-thumb:hover img,.km-thumb.active img{filter:brightness(1)}
+.km-caption{display:flex;align-items:flex-start;gap:1.2rem;background:var(--dark3);border:1px solid var(--border);border-radius:16px;padding:1.5rem 2rem}
+.km-caption-icon{font-size:2rem;flex-shrink:0}
+.km-caption-title{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.4rem}
+.km-caption-desc{font-size:0.86rem;color:var(--muted);line-height:1.65}
 /* Lightbox */
-.lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:2rem}
+.lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.95);align-items:center;justify-content:center;padding:2rem}
 .lightbox.active{display:flex}
-.lightbox-inner{position:relative;max-width:90vw;max-height:90vh}
-.lightbox-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:12px;border:1px solid var(--border)}
-.lightbox-close{position:absolute;top:-16px;right:-16px;width:40px;height:40px;border-radius:50%;background:var(--gold);color:#07090F;font-size:1.2rem;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
-.lightbox-caption{text-align:center;margin-top:1.2rem;font-size:0.9rem;color:var(--muted)}
+.lightbox-inner{position:relative;max-width:92vw;max-height:92vh;text-align:center}
+.lightbox-img{max-width:90vw;max-height:82vh;object-fit:contain;border-radius:12px;border:1px solid var(--border);display:block}
+.lightbox-close{position:absolute;top:-18px;right:-18px;width:40px;height:40px;border-radius:50%;background:var(--gold);color:#07090F;font-size:1.2rem;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(201,168,76,0.85);color:#07090F;font-size:1.2rem;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
+.lightbox-nav:hover{background:var(--gold2)}
+.lightbox-prev{left:-54px}
+.lightbox-next{right:-54px}
+.lightbox-caption{text-align:center;margin-top:1rem;font-size:0.88rem;color:var(--muted)}
+.lightbox-counter{font-size:0.75rem;color:var(--muted);margin-top:0.4rem}
 
 /* ── CONTACT ── */
 #contact{background:var(--dark2)}
@@ -389,27 +399,41 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 
   <div class="sec-label">Know More</div>
   <h2 class="sec-title">Roots &amp; journey.</h2>
   <div class="gold-line"></div>
-  <div class="km-grid">
-    <div class="km-card" onclick="openLightbox('https://prabhakar-67.github.io/prabhakarbehera.github.io/img1.jpg','🌾 Gulumunda — The village where dawn meets devotion')">
-      <div class="km-img-wrap">
-        <img class="km-img" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/img1.jpg" alt="Gulumunda Village" onerror="this.parentElement.innerHTML='<div class=\'km-img-placeholder\'><div class=\'km-placeholder-icon\'>🌾</div><div class=\'km-placeholder-txt\'>Gulumunda Village</div></div>'"/>
-        <div class="km-img-overlay"><div class="km-zoom-icon">🔍</div></div>
-      </div>
-      <div class="km-body">
-        <span class="km-emoji">🌾</span>
-        <div class="km-title">Gulumunda</div>
-        <div class="km-desc">The village where dawn meets devotion — a poetic embrace of nature and peace. Where it all began.</div>
+
+  <!-- Tab Buttons -->
+  <div class="km-tabs">
+    <button class="km-tab active" onclick="switchTab('village')">🌾 Gulumunda Village</button>
+    <button class="km-tab" onclick="switchTab('college')">🎓 Gunupur Degree College</button>
+  </div>
+
+  <!-- Village Gallery -->
+  <div class="km-gallery" id="tab-village">
+    <div class="km-featured">
+      <img id="village-featured" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/img1.jpg" alt="Gulumunda" onclick="openLightbox(this.src,'🌾 Gulumunda Village')"/>
+      <div class="km-featured-overlay"><div class="km-zoom-icon">🔍</div></div>
+    </div>
+    <div class="km-thumbs" id="village-thumbs"></div>
+    <div class="km-caption">
+      <span class="km-caption-icon">🌾</span>
+      <div>
+        <div class="km-caption-title">Gulumunda</div>
+        <div class="km-caption-desc">The village where dawn meets devotion — a poetic embrace of nature and peace. Where it all began.</div>
       </div>
     </div>
-    <div class="km-card" onclick="openLightbox('https://prabhakar-67.github.io/prabhakarbehera.github.io/collage1.jpg','🎓 Gunupur Degree College — Where curiosity met opportunity')">
-      <div class="km-img-wrap">
-        <img class="km-img" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/collage1.jpg" alt="Gunupur Degree College" onerror="this.parentElement.innerHTML='<div class=\'km-img-placeholder\'><div class=\'km-placeholder-icon\'>🎓</div><div class=\'km-placeholder-txt\'>Gunupur Degree College</div></div>'"/>
-        <div class="km-img-overlay"><div class="km-zoom-icon">🔍</div></div>
-      </div>
-      <div class="km-body">
-        <span class="km-emoji">🎓</span>
-        <div class="km-title">Gunupur Degree College</div>
-        <div class="km-desc">My academic roots — where curiosity met opportunity and passion found its purpose. The foundation of everything.</div>
+  </div>
+
+  <!-- College Gallery -->
+  <div class="km-gallery" id="tab-college" style="display:none">
+    <div class="km-featured">
+      <img id="college-featured" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/collage1.jpg" alt="Gunupur Degree College" onclick="openLightbox(this.src,'🎓 Gunupur Degree College')"/>
+      <div class="km-featured-overlay"><div class="km-zoom-icon">🔍</div></div>
+    </div>
+    <div class="km-thumbs" id="college-thumbs"></div>
+    <div class="km-caption">
+      <span class="km-caption-icon">🎓</span>
+      <div>
+        <div class="km-caption-title">Gunupur Degree College</div>
+        <div class="km-caption-desc">My academic roots — where curiosity met opportunity and passion found its purpose. The foundation of everything.</div>
       </div>
     </div>
   </div>
@@ -432,9 +456,9 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 
       <div class="ct-title">Let's build<br>something great.</div>
       <p class="ct-sub">Whether you're looking for a data analytics expert, an SAP B1 specialist, or someone who can automate your reporting — I'm ready to make it happen.</p>
       <div class="ct-links">
-        <a href="/cdn-cgi/l/email-protection#7f0f0d1e1d171e141e0d1d1a171a0d1e484b4848473f18121e1613511c1012" class="ct-link">
+        <a href="mailto:prabhakarbehera74778@gmail.com" class="ct-link">
           <div class="ct-ico">✉</div>
-          <div><div class="ct-lbl">Email</div><div class="ct-val"><span class="__cf_email__" data-cfemail="700002111218111b1102121518150211474447474830171d11191c5e131f1d">[email&#160;protected]</span></div></div>
+          <div><div class="ct-lbl">Email</div><div class="ct-val">prabhakarbehera74778@gmail.com</div></div>
         </a>
         <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank" class="ct-link">
           <div class="ct-ico" style="font-size:0.8rem;font-weight:700;color:var(--gold)">in</div>
@@ -450,7 +474,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 
       <div class="avail-badge"><span class="avail-dot"></span>Currently Available</div>
       <h3>Open to opportunities</h3>
       <p>Full-time roles, freelance analytics projects, and consulting engagements in SAP B1, Power BI, and data automation.</p>
-      <a href="/cdn-cgi/l/email-protection#3d4d4f5c5f555c565c4f5f5855584f5c0a090a0a057d5a505c5451135e5250" class="btn-gold">Send a Message →</a>
+      <a href="https://www.linkedin.com/messaging/compose/?recipient=prabhakar-behera-44107a21a" target="_blank" class="btn-gold">💬 Send a Message →</a>
     </div>
   </div>
 </section>
@@ -460,26 +484,115 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 
   <div class="ft-logo">Prabhakar Behera</div>
   <div class="ft-txt">© 2026 · Built with precision &amp; passion</div>
   <div class="ft-links">
-    <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">LinkedIn</</a>
+    <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">LinkedIn</a>
     <a href="https://prabhakar-67.github.io/prabhakarbehera.github.io/resume.pdf" target="_blank">Resume</a>
     <a href="mailto:prabhakarbehera74778@gmail.com">Email</a>
   </div>
 </footer>
 
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)">&#8592;</button>
+    <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)">&#8594;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt=""/>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+  </div>
+</div>
+
 <script>
-function openLightbox(src, caption) {
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox-caption').textContent = caption;
+const BASE = 'https://prabhakar-67.github.io/prabhakarbehera.github.io/';
+
+const villageImgs = [
+  'img1.jpg','img2.jpg','img03.jpg','img4.jpg','img5.jpg','img6.jpg',
+  'img7.jpg','img8.jpg','img9.jpg','img10.jpg','img11.jpg','img12.jpg',
+  'img13.jpg','img14.jpg','img15.jpg','img16.jpg','img17.jpg','img18.jpg','img19.jpg'
+];
+
+const collegeImgs = [
+  'collage1.jpg','college2.jpg','college3.jpg','college4.jpg',
+  'college5.jpg','college6.jpg','college7.jpg','college8.jpg',
+  'college9.jpg','college10.jpg','college11.jpg','college12.jpg'
+];
+
+let currentGallery = [];
+let currentLightboxIndex = 0;
+
+function buildThumbs(imgs, containerId, featuredId, label) {
+  const wrap = document.getElementById(containerId);
+  const featured = document.getElementById(featuredId);
+  imgs.forEach(function(src, i) {
+    const div = document.createElement('div');
+    div.className = 'km-thumb' + (i === 0 ? ' active' : '');
+    const image = document.createElement('img');
+    image.src = BASE + src;
+    image.alt = label + ' ' + (i+1);
+    image.loading = 'lazy';
+    div.appendChild(image);
+    div.onclick = function() {
+      featured.src = BASE + src;
+      featured.dataset.index = i;
+      featured.dataset.gallery = containerId;
+      wrap.querySelectorAll('.km-thumb').forEach(function(t){ t.classList.remove('active'); });
+      div.classList.add('active');
+    };
+    wrap.appendChild(div);
+  });
+  featured.dataset.index = 0;
+  featured.dataset.gallery = containerId;
+}
+
+function openLightboxFeatured(el, imgs, label) {
+  var idx = parseInt(el.dataset.index) || 0;
+  currentGallery = imgs;
+  currentLightboxIndex = idx;
+  document.getElementById('lightbox-img').src = BASE + imgs[idx];
+  document.getElementById('lightbox-caption').textContent = label;
+  document.getElementById('lightbox-counter').textContent = (idx+1) + ' / ' + imgs.length;
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
+
+function lightboxNav(dir) {
+  currentLightboxIndex = (currentLightboxIndex + dir + currentGallery.length) % currentGallery.length;
+  document.getElementById('lightbox-img').src = BASE + currentGallery[currentLightboxIndex];
+  document.getElementById('lightbox-counter').textContent = (currentLightboxIndex+1) + ' / ' + currentGallery.length;
+}
+
 function closeLightbox(e) {
-  if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
-    document.getElementById('lightbox').classList.remove('active');
+  var lb = document.getElementById('lightbox');
+  if (!e || e.target === lb) {
+    lb.classList.remove('active');
     document.body.style.overflow = '';
   }
 }
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+
+function switchTab(tab) {
+  document.getElementById('tab-village').style.display = tab === 'village' ? 'grid' : 'none';
+  document.getElementById('tab-college').style.display = tab === 'college' ? 'grid' : 'none';
+  document.querySelectorAll('.km-tab').forEach(function(t,i){
+    t.classList.toggle('active', (i===0 && tab==='village')||(i===1 && tab==='college'));
+  });
+}
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'Escape') { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow=''; }
+  if (e.key === 'ArrowRight') lightboxNav(1);
+  if (e.key === 'ArrowLeft') lightboxNav(-1);
+});
+
+document.getElementById('lightbox-img').addEventListener('click', function(e){ e.stopPropagation(); });
+
+// Set featured image click handlers
+document.getElementById('village-featured').onclick = function(){ openLightboxFeatured(this, villageImgs, '🌾 Gulumunda Village'); };
+document.getElementById('college-featured').onclick = function(){ openLightboxFeatured(this, collegeImgs, '🎓 Gunupur Degree College'); };
+
+buildThumbs(villageImgs, 'village-thumbs', 'village-featured', '🌾 Gulumunda');
+buildThumbs(collegeImgs, 'college-thumbs', 'college-featured', '🎓 Gunupur College');
 </script>
 </body>
 </html>
