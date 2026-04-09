@@ -132,13 +132,28 @@ section{padding:5.5rem 6%}
 /* ── KNOW MORE ── */
 #knowmore{background:var(--dark)}
 .km-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.km-card{border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:transform 0.25s,box-shadow 0.25s}
+.km-card{border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:transform 0.25s,box-shadow 0.25s;cursor:pointer}
 .km-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,0.5)}
-.km-img{width:100%;height:220px;object-fit:cover;display:block;filter:brightness(0.75)}
+.km-img-wrap{position:relative;overflow:hidden;height:240px;background:var(--dark3)}
+.km-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.75);transition:transform 0.4s,filter 0.4s}
+.km-card:hover .km-img{transform:scale(1.05);filter:brightness(0.9)}
+.km-img-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;background:rgba(201,168,76,0.15)}
+.km-card:hover .km-img-overlay{opacity:1}
+.km-zoom-icon{width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#07090F}
+.km-img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;background:var(--dark4);border-bottom:1px solid var(--border)}
+.km-placeholder-icon{font-size:3rem;opacity:0.4}
+.km-placeholder-txt{font-size:0.78rem;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
 .km-body{padding:1.8rem;background:var(--dark3)}
 .km-emoji{font-size:1.5rem;margin-bottom:0.7rem;display:block}
 .km-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.5rem}
 .km-desc{font-size:0.85rem;color:var(--muted);line-height:1.65}
+/* Lightbox */
+.lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:2rem}
+.lightbox.active{display:flex}
+.lightbox-inner{position:relative;max-width:90vw;max-height:90vh}
+.lightbox-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:12px;border:1px solid var(--border)}
+.lightbox-close{position:absolute;top:-16px;right:-16px;width:40px;height:40px;border-radius:50%;background:var(--gold);color:#07090F;font-size:1.2rem;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+.lightbox-caption{text-align:center;margin-top:1.2rem;font-size:0.9rem;color:var(--muted)}
 
 /* ── CONTACT ── */
 #contact{background:var(--dark2)}
@@ -375,16 +390,22 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 
   <h2 class="sec-title">Roots &amp; journey.</h2>
   <div class="gold-line"></div>
   <div class="km-grid">
-    <div class="km-card">
-      <img class="km-img" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/img1.jpg" alt="Gulumunda Village"/>
+    <div class="km-card" onclick="openLightbox('https://prabhakar-67.github.io/prabhakarbehera.github.io/img1.jpg','🌾 Gulumunda — The village where dawn meets devotion')">
+      <div class="km-img-wrap">
+        <img class="km-img" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/img1.jpg" alt="Gulumunda Village" onerror="this.parentElement.innerHTML='<div class=\'km-img-placeholder\'><div class=\'km-placeholder-icon\'>🌾</div><div class=\'km-placeholder-txt\'>Gulumunda Village</div></div>'"/>
+        <div class="km-img-overlay"><div class="km-zoom-icon">🔍</div></div>
+      </div>
       <div class="km-body">
         <span class="km-emoji">🌾</span>
         <div class="km-title">Gulumunda</div>
         <div class="km-desc">The village where dawn meets devotion — a poetic embrace of nature and peace. Where it all began.</div>
       </div>
     </div>
-    <div class="km-card">
-      <img class="km-img" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/collage1.jpg" alt="Gunupur Degree College"/>
+    <div class="km-card" onclick="openLightbox('https://prabhakar-67.github.io/prabhakarbehera.github.io/collage1.jpg','🎓 Gunupur Degree College — Where curiosity met opportunity')">
+      <div class="km-img-wrap">
+        <img class="km-img" src="https://prabhakar-67.github.io/prabhakarbehera.github.io/collage1.jpg" alt="Gunupur Degree College" onerror="this.parentElement.innerHTML='<div class=\'km-img-placeholder\'><div class=\'km-placeholder-icon\'>🎓</div><div class=\'km-placeholder-txt\'>Gunupur Degree College</div></div>'"/>
+        <div class="km-img-overlay"><div class="km-zoom-icon">🔍</div></div>
+      </div>
       <div class="km-body">
         <span class="km-emoji">🎓</span>
         <div class="km-title">Gunupur Degree College</div>
@@ -394,6 +415,15 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 
   </div>
 </section>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt=""/>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-box">
@@ -402,9 +432,9 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 
       <div class="ct-title">Let's build<br>something great.</div>
       <p class="ct-sub">Whether you're looking for a data analytics expert, an SAP B1 specialist, or someone who can automate your reporting — I'm ready to make it happen.</p>
       <div class="ct-links">
-        <a href="mailto:prabhakarbehera74778@gmail.com" class="ct-link">
+        <a href="/cdn-cgi/l/email-protection#7f0f0d1e1d171e141e0d1d1a171a0d1e484b4848473f18121e1613511c1012" class="ct-link">
           <div class="ct-ico">✉</div>
-          <div><div class="ct-lbl">Email</div><div class="ct-val">prabhakarbehera74778@gmail.com</div></div>
+          <div><div class="ct-lbl">Email</div><div class="ct-val"><span class="__cf_email__" data-cfemail="700002111218111b1102121518150211474447474830171d11191c5e131f1d">[email&#160;protected]</span></div></div>
         </a>
         <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank" class="ct-link">
           <div class="ct-ico" style="font-size:0.8rem;font-weight:700;color:var(--gold)">in</div>
@@ -420,7 +450,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 
       <div class="avail-badge"><span class="avail-dot"></span>Currently Available</div>
       <h3>Open to opportunities</h3>
       <p>Full-time roles, freelance analytics projects, and consulting engagements in SAP B1, Power BI, and data automation.</p>
-      <a href="mailto:prabhakarbehera74778@gmail.com" class="btn-gold">Send a Message →</a>
+      <a href="/cdn-cgi/l/email-protection#3d4d4f5c5f555c565c4f5f5855584f5c0a090a0a057d5a505c5451135e5250" class="btn-gold">Send a Message →</a>
     </div>
   </div>
 </section>
@@ -430,11 +460,26 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:2.5rem 
   <div class="ft-logo">Prabhakar Behera</div>
   <div class="ft-txt">© 2026 · Built with precision &amp; passion</div>
   <div class="ft-links">
-    <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/prabhakar-behera-44107a21a/" target="_blank">LinkedIn</</a>
     <a href="https://prabhakar-67.github.io/prabhakarbehera.github.io/resume.pdf" target="_blank">Resume</a>
     <a href="mailto:prabhakarbehera74778@gmail.com">Email</a>
   </div>
 </footer>
 
+<script>
+function openLightbox(src, caption) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-caption').textContent = caption;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e) {
+  if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+</script>
 </body>
 </html>
